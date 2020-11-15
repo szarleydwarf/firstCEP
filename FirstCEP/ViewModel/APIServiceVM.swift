@@ -9,16 +9,10 @@
 import Foundation
 
 class APIServiceVM {
-    func fetchData(from url:URL, completion:@escaping(Accounts)->Void) {
-        URLSession.shared.dataTask(with: url) {data, response, error in
-            guard let data = data else {return}
-            print("Data \(data)")
-            let accounts = try? JSONDecoder().decode(Accounts.self, from: data)
-            
-            
-            DispatchQueue.main.async {
-                completion(accounts!)
-            }
-        }.resume()
+    func fetchDataFromLocalFile(from url:URL) -> Accounts? {
+        guard let data = try? Data(contentsOf: url) else { fatalError("Couldnot read the file") }
+        guard let accounts = try? JSONDecoder().decode(Accounts.self, from: data) else{fatalError("Could not decode data") }
+        
+        return accounts
     }
 }
