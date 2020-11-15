@@ -13,11 +13,11 @@ class APIServiceVM {
         URLSession.shared.dataTask(with: url) {data, response, error in
             guard let data = data else {return}
             print("Data \(data)")
-            let accounts = try JSONDecoder().decode(Accounts.self, from: data)
+            let accounts = try? JSONDecoder().decode(Accounts.self, from: data)
             
             
             DispatchQueue.main.async {
-                completion(accounts)
+                completion(accounts!)
             }
         }.resume()
     }
