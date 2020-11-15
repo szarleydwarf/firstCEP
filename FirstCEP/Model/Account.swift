@@ -13,9 +13,9 @@ struct Accounts :Decodable{
 }
 
 struct Account:Decodable {
-    let kind:String
-    let title:String
-    let number:String
-    let balance:Double
-    let currency:String
+    let kind:String?
+    let title:String?
+    let number:String?
+    let balance:Double?
+    let currency:String?
 }

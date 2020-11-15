@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D772BC47256191A700132878 /* APIServiceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D772BC46256191A700132878 /* APIServiceVM.swift */; };
 		D77D0F1D255FD40200446EBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77D0F1C255FD40200446EBC /* AppDelegate.swift */; };
 		D77D0F1F255FD40200446EBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77D0F1E255FD40200446EBC /* SceneDelegate.swift */; };
 		D77D0F21255FD40200446EBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77D0F20255FD40200446EBC /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 		D77D0F34255FD40500446EBC /* FirstCEPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77D0F33255FD40500446EBC /* FirstCEPTests.swift */; };
 		D77D0F3F255FDAE500446EBC /* Accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = D77D0F3E255FDAE500446EBC /* Accounts.json */; };
 		D77D0F45256032A000446EBC /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77D0F44256032A000446EBC /* Account.swift */; };
+		D77D0F472560349900446EBC /* ModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77D0F462560349900446EBC /* ModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D772BC46256191A700132878 /* APIServiceVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceVM.swift; sourceTree = "<group>"; };
 		D77D0F19255FD40200446EBC /* FirstCEP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstCEP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77D0F1C255FD40200446EBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D77D0F1E255FD40200446EBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		D77D0F35255FD40500446EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D77D0F3E255FDAE500446EBC /* Accounts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Accounts.json; sourceTree = "<group>"; };
 		D77D0F44256032A000446EBC /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		D77D0F462560349900446EBC /* ModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 			children = (
 				D77D0F33255FD40500446EBC /* FirstCEPTests.swift */,
 				D77D0F35255FD40500446EBC /* Info.plist */,
+				D77D0F462560349900446EBC /* ModelTest.swift */,
 			);
 			path = FirstCEPTests;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 		D77D0F42255FDD8800446EBC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D772BC46256191A700132878 /* APIServiceVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 			files = (
 				D77D0F1D255FD40200446EBC /* AppDelegate.swift in Sources */,
 				D77D0F45256032A000446EBC /* Account.swift in Sources */,
+				D772BC47256191A700132878 /* APIServiceVM.swift in Sources */,
 				D77D0F1F255FD40200446EBC /* SceneDelegate.swift in Sources */,
 				D77D0F21255FD40200446EBC /* ContentView.swift in Sources */,
 			);
@@ -259,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D77D0F34255FD40500446EBC /* FirstCEPTests.swift in Sources */,
+				D77D0F472560349900446EBC /* ModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
