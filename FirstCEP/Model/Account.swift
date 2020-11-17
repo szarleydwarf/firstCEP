@@ -9,10 +9,25 @@
 import Foundation
 
 
-struct Account:Decodable {
+struct Account:Decodable , Hashable{
     let kind:String?
     let title:String?
     let number:String?
     let balance:Double?
     let currency:String?
+    
+    func getBalance() ->String {
+        guard let currency = self.currency, let balance = self.balance else {return ""}
+        return currency + " " + String(balance)
+    }
+    
+    func getName() -> String {
+        guard let kind = self.kind, let title = self.title else {return ""}
+        return kind + " " + title
+    }
+    
+    func getNumber() -> String {
+        guard let number = self.number else {return ""}
+        return number
+    }
 }
