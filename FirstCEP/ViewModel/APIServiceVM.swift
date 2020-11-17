@@ -9,9 +9,12 @@
 import Foundation
 
 class APIServiceVM {
-    func fetchDataFromLocalFile(from url:URL) -> Accounts? {
-        guard let data = try? Data(contentsOf: url) else { fatalError("Couldnot read the file") }
-        guard let accounts = try? JSONDecoder().decode(Accounts.self, from: data) else{fatalError("Could not decode data") }
+    func fetchDataFromLocalFile(from file:String) -> [Account] {
+        guard let url = Bundle.main.url(forResource: file, withExtension: "json") else {fatalError("could not create the path")}
+        
+        guard let data = try? Data(contentsOf: url) else { fatalError("Couldnot read the file")}
+        
+        guard let accounts = try? JSONDecoder().decode([Account].self, from: data) else{fatalError("Could not decode data")}
         
         return accounts
     }

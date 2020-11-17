@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    let accounts = APIServiceVM().fetchDataFromLocalFile(from: "Accounts")
+    
     var body: some View {
         NavigationView{
             List {
