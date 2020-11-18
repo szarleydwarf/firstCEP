@@ -16,4 +16,22 @@ class APIServices {
         guard let accounts = try? JSONDecoder().decode([Account].self, from: data) else {return []}
         return accounts
     }
+    
+    func fetchFromRESTAPI(from url:String, completion:@escaping([Account])->Void) {
+        guard let url = URL(string: url) else {return}
+        
+        URLSession.shared.dataTask(with: url) { (data, respons, error) in
+            guard let data = data else {return}
+            guard let respons = respons else {return}
+            guard let error = error else {return}
+            
+            print("DATA \(data)")
+            print("RESP \(respons)")
+            print("ERRO \(error)")
+
+            DispatchQueue.main.async {
+                completion([])
+            }
+        }.resume()
+    }
 }
