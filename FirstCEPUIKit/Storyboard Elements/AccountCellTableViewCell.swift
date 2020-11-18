@@ -9,7 +9,10 @@
 import UIKit
 
 class AccountCellTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var accountNameAndKind: UILabel!
+    @IBOutlet weak var accountNumber: UILabel!
+    @IBOutlet weak var accountCurrencyAndBalance: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

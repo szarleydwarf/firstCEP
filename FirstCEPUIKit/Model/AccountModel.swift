@@ -17,7 +17,7 @@ struct Account : Decodable{
     
     func getBalance() ->String {
         guard let currency = self.currency, let balance = self.balance else {return ""}
-        return currency + " " + String(balance)
+        return currency + " " + String(format:"%.2f", locale: Locale.current, balance)
     }
     
     func getName() -> String {

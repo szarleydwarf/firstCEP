@@ -14,7 +14,6 @@ class APIServices {
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {return []}
         guard let data = try? Data(contentsOf: url) else {return []}
         guard let accounts = try? JSONDecoder().decode([Account].self, from: data) else {return []}
-        print("ACC \(accounts)")
         return accounts
     }
 }
