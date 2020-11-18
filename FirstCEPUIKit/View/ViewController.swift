@@ -17,31 +17,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         accounts = APIServices().fetchFromLocalFile(from: "Accounts")
         
-        fetchFromRESTAPI(from: "https://www.poemist.com/api/v1/randompoems"){ accountsArray in
+        APIServices().fetchFromRESTAPI(from: "https://accounts-json-file.netlify.app/db.json") { accountsArray in
             print("Completed \(accountsArray)")
         }
         self.table.dataSource = self
         self.table.delegate = self
         
         registerCell()
-    }
-    
-    func fetchFromRESTAPI(from url:String, completion:@escaping([Account])->Void) {
-        guard let url = URL(string: url) else {return}
-        
-        URLSession.shared.dataTask(with: url) { (data, respons, error) in
-            guard let data = data else {return}
-            guard let respons = respons else {return}
-            guard let error = error else {return}
-            
-            print("DATA \(data)")
-            print("RESP \(respons)")
-            print("ERRO \(error)")
-
-            DispatchQueue.main.async {
-                completion([])
-            }
-        }.resume()
     }
     
     func registerCell() {
