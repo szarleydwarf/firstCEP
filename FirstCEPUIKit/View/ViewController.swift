@@ -17,6 +17,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewWillAppear(animated)
         APIServices().fetchFromRESTAPI(from: "https://accounts-json-file.netlify.app/db.json") { accountsArray in
             print("Completed \(accountsArray)")
+            self.accounts = accountsArray
+            self.table.reloadData()
         }
 
     }
@@ -24,7 +26,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        accounts = APIServices().fetchFromLocalFile(from: "Accounts")
+//        accounts = APIServices().fetchFromLocalFile(from: "Accounts")
         
         self.table.dataSource = self
         self.table.delegate = self
