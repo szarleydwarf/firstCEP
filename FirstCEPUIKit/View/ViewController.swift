@@ -13,13 +13,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     private var accounts:[Account]?
     private let identifier:String = "AccountCellTableViewCell"
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        accounts = APIServices().fetchFromLocalFile(from: "Accounts")
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         APIServices().fetchFromRESTAPI(from: "https://accounts-json-file.netlify.app/db.json") { accountsArray in
             print("Completed \(accountsArray)")
         }
+
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        accounts = APIServices().fetchFromLocalFile(from: "Accounts")
+        
         self.table.dataSource = self
         self.table.delegate = self
         
