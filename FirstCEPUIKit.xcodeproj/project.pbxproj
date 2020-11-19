@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D777459C2566B9A300F8DD06 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777459B2566B9A300F8DD06 /* DetailsViewController.swift */; };
 		D77FF832256582BC00C4E93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77FF831256582BC00C4E93C /* AppDelegate.swift */; };
 		D77FF834256582BC00C4E93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77FF833256582BC00C4E93C /* SceneDelegate.swift */; };
 		D77FF836256582BC00C4E93C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77FF835256582BC00C4E93C /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D777459B2566B9A300F8DD06 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		D77FF82E256582BC00C4E93C /* FirstCEPUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstCEPUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77FF831256582BC00C4E93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D77FF833256582BC00C4E93C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				D77FF835256582BC00C4E93C /* ViewController.swift */,
+				D777459B2566B9A300F8DD06 /* DetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				D77FF832256582BC00C4E93C /* AppDelegate.swift in Sources */,
 				D77FF834256582BC00C4E93C /* SceneDelegate.swift in Sources */,
 				D77FF85425658EA100C4E93C /* AccountCellTableViewCell.swift in Sources */,
+				D777459C2566B9A300F8DD06 /* DetailsViewController.swift in Sources */,
 				D77FF84E2565853900C4E93C /* AccountModel.swift in Sources */,
 				D77FF850256585C300C4E93C /* APIServices.swift in Sources */,
 			);

@@ -58,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="842" y="-3"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="WcC-FM-dgk">
             <objects>
-                <viewController id="cAC-5Z-Zxi" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="cAC-5Z-Zxi" customClass="DetailsViewController" customModule="FirstCEPUIKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H9x-uj-qEI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,7 +191,13 @@
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSE-jP-Ajz">
                                 <rect key="frame" x="160" y="548.5" width="94" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" backgroundImage="backward.fill" catalog="system"/>
+                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="backward.fill" catalog="system">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnToTable:" destination="cAC-5Z-Zxi" eventType="touchUpInside" id="vXT-z5-tZ8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -215,6 +221,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bD0-ow-A0T"/>
                     </view>
+                    <connections>
+                        <outlet property="accountTitle" destination="mdi-vX-KHx" id="aun-QB-Sm4"/>
+                        <outlet property="balance" destination="bxh-fa-bEA" id="s2p-r9-g4I"/>
+                        <outlet property="currency" destination="xOv-Hp-NV7" id="CSR-Lr-hVE"/>
+                        <outlet property="image" destination="jfZ-JF-Etl" id="tad-ID-4RL"/>
+                        <outlet property="kindText" destination="8lZ-wo-iOD" id="axZ-1B-6xm"/>
+                        <outlet property="number" destination="GEJ-Gw-zCx" id="JQd-YC-uHI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezw-Mq-18i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
