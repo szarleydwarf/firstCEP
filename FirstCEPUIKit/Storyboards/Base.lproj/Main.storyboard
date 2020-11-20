@@ -189,7 +189,10 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSE-jP-Ajz">
-                                <rect key="frame" x="160" y="548.5" width="94" height="22"/>
+                                <rect key="frame" x="160" y="548.5" width="94" height="43.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="MRJ-3q-uFC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" backgroundImage="backward.fill" catalog="system">
@@ -226,7 +229,7 @@
                         <outlet property="balance" destination="bxh-fa-bEA" id="s2p-r9-g4I"/>
                         <outlet property="currency" destination="xOv-Hp-NV7" id="CSR-Lr-hVE"/>
                         <outlet property="image" destination="jfZ-JF-Etl" id="tad-ID-4RL"/>
-                        <outlet property="kindText" destination="8lZ-wo-iOD" id="axZ-1B-6xm"/>
+                        <outlet property="kind" destination="8lZ-wo-iOD" id="ft1-v7-7M6"/>
                         <outlet property="number" destination="GEJ-Gw-zCx" id="JQd-YC-uHI"/>
                     </connections>
                 </viewController>

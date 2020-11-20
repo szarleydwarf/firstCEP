@@ -16,7 +16,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         APIServices().fetchFromRESTAPI(from: "https://accounts-json-file.netlify.app/db.json") { accountsArray in
-            print("Completed \(accountsArray)")
             self.accounts = accountsArray
             self.table.reloadData()
         }
@@ -54,11 +53,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             return cell
         }
-        
-        
         return UITableViewCell()
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailsView = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        self.navigationController?.pushViewController(detailsView, animated: true)
+    }
 }
 
