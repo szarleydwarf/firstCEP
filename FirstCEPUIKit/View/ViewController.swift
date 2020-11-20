@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewWillAppear(animated)
         APIServices().fetchFromRESTAPI(from: "https://accounts-json-file.netlify.app/db.json") { accountsArray in
             self.accounts = accountsArray
+            print("ACC \(accountsArray) \n")
             self.table.reloadData()
         }
 

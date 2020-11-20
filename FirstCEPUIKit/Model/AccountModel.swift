@@ -14,6 +14,16 @@ struct Account : Decodable{
     let number:String?
     let balance:Double?
     let currency:String?
+    let openingDate:String?
+    
+    enum CodingKeys: String, CodingKey {
+        case kind
+        case title
+        case number
+        case balance
+        case currency
+        case openingDate = "opening_date"
+    }
     
     func getBalance() ->String {
         guard let currency = self.currency, let balance = self.balance else {return ""}
