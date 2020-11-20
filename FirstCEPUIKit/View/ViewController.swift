@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewWillAppear(animated)
         APIServices().fetchFromRESTAPI(from: "https://accounts-json-file.netlify.app/db.json") { accountsArray in
             self.accounts = accountsArray
-            print("ACC \(accountsArray) \n")
+//            print("ACC \(accountsArray) \n")
             self.table.reloadData()
         }
 
@@ -60,6 +60,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailsView = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        if let accountsUnwraped = accounts {
+            let account = accountsUnwraped[indexPath.row]
+            detailsView.account = account
+        }
+        
         self.navigationController?.pushViewController(detailsView, animated: true)
     }
 }

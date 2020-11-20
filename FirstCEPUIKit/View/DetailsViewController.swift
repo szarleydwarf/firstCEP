@@ -15,12 +15,14 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var currency: UILabel!
     @IBOutlet weak var balance: UILabel!
+    @IBOutlet weak var openingData: UILabel!
+    @IBOutlet weak var transactionsTable: UITableView!
+    
+    var account:Account?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("ACCOUNT >> \(account)")
     }
     
-    @IBAction func returnToTable(_ sender: UIButton) {
-    }
 }
