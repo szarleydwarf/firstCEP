@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D707B2AB256AE59300774DCB /* Transactions.json in Resources */ = {isa = PBXBuildFile; fileRef = D707B2AA256AE59300774DCB /* Transactions.json */; };
 		D777459C2566B9A300F8DD06 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777459B2566B9A300F8DD06 /* DetailsViewController.swift */; };
 		D77FF832256582BC00C4E93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77FF831256582BC00C4E93C /* AppDelegate.swift */; };
 		D77FF834256582BC00C4E93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77FF833256582BC00C4E93C /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D707B2AA256AE59300774DCB /* Transactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Transactions.json; sourceTree = "<group>"; };
 		D777459B2566B9A300F8DD06 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		D77FF82E256582BC00C4E93C /* FirstCEPUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstCEPUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77FF831256582BC00C4E93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		D77FF84A256584C300C4E93C /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				D707B2AA256AE59300774DCB /* Transactions.json */,
 				D77FF84B256584D900C4E93C /* Accounts.json */,
 			);
 			path = JSON;
@@ -201,6 +204,7 @@
 			files = (
 				D77FF83E256582BF00C4E93C /* LaunchScreen.storyboard in Resources */,
 				D77FF84C256584DA00C4E93C /* Accounts.json in Resources */,
+				D707B2AB256AE59300774DCB /* Transactions.json in Resources */,
 				D77FF83B256582BF00C4E93C /* Assets.xcassets in Resources */,
 				D77FF839256582BC00C4E93C /* Main.storyboard in Resources */,
 				D77FF85525658EA100C4E93C /* AccountCellTableViewCell.xib in Resources */,
