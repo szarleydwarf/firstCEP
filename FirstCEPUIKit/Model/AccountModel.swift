@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Account : Decodable{
+struct Account: Decodable{
     let kind:String?
     let title:String?
     let number:String?

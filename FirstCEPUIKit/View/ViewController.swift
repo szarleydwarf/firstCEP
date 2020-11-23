@@ -15,13 +15,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/accounts"
-//        let netlifyJSON = "https://accounts-json-file.netlify.app/db.json"
-        APIServices().fetchFromRESTAPI(from: placeholder) { accountsArray in
-            self.accounts = accountsArray
-//            print("ACC \(accountsArray) \n")
-            self.table.reloadData()
-        }
+//        let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/accounts"
+////        let netlifyJSON = "https://accounts-json-file.netlify.app/db.json"
+//        APIServices().fetchFromRESTAPI(from: placeholder) { accountsArray in
+//            self.accounts = accountsArray
+////            print("ACC \(accountsArray) \n")
+//            self.table.reloadData()
+//        }
 
     }
     
@@ -29,7 +29,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         
 //        accounts = APIServices().fetchFromLocalFile(from: "Accounts")
-        
+        accounts = APIServices().fetchFromLocalFileGeneric(type: Account, from: "Accounts")
+        print("ACCOUNTS>>\(accounts)")
+//        var transactions = APIServices().fetchFromLocalFileGeneric(from: "Accounts")
+//        print("transactions \(transactions)")
         self.table.dataSource = self
         self.table.delegate = self
         

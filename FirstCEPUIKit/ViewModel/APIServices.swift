@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class APIServices {
     func fetchFromLocalFile(from fileName:String) -> [Account] {
         
@@ -17,17 +18,24 @@ class APIServices {
         return accounts
     }
     
+    func fetchFromLocalFileGeneric<T: Decodable>(type:T, from fileName:String) -> [T]{
+        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {fatalError("could not create URL")}
+        guard let data = try? Data(contentsOf: url) else {fatalError("could not create data")}
+        guard let object = try? JSONDecoder().decode([T].self, from: data) else {return []}
+        return object
+    }
+    
     
     func fetchFromRESTAPI(from address:String, completion:@escaping([Account])->Void) {
         guard let url = URL(string: address) else {return}
         
         URLSession.shared.dataTask(with: url) { (data, respons, error) in
             guard let dataToUse = data else {return}
-            print("DATA >> \n\(dataToUse)")
-            print("RESP >> \(respons)")
-            print("ERRO >> \(error)")
+//            print("DATA >> \n\(dataToUse)")
+//            print("RESP >> \(respons)")
+//            print("ERRO >> \(error)")
             let json = try? JSONDecoder().decode([Account].self, from: dataToUse)
-            //            print("JSON >> \(json)")
+//                        print("JSON >> \(json)")
             
             DispatchQueue.main.async {
                 guard let accounts = json else {return}
