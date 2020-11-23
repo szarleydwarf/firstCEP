@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         
 //        accounts = APIServices().fetchFromLocalFile(from: "Accounts")
-        accounts = APIServices().fetchFromLocalFileGeneric(type: Account, from: "Accounts")
+        accounts = APIServices().fetchFromLocalFileGeneric(type: Account.self, from: "Accounts")
         print("ACCOUNTS>>\(accounts)")
 //        var transactions = APIServices().fetchFromLocalFileGeneric(from: "Accounts")
 //        print("transactions \(transactions)")

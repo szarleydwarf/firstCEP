@@ -25,6 +25,17 @@ struct Account: Decodable{
         case openingDate = "opening_date"
     }
     
+    init(from decoder: Decoder) throws{
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.kind = try container.decode(String.self, forKey: .kind)
+        self.title = try container.decode(String.self, forKey: .title)
+        self.number = try container.decode(String.self, forKey: .number)
+        self.balance = try container.decode(Double.self, forKey: .balance)
+        self.currency = try container.decode(String.self, forKey: .currency)
+        self.openingDate = try container.decode(String.self, forKey: .openingDate)
+    }
+    
     func getBalance() ->String {
         guard let currency = self.currency, let balance = self.balance else {return ""}
         return currency + " " + String(format:"%.2f", locale: Locale.current, balance)

@@ -18,7 +18,7 @@ class APIServices {
         return accounts
     }
     
-    func fetchFromLocalFileGeneric<T: Decodable>(type:T, from fileName:String) -> [T]{
+    func fetchFromLocalFileGeneric<T: Decodable>(type:T.Type, from fileName:String) -> [T]{
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {fatalError("could not create URL")}
         guard let data = try? Data(contentsOf: url) else {fatalError("could not create data")}
         guard let object = try? JSONDecoder().decode([T].self, from: data) else {return []}
