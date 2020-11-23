@@ -1,0 +1,11 @@
+{
+    "transactions": [
+      {
+        "data_of_transaction": "02-12-1997",
+        "amount": 50.75,
+        "currency": "EUR",
+        "type":"CR",
+        "recipient": "NL25 TRIO 0253 8443 20"
+      }
+    ]
+  }

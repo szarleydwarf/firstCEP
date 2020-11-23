@@ -15,7 +15,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        APIServices().fetchFromRESTAPI(from: "https://accounts-json-file.netlify.app/db.json") { accountsArray in
+        let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/accounts"
+//        let netlifyJSON = "https://accounts-json-file.netlify.app/db.json"
+        APIServices().fetchFromRESTAPI(from: placeholder) { accountsArray in
             self.accounts = accountsArray
 //            print("ACC \(accountsArray) \n")
             self.table.reloadData()

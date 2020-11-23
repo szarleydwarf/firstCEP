@@ -9,9 +9,6 @@
 import Foundation
 
 
-struct accountTransactions:Decodable {
-    let transactions: [Transactions]
-}
 
 struct Transactions: Decodable {
     let dateOfTransaction:String

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D707B2AB256AE59300774DCB /* Transactions.json in Resources */ = {isa = PBXBuildFile; fileRef = D707B2AA256AE59300774DCB /* Transactions.json */; };
+		D707B2AB256AE59300774DCB /* NL25 TRIO 0253 8443 20.json in Resources */ = {isa = PBXBuildFile; fileRef = D707B2AA256AE59300774DCB /* NL25 TRIO 0253 8443 20.json */; };
 		D707B2AD256B003400774DCB /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D707B2AC256B003400774DCB /* Transactions.swift */; };
 		D777459C2566B9A300F8DD06 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777459B2566B9A300F8DD06 /* DetailsViewController.swift */; };
 		D77FF832256582BC00C4E93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77FF831256582BC00C4E93C /* AppDelegate.swift */; };
@@ -21,10 +21,11 @@
 		D77FF850256585C300C4E93C /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77FF84F256585C300C4E93C /* APIServices.swift */; };
 		D77FF85425658EA100C4E93C /* AccountCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77FF85225658EA100C4E93C /* AccountCellTableViewCell.swift */; };
 		D77FF85525658EA100C4E93C /* AccountCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77FF85325658EA100C4E93C /* AccountCellTableViewCell.xib */; };
+		D784DCCD256BEC4400883F50 /* NL81 TRIO 0212 4710 66.json in Resources */ = {isa = PBXBuildFile; fileRef = D784DCCC256BEC4400883F50 /* NL81 TRIO 0212 4710 66.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D707B2AA256AE59300774DCB /* Transactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Transactions.json; sourceTree = "<group>"; };
+		D707B2AA256AE59300774DCB /* NL25 TRIO 0253 8443 20.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "NL25 TRIO 0253 8443 20.json"; sourceTree = "<group>"; };
 		D707B2AC256B003400774DCB /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
 		D777459B2566B9A300F8DD06 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		D77FF82E256582BC00C4E93C /* FirstCEPUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstCEPUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +41,7 @@
 		D77FF84F256585C300C4E93C /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		D77FF85225658EA100C4E93C /* AccountCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCellTableViewCell.swift; sourceTree = "<group>"; };
 		D77FF85325658EA100C4E93C /* AccountCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountCellTableViewCell.xib; sourceTree = "<group>"; };
+		D784DCCC256BEC4400883F50 /* NL81 TRIO 0212 4710 66.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "NL81 TRIO 0212 4710 66.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +134,8 @@
 		D77FF84A256584C300C4E93C /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				D707B2AA256AE59300774DCB /* Transactions.json */,
+				D784DCCC256BEC4400883F50 /* NL81 TRIO 0212 4710 66.json */,
+				D707B2AA256AE59300774DCB /* NL25 TRIO 0253 8443 20.json */,
 				D77FF84B256584D900C4E93C /* Accounts.json */,
 			);
 			path = JSON;
@@ -207,10 +210,11 @@
 			files = (
 				D77FF83E256582BF00C4E93C /* LaunchScreen.storyboard in Resources */,
 				D77FF84C256584DA00C4E93C /* Accounts.json in Resources */,
-				D707B2AB256AE59300774DCB /* Transactions.json in Resources */,
+				D707B2AB256AE59300774DCB /* NL25 TRIO 0253 8443 20.json in Resources */,
 				D77FF83B256582BF00C4E93C /* Assets.xcassets in Resources */,
 				D77FF839256582BC00C4E93C /* Main.storyboard in Resources */,
 				D77FF85525658EA100C4E93C /* AccountCellTableViewCell.xib in Resources */,
+				D784DCCD256BEC4400883F50 /* NL81 TRIO 0212 4710 66.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
