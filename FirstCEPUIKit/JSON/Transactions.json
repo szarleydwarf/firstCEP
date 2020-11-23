@@ -1,35 +1,31 @@
 {
-  "all_transactions": [
-    {
-      "sender_account": "NL25 TRIO 0253 8443 20",
-      "transactions": [
-        {
-          "data_of_transaction": "21-09-1990",
-          "amount": 120.99,
-          "type" : "debit",
-          "currency": "GBP",
-          "recipient": "NL25 TRIO 0269 8445 60"
-        },
-        {
-          "data_of_transaction": "02-12-1997",
-          "amount": 20.97,
-          "type" : "credit",
-          "currency": "GBP",
-          "recipient": "NL81 TRIO 0212 4710 66"
-        }
-      ]
-    },
-    {
-      "sender_account": "NL81 TRIO 0212 4710 66",
-      "transactions": [
-        {
-          "data_of_transaction": "02-12-1997",
-          "amount": 50.75,
-          "type" : "debit",
-          "currency": "EUR",
-          "recipient": "NL25 TRIO 0253 8443 20"
-        }
-      ]
-    }
-  ]
+  "NL25 TRIO 0253 8443 20": {
+    "transactions": [
+      {
+        "data_of_transaction": "21-09-1990",
+        "amount_send": 120.99,
+        "currency": "GBP",
+        "type":"CR",
+        "recipient": "NL25 TRIO 0269 8445 60"
+      },
+      {
+        "data_of_transaction": "02-12-1997",
+        "amount_send": 20.97,
+        "currency": "GBP",
+        "type":"DB",
+        "recipient": "NL81 TRIO 0212 4710 66"
+      }
+    ]
+  },
+  "NL81 TRIO 0212 4710 66": {
+    "transactions": [
+      {
+        "data_of_transaction": "02-12-1997",
+        "amount_send": 50.75,
+        "currency": "EUR",
+        "type":"CR",
+        "recipient": "NL25 TRIO 0253 8443 20"
+      }
+    ]
+  }
 }
