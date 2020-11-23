@@ -23,11 +23,12 @@ class APIServices {
         
         URLSession.shared.dataTask(with: url) { (data, respons, error) in
             guard let dataToUse = data else {return}
-        print("DATA >> \n\(dataToUse)")
-//            print("ERRO >> \(error)")
+            print("DATA >> \n\(dataToUse)")
+            print("RESP >> \(respons)")
+            print("ERRO >> \(error)")
             let json = try? JSONDecoder().decode([Account].self, from: dataToUse)
-//            print("JSON >> \(json)")
-
+            //            print("JSON >> \(json)")
+            
             DispatchQueue.main.async {
                 guard let accounts = json else {return}
                 completion(accounts)

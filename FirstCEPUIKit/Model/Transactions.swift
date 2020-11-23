@@ -11,6 +11,7 @@ import Foundation
 
 
 struct Transactions: Decodable {
+    let from:String
     let dateOfTransaction:String
 //    let amount:String
 //    let type:String
@@ -18,6 +19,7 @@ struct Transactions: Decodable {
 //    let recipient:String
     
     enum CodingKeys: String, CodingKey {
+        case from
         case dateOfTransaction = "data_of_transaction"
 //        case amount
 //        case type
