@@ -7,6 +7,10 @@
 //
 
 import Foundation
+struct Accounts:Decodable {
+    let accounts:[Account]
+    
+}
 
 struct Account: Decodable{
     let kind:String?
