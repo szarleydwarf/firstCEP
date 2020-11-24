@@ -16,7 +16,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 //        let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/accounts"
-//       let netlifyJSON = "https://accounts-json-file.netlify.app/db.json"
 //        APIServices().fetchFromRESTAPI(from: placeholder) { accountsArray in
 //            self.accounts = accountsArray
 //            print("ACC \(accountsArray) \n")
@@ -53,9 +52,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         guard let unwrappedAccount = accounts else {return UITableViewCell()}
         if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? AccountCellTableViewCell {
             
-            cell.accountNameAndKind.text = unwrappedAccount[indexPath.row].getName()
-            cell.accountNumber.text = unwrappedAccount[indexPath.row].getNumber()
-            cell.accountCurrencyAndBalance.text = unwrappedAccount[indexPath.row].getBalance()
+//            cell.accountNameAndKind.text = unwrappedAccount[indexPath.row].getName()
+//            cell.accountNumber.text = unwrappedAccount[indexPath.row].getNumber()
+//            cell.accountCurrencyAndBalance.text = unwrappedAccount[indexPath.row].getBalance()
             
             return cell
         }
