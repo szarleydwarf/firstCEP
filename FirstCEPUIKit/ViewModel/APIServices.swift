@@ -10,23 +10,16 @@ import Foundation
 
 
 class APIServices {
-    func fetchFromLocalFile(from fileName:String) -> [Account] {
-        
+ 
+    func fetchFromLocalFile(from fileName:String) -> [Account]{
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {return []}
         guard let data = try? Data(contentsOf: url) else {return []}
         print("DATA>> \(data)")
-        guard let json = try? JSONDecoder().decode([Account].self, from: data) else {return []}
-        print("JAJSON >> \(json)")
-        let accounts :[Account] = [] 
-        
-        return accounts
-    }
-    
-    func fetchFromLocalFileGeneric<T: Decodable>(type:T.Type, from fileName:String) -> [T]{
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {fatalError("could not create URL")}
-        guard let data = try? Data(contentsOf: url) else {fatalError("could not create data")}
-        guard let object = try? JSONDecoder().decode([T].self, from: data) else {return []}
-        return object
+        if let json = try? JSONDecoder().decode(Accounts.self, from: data){
+            print("JSON>> \(json.accounts)")
+            return json.accounts
+        }
+        return []
     }
     
     
