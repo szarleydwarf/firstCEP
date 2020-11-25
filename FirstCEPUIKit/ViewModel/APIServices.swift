@@ -14,9 +14,10 @@ class APIServices {
     func fetchFromLocalFile(from fileName:String) -> [Account]{
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {return []}
         guard let data = try? Data(contentsOf: url) else {return []}
-        print("DATA>> \(data)")
-        if let json = try? JSONDecoder().decode(Accounts.self, from: data){
-            print("JSON>> \(json.accounts)")
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        if let json = try? decoder.decode(Accounts.self, from: data){
             return json.accounts
         }
         return []

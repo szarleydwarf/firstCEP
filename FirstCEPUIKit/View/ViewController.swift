@@ -52,9 +52,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         guard let unwrappedAccount = accounts else {return UITableViewCell()}
         if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? AccountCellTableViewCell {
             
-//            cell.accountNameAndKind.text = unwrappedAccount[indexPath.row].getName()
-//            cell.accountNumber.text = unwrappedAccount[indexPath.row].getNumber()
-//            cell.accountCurrencyAndBalance.text = unwrappedAccount[indexPath.row].getBalance()
+            var textToDisplay = unwrappedAccount[indexPath.row].getName()
+            if let date = unwrappedAccount[indexPath.row].openingDate {
+                textToDisplay = textToDisplay + " - " + date
+            }
+            cell.accountNameAndKind.text = textToDisplay
+            cell.accountNumber.text = unwrappedAccount[indexPath.row].getNumber()
+            cell.accountCurrencyAndBalance.text = unwrappedAccount[indexPath.row].getBalance()
             
             return cell
         }
