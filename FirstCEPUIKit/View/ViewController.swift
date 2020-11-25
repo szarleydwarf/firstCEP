@@ -27,11 +27,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        accounts = APIServices().fetchFromLocalFile(from: "Accounts")
-//        accounts = APIServices().fetchFromLocalFileGeneric(type: Account.self, from: "Accounts")
-        print("ACCOUNTS>>\(accounts)")
-//        var transactions = APIServices().fetchFromLocalFileGeneric(from: "Accounts")
-//        print("transactions \(transactions)")
+//        accounts = APIServices().fetchFromLocalFile(from: "Accounts")
+        if let acc = APIServices().fetchFromLocalFileGeneric(type: Accounts.self, from: "Accounts") {
+            print("ACC >> \(acc)")
+            accounts = acc.accounts
+            print("ACCOUNTS>>\(accounts)")
+        }
+
+        
+        if let transactionsList = APIServices().fetchFromLocalFileGeneric(type: Transactions.self ,from: "Accounts") {
+            print("transactions \(transactionsList)")
+        }
         self.table.dataSource = self
         self.table.delegate = self
         

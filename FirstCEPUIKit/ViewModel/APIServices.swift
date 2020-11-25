@@ -23,6 +23,19 @@ class APIServices {
         return []
     }
     
+    func fetchFromLocalFileGeneric<T: Decodable>(type: T.Type, from fileName:String) -> T?{
+        
+        if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+            if let data = try? Data(contentsOf: url) {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                if let object = try? decoder.decode(T.self, from: data) {
+                    return object
+                }
+            }
+        }
+        return nil
+    }
     
     func fetchFromRESTAPI(from address:String, completion:@escaping([Account])->Void) {
         guard let url = URL(string: address) else {return}

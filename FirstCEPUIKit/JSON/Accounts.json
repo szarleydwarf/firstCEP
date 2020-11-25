@@ -40,5 +40,32 @@
       "currency": "GBP",
       "opening_date": "2009-11-14"
     }
+  ],
+  "transactions": [
+    {
+      "from": "NL25 TRIO 0253 8443 20",
+      "data_of_transaction": "21-09-1990",
+      "amount": 120.99,
+      "type":"CR",
+      "currency": "GBP",
+      "recipient": "NL25 TRIO 0269 8445 60"
+    },
+    {
+      "from": "NL25 TRIO 0253 8443 20",
+      "data_of_transaction": "02-12-1997",
+      "amount": 20.97,
+      "type":"DB",
+      "currency": "GBP",
+      "recipient": "NL81 TRIO 0212 4710 66"
+    },
+    {
+      "from": "NL81 TRIO 0212 4710 66",
+      "data_of_transaction": "02-12-1997",
+      "amount": 50.75,
+      "type":"CR",
+      "currency": "EUR",
+      "recipient": "NL25 TRIO 0253 8443 20"
+    }
   ]
+
 }
