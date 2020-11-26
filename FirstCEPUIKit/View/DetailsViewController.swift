@@ -20,16 +20,14 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
     @IBOutlet weak var transactionsTable: UITableView!
     
     var account:Account?
-    var transactions:Transactions?
+    var transactions:[Transaction]?
     private let identifier:String = "AccountCellTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ACCOUNT >> \(account)")
         
         self.transactionsTable.delegate = self
         self.transactionsTable.dataSource = self
-        
         
         registerCell()
         
@@ -39,7 +37,10 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
     }
     
     func fetchTransactionsForAccount() {
-        
+        if let transactionFetched = APIServices().fetchFromLocalFileGeneric(type: Transactions.self, from: "Accounts") {
+            transactions = transactionFetched.transactions.filter{$0.from == self.account?.number}
+            self.transactionsTable.reloadData()
+        }
     }
     
     func setAccountImage() {
@@ -76,17 +77,23 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.transactions?.transactions.count ?? 0
+        return self.transactions?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let transactionsUnwrapped = transactions?.transactions else {return UITableViewCell()}
+        guard let transactionsUnwrapped = transactions else {return UITableViewCell()}
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: self.identifier) as? AccountCellTableViewCell {
             
-//            cell.accountNameAndKind.text = transactionsUnwrapped
-//            cell.accountNumber.text = transactionsUnwrapped
-//            cell.accountCurrencyAndBalance.text = transactionsUnwrapped
+            cell.accountNameAndKind.text = transactionsUnwrapped[indexPath.row].getReciepient()
+            cell.accountNumber.text = transactionsUnwrapped[indexPath.row].getDate()
+            cell.accountCurrencyAndBalance.text = transactionsUnwrapped[indexPath.row].getAmountCurrencyType()
+            
+            if transactionsUnwrapped[indexPath.row].type == "DB" {
+                cell.accountCurrencyAndBalance.textColor = .red
+            } else {
+                cell.accountCurrencyAndBalance.textColor = .green
+            }
             
             return cell
         }
