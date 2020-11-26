@@ -42,7 +42,13 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
     }
     
     func setViews() {
-        
+        guard let accountUnwrapped = self.account else {return}
+        self.kind.text = accountUnwrapped.kind
+        self.accountTitle.text = accountUnwrapped.title
+        self.number.text = accountUnwrapped.number
+        self.currency.text = accountUnwrapped.currency
+        self.balance.text = "\(accountUnwrapped.balance ?? 0.0)"
+        self.openingData.text = accountUnwrapped.openingDate
     }
     
     func registerCell() {

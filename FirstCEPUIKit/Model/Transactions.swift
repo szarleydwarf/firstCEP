@@ -35,7 +35,7 @@ struct Transaction: Decodable {
         guard let typ = self.type else {return "N/A"}
         guard let sum = self.amount else {return "0.0"}
         guard let cur = self.currency else {return "£"}
-        return cur + " " + sum + " " + typ
+        return "\(cur) \(sum) \(typ)"
     }
     
 }
