@@ -33,10 +33,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //            print("ACCOUNTS>>\(accounts)")
         }
 
-        
-        if let transactionsList = APIServices().fetchFromLocalFileGeneric(type: Transactions.self ,from: "Accounts") {
-            print("transactions \(transactionsList)")
-        }
         self.table.dataSource = self
         self.table.delegate = self
         
@@ -49,8 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = accounts?.count else {return 0}
-        return count
+        return accounts?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
