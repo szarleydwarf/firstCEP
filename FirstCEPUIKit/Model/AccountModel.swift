@@ -13,6 +13,13 @@ struct Accounts: Decodable {
 }
 
 struct Account: Decodable {
+    enum AccountKind: String {
+        case current = "current"
+        case savings = "savings"
+        case term = "term"
+        case loan = "loan"
+    }
+    
     let kind:String?
     let title:String?
     let number:String?

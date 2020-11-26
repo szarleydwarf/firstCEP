@@ -34,11 +34,30 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
         registerCell()
         
         fetchTransactionsForAccount()
+        setAccountImage()
         setViews()
     }
     
     func fetchTransactionsForAccount() {
         
+    }
+    
+    func setAccountImage() {
+        var imageName:String = "banknote"
+        switch self.account?.kind {
+        case Account.AccountKind.current.rawValue:
+            imageName = "banknote"
+        case Account.AccountKind.savings.rawValue:
+            imageName = "goforward.plus"
+        case Account.AccountKind.loan.rawValue:
+            imageName = "gobackward.minus"
+        case Account.AccountKind.term.rawValue:
+            imageName = "snow"
+        default:
+            imageName = "banknote"
+        }
+        let image = UIImage(named: imageName)
+        self.image.image = image
     }
     
     func setViews() {
