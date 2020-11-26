@@ -23,6 +23,12 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
     var transactions:[Transaction]?
     private let identifier:String = "AccountCellTableViewCell"
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchTransactionsForAccount()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,16 +37,19 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
         
         registerCell()
         
-        fetchTransactionsForAccount()
         setAccountImage()
         setViews()
     }
     
     func fetchTransactionsForAccount() {
-        if let transactionFetched = APIServices().fetchFromLocalFileGeneric(type: Transactions.self, from: "Accounts") {
-            transactions = transactionFetched.transactions.filter{$0.from == self.account?.number}
-            self.transactionsTable.reloadData()
+        
+        
+        let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/accounts"
+        APIServices().fetchFromRESTAPIT(from: placeholder) { transactionArray in
+            print("TR \(transactionArray) \n")
+            
         }
+        
     }
     
     func setAccountImage() {
@@ -75,7 +84,7 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
         let customCell = UINib(nibName: identifier, bundle: nil)
         self.transactionsTable.register(customCell, forCellReuseIdentifier: identifier)
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.transactions?.count ?? 0
     }
@@ -99,5 +108,14 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
         }
         return UITableViewCell()
     }
-
+    
+    func localFetching() {
+        if let transactionFetched = APIServices().fetchFromLocalFileGeneric(type: TransactionList.self, from: "Accounts") {
+            if let transactionsUnwrapped = transactionFetched.transactions {
+                transactions = transactionsUnwrapped.filter{$0.from == self.account?.number}
+                self.transactionsTable.reloadData()
+            }
+        }
+        
+    }
 }

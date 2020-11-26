@@ -8,25 +8,21 @@
 
 import Foundation
 
-struct Accounts: Decodable {
-    let accounts:[Account]
+struct AccountList: Decodable {
+    let accounts:[Account]?
 }
 
 struct Account: Decodable {
     enum AccountKind: String {
-        case current = "current"
-        case savings = "savings"
-        case term = "term"
-        case loan = "loan"
+        case current
+        case savings
+        case term
+        case loan
     }
     
-    let kind:String?
-    let title:String?
-    let number:String?
-    let balance:Double?
-    let currency:String?
-    let openingDate:String?
-    
+    let kind, title, number: String?
+    let balance: Double?
+    let currency, openingDate: String?
     
     func getBalance() ->String {
         guard let currency = self.currency, let balance = self.balance else {return ""}

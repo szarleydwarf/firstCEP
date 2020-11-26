@@ -8,19 +8,16 @@
 
 import Foundation
 
-struct Transactions: Decodable {
-    let transactions: [Transaction]
+struct TransactionList: Decodable {
+    let transactions: [Transaction]?
 }
 
 
 struct Transaction: Decodable {
-    let from:String?
-    let dataOfTransaction:String?
-    let amount:Double?
-    let type:String?
-    let currency:String?
-    let recipient:String?
-    
+    let from, dataOfTransaction: String?
+    let amount: Double?
+    let type, currency, recipient: String?
+
     func getReciepient() -> String {
         guard let toFrom = self.recipient else {return "Unknown"}
         return "To/From: \(toFrom)"
