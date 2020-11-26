@@ -29,9 +29,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
 //        accounts = APIServices().fetchFromLocalFile(from: "Accounts")
         if let acc = APIServices().fetchFromLocalFileGeneric(type: Accounts.self, from: "Accounts") {
-            print("ACC >> \(acc)")
             accounts = acc.accounts
-            print("ACCOUNTS>>\(accounts)")
+//            print("ACCOUNTS>>\(accounts)")
         }
 
         

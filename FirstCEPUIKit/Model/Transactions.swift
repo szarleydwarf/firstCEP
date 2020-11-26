@@ -15,10 +15,9 @@ struct Transactions: Decodable {
 
 struct Transaction: Decodable {
     let from:String?
-    let dateOfTransaction:String?
-//    let amount:String
-//    let type:String
-//    let currency:String
-//    let recipient:String
-    
+    let dataOfTransaction:String?
+    let amount:Double?
+    let type:String?
+    let currency:String?
+    let recipient:String?
 }
