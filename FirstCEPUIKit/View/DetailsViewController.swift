@@ -102,8 +102,8 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
     func fetchingFromRESTAPI() {
         let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/transactions"
         APIServices().fetchFromRESTAPIT(from: placeholder) { transactionArray in
-            print("TR \(transactionArray) \n")
-            
+            self.transactions = transactionArray.filter{$0.from == self.account?.number}
+            self.transactionsTable.reloadData()
         }
     }
     
