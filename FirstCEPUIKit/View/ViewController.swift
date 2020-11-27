@@ -12,11 +12,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var table: UITableView!
     private var accounts:[Account]?
     private let identifier:String = "AccountCellTableViewCell"
+    private let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/accounts"
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchingFromRESTAPI()
-//        localFetching()
+        fetchingWithGenericsFunc()
+        //        fetchingFromRESTAPI()
+        //        localFetching()
     }
     
     override func viewDidLoad() {
@@ -65,12 +68,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.navigationController?.pushViewController(detailsView, animated: true)
     }
     
+    func fetchingWithGenericsFunc() {
+        APIServices().fetchFromRESTAPIGeneric(type: [Account].self, from: placeholder) { list in
+            self.accounts = list
+            self.table.reloadData()
+        }
+    }
+    
     func fetchingFromRESTAPI() {
-        let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/accounts"
-
         APIServices().fetchFromRESTAPI(from: placeholder) { accountsArray in
             self.accounts = accountsArray
-                        print("ACC \(accountsArray) \n")
             self.table.reloadData()
         }
     }

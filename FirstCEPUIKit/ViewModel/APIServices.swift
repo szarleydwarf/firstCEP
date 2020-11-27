@@ -47,7 +47,9 @@ class APIServices {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     if let json = try? decoder.decode(T.self, from: dataToDecode) {
-                        print("JSON \(json)")
+                        DispatchQueue.main.async {
+                            completion(json)
+                        }
                     }
                 }
             }.resume()

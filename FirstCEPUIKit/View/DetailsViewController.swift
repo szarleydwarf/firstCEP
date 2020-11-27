@@ -22,11 +22,12 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
     var account:Account?
     var transactions:[Transaction]?
     private let identifier:String = "AccountCellTableViewCell"
-    
+    private let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/transactions"
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchingFromRESTAPI()
+        fetchingWithGenericsFunc()
+//        fetchingFromRESTAPI()
 //        localFetching()
     }
     
@@ -99,8 +100,16 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
         return UITableViewCell()
     }
     
+    func fetchingWithGenericsFunc() {
+        APIServices().fetchFromRESTAPIGeneric(type: [Transaction].self, from: placeholder) { list in
+            if let transactionList = list {
+                self.transactions = transactionList.filter{$0.from == self.account?.number}
+                self.transactionsTable.reloadData()
+            }
+        }
+    }
+    
     func fetchingFromRESTAPI() {
-        let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/transactions"
         APIServices().fetchFromRESTAPIT(from: placeholder) { transactionArray in
             self.transactions = transactionArray.filter{$0.from == self.account?.number}
             self.transactionsTable.reloadData()
