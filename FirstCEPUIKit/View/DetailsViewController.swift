@@ -26,7 +26,8 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchTransactionsForAccount()
+        fetchingFromRESTAPI()
+//        localFetching()
     }
     
     override func viewDidLoad() {
@@ -40,18 +41,7 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
         setAccountImage()
         setViews()
     }
-    
-    func fetchTransactionsForAccount() {
         
-        
-        let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/accounts"
-        APIServices().fetchFromRESTAPIT(from: placeholder) { transactionArray in
-            print("TR \(transactionArray) \n")
-            
-        }
-        
-    }
-    
     func setAccountImage() {
         var imageName:String = "banknote"
         switch self.account?.kind {
@@ -107,6 +97,14 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func fetchingFromRESTAPI() {
+        let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/transactions"
+        APIServices().fetchFromRESTAPIT(from: placeholder) { transactionArray in
+            print("TR \(transactionArray) \n")
+            
+        }
     }
     
     func localFetching() {

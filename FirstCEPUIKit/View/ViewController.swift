@@ -15,13 +15,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/accounts"
-        APIServices().fetchFromRESTAPI(from: placeholder) { accountsArray in
-            self.accounts = accountsArray
-            //            print("ACC \(accountsArray) \n")
-            self.table.reloadData()
-        }
-        
+        fetchingFromRESTAPI()
+//        localFetching()
     }
     
     override func viewDidLoad() {
@@ -70,11 +65,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.navigationController?.pushViewController(detailsView, animated: true)
     }
     
+    func fetchingFromRESTAPI() {
+        let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/accounts"
+
+        APIServices().fetchFromRESTAPI(from: placeholder) { accountsArray in
+            self.accounts = accountsArray
+                        print("ACC \(accountsArray) \n")
+            self.table.reloadData()
+        }
+    }
+    
     func localFetching() {
         accounts = APIServices().fetchFromLocalFile(from: "Accounts")
         if let acc = APIServices().fetchFromLocalFileGeneric(type: AccountList.self, from: "Accounts") {
             accounts = acc.accounts
-            //            print("ACCOUNTS>>\(accounts)")
         }
     }
 }

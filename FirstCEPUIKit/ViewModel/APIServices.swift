@@ -59,13 +59,11 @@ class APIServices {
         
         URLSession.shared.dataTask(with: url) { (data, respons, error) in
             guard let dataToUse = data else {return}
-            print("ACC DATA >> \n\(dataToUse)")
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            if let json = try? decoder.decode(AccountList.self, from: dataToUse) {
+            if let json = try? decoder.decode([Account].self, from: dataToUse) {
                 DispatchQueue.main.async {
-                    guard let accounts = json.accounts else {return}
-                    completion(accounts)
+                    completion(json)
                 }
             }
         }.resume()
@@ -76,16 +74,11 @@ class APIServices {
         
         URLSession.shared.dataTask(with: url) { (data, respons, error) in
             guard let dataToUse = data else {return}
-            print("TRA DATA >> \n\(dataToUse)")
-//            print("RESP >> \(respons)")
-//            print("ERRO >> \(error)")
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            if let json = try? decoder.decode(TransactionList.self, from: dataToUse){
-                print("JSON >> \(json.transactions)")
+            if let json = try? decoder.decode([Transaction].self, from: dataToUse){
                 DispatchQueue.main.async {
-                    //                guard let transactions = json else {return}
-                    //                completion(transactions)
+                    completion(json)
                 }
             }
         }.resume()
