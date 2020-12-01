@@ -17,4 +17,8 @@ class ViewModel {
         }
         return ""
     }
+    
+    func formatAmount(amount:String) -> String {
+        return String(format:"%.2f", locale: Locale.current, amount)
+    }
 }

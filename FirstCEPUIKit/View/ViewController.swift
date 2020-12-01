@@ -50,7 +50,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             cell.accountNameAndKind.text = textToDisplay
             cell.accountNumber.text = unwrappedAccount[indexPath.row].getNumber()
-            cell.accountCurrencyAndBalance.text = unwrappedAccount[indexPath.row].getBalance()
+            cell.accountCurrencyAndBalance.text = ""
             
             return cell
         }
