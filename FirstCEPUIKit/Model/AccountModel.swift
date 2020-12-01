@@ -23,10 +23,15 @@ struct Account: Decodable {
     let kind, title, number: String?
     let balance: Double?
     let currency, openingDate: String?
+
     
     func getBalance() ->String {
-        guard let currency = self.currency, let balance = self.balance else {return ""}
-        return currency + " " + String(format:"%.2f", locale: Locale.current, balance)
+        var currencySymbol = self.currency ?? "GBP"
+        guard let balance = self.balance else {return ""}
+        if let currency = self.currency {
+            currencySymbol = getCurrencySymbol(from: currency)
+        }
+        return currencySymbol + " " + String(format:"%.2f", locale: Locale.current, balance)
     }
     
     func getName() -> String {

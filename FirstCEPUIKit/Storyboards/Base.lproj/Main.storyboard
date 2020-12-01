@@ -55,6 +55,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="EpH-3J-27z"/>
             </objects>
             <point key="canvasLocation" x="842" y="-3"/>
         </scene>
