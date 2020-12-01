@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ViewModel {
+class ViewModel:NSObject {
     
     func getCurrencySymbol(from currencyCode:String)->String {
         let result = Locale.availableIdentifiers.map { Locale(identifier: $0) }.first { $0.currencyCode == currencyCode }

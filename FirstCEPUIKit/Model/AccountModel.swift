@@ -23,14 +23,4 @@ struct Account: Decodable {
     let kind, title, number: String?
     let balance: Double?
     let currency, openingDate: String?
-    
-    func getName() -> String {
-        guard let kind = self.kind, let title = self.title else {return ""}
-        return kind + " " + title
-    }
-    
-    func getNumber() -> String {
-        guard let number = self.number else {return ""}
-        return number
-    }
 }

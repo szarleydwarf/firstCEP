@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet var viewModel: ViewModel!
     @IBOutlet weak var table: UITableView!
     private var accounts:[Account]?
     private let identifier:String = "AccountCellTableViewCell"
@@ -44,12 +45,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         guard let unwrappedAccount = accounts else {return UITableViewCell()}
         if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? AccountCellTableViewCell {
             
-            var textToDisplay = unwrappedAccount[indexPath.row].getName()
-            if let date = unwrappedAccount[indexPath.row].openingDate {
-                textToDisplay = textToDisplay + " - " + date
-            }
+            let textToDisplay = ""
+            
             cell.accountNameAndKind.text = textToDisplay
-            cell.accountNumber.text = unwrappedAccount[indexPath.row].getNumber()
+            cell.accountNumber.text = ""
             cell.accountCurrencyAndBalance.text = ""
             
             return cell

@@ -10,6 +10,7 @@ import UIKit
 
 class DetailsViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet var viewModel: ViewModel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var kind: UILabel!
     @IBOutlet weak var accountTitle: UILabel!
@@ -85,9 +86,9 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: self.identifier) as? AccountCellTableViewCell {
             
-            cell.accountNameAndKind.text = transactionsUnwrapped[indexPath.row].getReciepient()
-            cell.accountNumber.text = transactionsUnwrapped[indexPath.row].getDate()
-            cell.accountCurrencyAndBalance.text = transactionsUnwrapped[indexPath.row].getAmountCurrencyType()
+            cell.accountNameAndKind.text = ""
+            cell.accountNumber.text = ""
+            cell.accountCurrencyAndBalance.text = ""
             
             if transactionsUnwrapped[indexPath.row].type == "DB" {
                 cell.accountCurrencyAndBalance.textColor = .red
