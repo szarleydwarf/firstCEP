@@ -6,7 +6,23 @@
       "number": "NL25 TRIO 0253 8443 20",
       "balance": 1230,
       "currency": "GBP",
-      "opening_date": "2016-04-12"
+      "opening_date": "1990-04-12",
+      "transactions": [
+        {
+          "data_of_transaction": "1990-09-21",
+          "amount": 120.99,
+          "type": "CR",
+          "currency": "GBP",
+          "recipient": "NL25 TRIO 0269 8445 60"
+        },
+        {
+          "data_of_transaction": "1997-12-02",
+          "amount": 20.97,
+          "type": "DB",
+          "currency": "GBP",
+          "recipient": "NL81 TRIO 0212 4710 66"
+        }
+      ]
     },
     {
       "kind": "current",
@@ -14,7 +30,8 @@
       "number": "NL25 TRIO 0269 8445 60",
       "balance": 45090.2,
       "currency": "USD",
-      "opening_date": "1997-07-22"
+      "opening_date": "1997-07-22",
+      "transactions": []
     },
     {
       "kind": "savings",
@@ -22,49 +39,34 @@
       "number": "NL81 TRIO 0212  4710 66",
       "balance": 1,
       "currency": "EUR",
-      "opening_date": "1968-12-29"
+      "opening_date": "1968-12-29",
+      "transactions": [
+        {
+          "data_of_transaction": "1997-07-16",
+          "amount": 50.75,
+          "type": "CR",
+          "currency": "EUR",
+          "recipient": "NL25 TRIO 0253 8443 20"
+        }
+      ]
     },
     {
       "kind": "term",
       "title": "Term Deposit",
-      "number": "NL81 TRIO 0212 4710 66",
+      "number": "NL81 TRIO 0212 4710 63",
       "balance": 13210560.47,
       "currency": "PLN",
-      "opening_date": "2000-01-02"
+      "opening_date": "2000-01-02",
+      "transactions": []
     },
     {
       "kind": "loan",
       "title": "Our home loan",
-      "number": "NL25 TRIO 0253 8443 20",
+      "number": "NL25 TRIO 0253 8443 21",
       "balance": 150033.33,
       "currency": "GBP",
-      "opening_date": "2009-11-14"
-    }
-  ],
-  "transactions": [
-    {
-      "from": "NL25 TRIO 0253 8443 20",
-      "data_of_transaction": "1990-09-21",
-      "amount": 120.99,
-      "type":"CR",
-      "currency": "GBP",
-      "recipient": "NL25 TRIO 0269 8445 60"
-    },
-    {
-      "from": "NL25 TRIO 0253 8443 20",
-      "data_of_transaction": "1997-12-02",
-      "amount": 20.97,
-      "type":"DB",
-      "currency": "GBP",
-      "recipient": "NL81 TRIO 0212 4710 66"
-    },
-    {
-      "from": "NL81 TRIO 0212 4710 66",
-      "data_of_transaction": "1997-07-16",
-      "amount": 50.75,
-      "type":"CR",
-      "currency": "EUR",
-      "recipient": "NL25 TRIO 0253 8443 20"
+      "opening_date": "2009-11-14",
+      "transactions": []
     }
   ]
 }
