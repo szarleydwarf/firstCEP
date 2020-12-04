@@ -13,14 +13,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var table: UITableView!
     private var accounts:[Account]?
     private let identifier:String = "AccountCellTableViewCell"
-    private let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/accounts"
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchingWithGenericsFunc()
-        //        fetchingFromRESTAPI()
-        //        localFetching()
     }
     
     override func viewDidLoad() {
@@ -65,27 +60,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         self.navigationController?.pushViewController(detailsView, animated: true)
-    }
-    
-    func fetchingWithGenericsFunc() {
-        APIServices().fetchFromRESTAPIGeneric(type: [Account].self, from: placeholder) { list in
-            self.accounts = list
-            self.table.reloadData()
-        }
-    }
-    
-    func fetchingFromRESTAPI() {
-        APIServices().fetchFromRESTAPI(from: placeholder) { accountsArray in
-            self.accounts = accountsArray
-            self.table.reloadData()
-        }
-    }
-    
-    func localFetching() {
-        accounts = APIServices().fetchFromLocalFile(from: "Accounts")
-        if let acc = APIServices().fetchFromLocalFileGeneric(type: AccountList.self, from: "Accounts") {
-            accounts = acc.accounts
-        }
     }
 }
 

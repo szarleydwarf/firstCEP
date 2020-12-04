@@ -9,7 +9,10 @@
 import Foundation
 
 class ViewModel:NSObject {
+    private let placeholderT = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/transactions"
+    private let placeholderA = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/accounts"
     
+
     func getCurrencySymbol(from currencyCode:String)->String {
         let result = Locale.availableIdentifiers.map { Locale(identifier: $0) }.first { $0.currencyCode == currencyCode }
         if let symbol = result?.currencySymbol {
