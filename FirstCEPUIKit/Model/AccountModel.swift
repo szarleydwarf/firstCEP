@@ -9,7 +9,7 @@
 import Foundation
 
 struct AccountList: Decodable {
-    let accounts:[Account]?
+    var accounts:[Account]?
 }
 
 struct Account: Decodable {
@@ -20,10 +20,11 @@ struct Account: Decodable {
         case loan
     }
     
-    let kind, title, number: String?
-    let balance: Double?
-    let currency, openingDate: String?
-    let transactions:[Transaction]
+    let kind:String?
+//    , title, number: String?
+//    let balance: Double?
+//    let currency, openingDate: String?
+//    let transactions:[Transaction]
 }
 
 struct Transaction: Decodable {

@@ -56,7 +56,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <customObject id="EpH-3J-27z" customClass="ViewModel"/>
+                <customObject id="EpH-3J-27z" customClass="ViewModel" customModule="FirstCEPUIKit" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="842" y="-3"/>
         </scene>
@@ -273,7 +273,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezw-Mq-18i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <customObject id="P2V-yY-xmi" customClass="ViewModel"/>
+                <customObject id="P2V-yY-xmi" customClass="ViewModel" customModule="FirstCEPUIKit" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1553.6231884057972" y="-3.3482142857142856"/>
         </scene>

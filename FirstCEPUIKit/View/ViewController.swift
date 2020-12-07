@@ -14,9 +14,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     private var accounts:[Account]?
     private let identifier:String = "AccountCellTableViewCell"
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.table.delegate = self
         
         registerCell()
+        accounts = ViewModel().getAccounts().accounts
     }
     
     func registerCell() {
