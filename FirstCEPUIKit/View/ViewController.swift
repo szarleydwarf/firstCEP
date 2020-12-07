@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.table.delegate = self
         
         registerCell()
-        accounts = ViewModel().getAccounts().accounts
+        accounts = ViewModel().getAccounts()?.accounts
     }
     
     func registerCell() {

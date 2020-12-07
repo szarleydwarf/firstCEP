@@ -9,18 +9,26 @@
 import Foundation
 
 class ViewModel:NSObject {
-    private let service = APIServices()
+    private let service:APIServices?
     private let placeholderT = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/transactions"
     private let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/accounts"
     let fileName = "Accounts"
     var accounts:AccountList?
     
+    override init() {
+        self.service = APIServices()
+        self.accounts = AccountList()
+    }
     
-    
-    func getAccounts() -> AccountList {
-        accounts?.accounts = service.fetchFromLocalFile(from: fileName)
-        print("AC>AC >> \(accounts?.accounts)")
-        return accounts!
+    func getAccounts() -> AccountList? {
+        if let service = service {
+            let accountsList = service.fetchFromLocalFile(from: fileName)
+            if !accountsList.isEmpty {
+                self.accounts?.accounts = accountsList
+            }
+            print("AC>AC >> \(accounts)")
+        }
+        return self.accounts
     }
 
     func getCurrencySymbol(from currencyCode:String)->String {
