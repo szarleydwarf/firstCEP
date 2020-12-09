@@ -21,7 +21,7 @@ struct Account: Decodable {
     }
     
     let kind, title, number: String?
-//    let balance: Double?
+    let balance: Double?
 //    let currency, openingDate: String?
 //    let transactions:[Transaction]
 }

@@ -24,6 +24,7 @@ class ViewModel:NSObject {
         if let service = service {
             let accountsList = service.fetchFromLocalFile(from: fileName)
             if !accountsList.isEmpty {
+                formatAmounts(list: accountsList)
                 self.accounts?.accounts = accountsList
             }
         }
@@ -36,6 +37,15 @@ class ViewModel:NSObject {
             return symbol
         }
         return ""
+    }
+    
+    func formatAmounts(list:[Account]) ->[Account]{
+        let newList = list.map{
+            if let b = $0.balance {
+                formatAmount(amount: String(b))
+            }
+        }
+        return newList
     }
     
     func formatAmount(amount:String) -> String {
