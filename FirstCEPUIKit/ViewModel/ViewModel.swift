@@ -26,7 +26,6 @@ class ViewModel:NSObject {
             if !accountsList.isEmpty {
                 self.accounts?.accounts = accountsList
             }
-            print("AC>AC >> \(accounts)")
         }
         return self.accounts
     }

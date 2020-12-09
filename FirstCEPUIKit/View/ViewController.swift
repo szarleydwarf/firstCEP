@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         registerCell()
         accounts = ViewModel().getAccounts()?.accounts
+        print("ACVC >> \(accounts)")
     }
     
     func registerCell() {
@@ -35,12 +36,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let unwrappedAccount = accounts else {return UITableViewCell()}
+        guard let unwrappedAccounts = accounts else {return UITableViewCell()}
         if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? AccountCellTableViewCell {
             
             let textToDisplay = ""
             
-            cell.accountNameAndKind.text = textToDisplay
+            cell.accountNameAndKind.text = unwrappedAccounts[indexPath.row].kind
             cell.accountNumber.text = ""
             cell.accountCurrencyAndBalance.text = ""
             

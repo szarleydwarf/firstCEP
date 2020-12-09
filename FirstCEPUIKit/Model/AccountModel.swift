@@ -20,8 +20,7 @@ struct Account: Decodable {
         case loan
     }
     
-    let kind:String?
-//    , title, number: String?
+    let kind, title, number: String?
 //    let balance: Double?
 //    let currency, openingDate: String?
 //    let transactions:[Transaction]
