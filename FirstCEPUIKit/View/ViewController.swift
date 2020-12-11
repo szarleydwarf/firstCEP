@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.table.delegate = self
         
         registerCell()
-        accounts = ViewModel().getAccounts()?.accounts
+        accounts = viewModel.getAccounts()?.accounts
         print("ACVC >> \(accounts)")
     }
     
@@ -38,12 +38,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let unwrappedAccounts = accounts else {return UITableViewCell()}
         if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? AccountCellTableViewCell {
+            let displayModel = viewModel.getDisplayModel(model: unwrappedAccounts[indexPath.row])
             
-            let textToDisplay = ""
-            
-            cell.accountNameAndKind.text = unwrappedAccounts[indexPath.row].kind
-            cell.accountNumber.text = ""
-            cell.accountCurrencyAndBalance.text = ""
+            cell.accountNameAndKind.text = displayModel.title
+            cell.accountNumber.text = displayModel.firstSubtitle
+            cell.accountCurrencyAndBalance.text = displayModel.secondSubtitle
             
             return cell
         }

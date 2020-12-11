@@ -20,14 +20,12 @@ struct Account: Decodable {
         case loan
     }
     
-    let kind, title, number: String?
+    let kind, title, number, currency, openingDate: String?
     let balance: Double?
-//    let currency, openingDate: String?
-//    let transactions:[Transaction]
+    let transactions:[Transaction]
 }
 
 struct Transaction: Decodable {
-    let from, dataOfTransaction: String?
+    let type, currency, recipient, dataOfTransaction: String?
     let amount: Double?
-    let type, currency, recipient: String?
 }

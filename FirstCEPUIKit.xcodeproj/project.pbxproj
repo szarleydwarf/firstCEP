@@ -20,6 +20,7 @@
 		D77FF850256585C300C4E93C /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77FF84F256585C300C4E93C /* APIServices.swift */; };
 		D77FF85425658EA100C4E93C /* AccountCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77FF85225658EA100C4E93C /* AccountCellTableViewCell.swift */; };
 		D77FF85525658EA100C4E93C /* AccountCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77FF85325658EA100C4E93C /* AccountCellTableViewCell.xib */; };
+		D79E31BD2584245A0018877A /* DisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79E31BC2584245A0018877A /* DisplayModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D77FF84F256585C300C4E93C /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		D77FF85225658EA100C4E93C /* AccountCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCellTableViewCell.swift; sourceTree = "<group>"; };
 		D77FF85325658EA100C4E93C /* AccountCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountCellTableViewCell.xib; sourceTree = "<group>"; };
+		D79E31BC2584245A0018877A /* DisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				D77FF84D2565853900C4E93C /* AccountModel.swift */,
+				D79E31BC2584245A0018877A /* DisplayModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D73AF83E2576A92E00B0DE10 /* ViewModel.swift in Sources */,
+				D79E31BD2584245A0018877A /* DisplayModel.swift in Sources */,
 				D77FF836256582BC00C4E93C /* ViewController.swift in Sources */,
 				D77FF832256582BC00C4E93C /* AppDelegate.swift in Sources */,
 				D77FF834256582BC00C4E93C /* SceneDelegate.swift in Sources */,

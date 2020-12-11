@@ -24,28 +24,36 @@ class ViewModel:NSObject {
         if let service = service {
             let accountsList = service.fetchFromLocalFile(from: fileName)
             if !accountsList.isEmpty {
-                formatAmounts(list: accountsList)
                 self.accounts?.accounts = accountsList
             }
         }
         return self.accounts
     }
+    
+    func getDisplayModel (model:Account) -> DisplayModel {
+        var displayModel:DisplayModel = DisplayModel()
+        if let title = model.title, let kind = model.kind {
+            displayModel.title = kind + " " + title
+        }
+        if let number = model.number {
+            displayModel.firstSubtitle = number
+        }
+        if let balance = model.balance, let currency = model.currency {
+            displayModel.secondSubtitle = getCurrencySymbol(from: currency) + " " + formatAmount(amount: String(balance))
+        }
+        return displayModel
+    }
 
+    func get(from first:String, second:String)->String {
+        return first + " " + second
+    }
+    
     func getCurrencySymbol(from currencyCode:String)->String {
         let result = Locale.availableIdentifiers.map { Locale(identifier: $0) }.first { $0.currencyCode == currencyCode }
         if let symbol = result?.currencySymbol {
             return symbol
         }
         return ""
-    }
-    
-    func formatAmounts(list:[Account]) ->[Account]{
-        let newList = list.map{
-            if let b = $0.balance {
-                formatAmount(amount: String(b))
-            }
-        }
-        return newList
     }
     
     func formatAmount(amount:String) -> String {
