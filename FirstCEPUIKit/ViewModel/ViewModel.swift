@@ -39,7 +39,7 @@ class ViewModel:NSObject {
             displayModel.firstSubtitle = number
         }
         if let balance = model.balance, let currency = model.currency {
-            displayModel.secondSubtitle = getCurrencySymbol(from: currency) + " " + formatAmount(amount: String(balance))
+            displayModel.secondSubtitle = getCurrencySymbol(from: currency) + " " + formatAmount(amount: balance)
         }
         return displayModel
     }
@@ -56,7 +56,7 @@ class ViewModel:NSObject {
         return ""
     }
     
-    func formatAmount(amount:String) -> String {
-        return String(format:"%.2f", locale: Locale.current, amount)
+    func formatAmount(amount:Double) -> String {
+        return String(format:" %.2f", locale: Locale.current, amount)
     }
 }
