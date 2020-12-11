@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         registerCell()
         accounts = viewModel.getAccounts()?.accounts
-        print("ACVC >> \(accounts)")
+//        print("ACVC >> \(accounts)")
     }
     
     func registerCell() {

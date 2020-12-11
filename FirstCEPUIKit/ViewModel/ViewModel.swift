@@ -43,6 +43,37 @@ class ViewModel:NSObject {
         }
         return displayModel
     }
+    
+    func getDisplayModel (model:Transaction) -> DisplayModel {
+        var displayModel:DisplayModel = DisplayModel()
+        if let recipient = model.recipient {
+            displayModel.title = recipient
+        }
+        if let date = model.dataOfTransaction {
+            displayModel.firstSubtitle = date
+        }
+        if let type = model.type, let currency = model.currency, let amount = model.amount {
+            displayModel.secondSubtitle = type + " " + getCurrencySymbol(from: currency) + " " + formatAmount(amount: amount)
+        }
+        return displayModel
+    }
+    
+    func getImageName(kind: String) -> String {
+        var imageName:String = "banknote"
+        switch kind {
+        case Account.AccountKind.current.rawValue:
+            imageName = "banknote"
+        case Account.AccountKind.savings.rawValue:
+            imageName = "goforward.plus"
+        case Account.AccountKind.loan.rawValue:
+            imageName = "gobackward.minus"
+        case Account.AccountKind.term.rawValue:
+            imageName = "snow"
+        default:
+            imageName = "banknote"
+        }
+        return imageName
+    }
 
     func get(from first:String, second:String)->String {
         return first + " " + second

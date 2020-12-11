@@ -47,6 +47,13 @@
           "type": "CR",
           "currency": "EUR",
           "recipient": "NL25 TRIO 0253 8443 20"
+        },
+        {
+          "data_of_transaction": "1998-04-26",
+          "amount": 10.01,
+          "type": "CR",
+          "currency": "EUR",
+          "recipient": "NL25 TRIO 0253 8443 20"
         }
       ]
     },
@@ -57,7 +64,15 @@
       "balance": 13210560.47,
       "currency": "PLN",
       "opening_date": "2000-01-02",
-      "transactions": []
+      "transactions": [
+          {
+            "data_of_transaction": "2002-10-12",
+            "amount": 350.75,
+            "type": "DB",
+            "currency": "PLN",
+            "recipient": "NL25 TRIO 0253 8443 20"
+          }
+      ]
     },
     {
       "kind": "loan",
@@ -66,7 +81,22 @@
       "balance": 150033.33,
       "currency": "GBP",
       "opening_date": "2009-11-14",
-      "transactions": []
+      "transactions": [
+      {
+        "data_of_transaction": "2012-05-24",
+        "amount": 5000.75,
+        "type": "CR",
+        "currency": "GBP",
+        "recipient": "NL25 TRIO 0253 8443 20"
+      },
+      {
+        "data_of_transaction": "2001-12-15",
+        "amount": 2150.99,
+        "type": "CR",
+        "currency": "GBP",
+        "recipient": "NL25 TRIO 0253 8443 20"
+      }
+      ]
     }
   ]
 }

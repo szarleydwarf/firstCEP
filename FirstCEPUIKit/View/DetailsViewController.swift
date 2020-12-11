@@ -21,7 +21,6 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
     @IBOutlet weak var transactionsTable: UITableView!
     
     var account:Account?
-    var transactions:[Transaction]?
     private let identifier:String = "AccountCellTableViewCell"
      
     override func viewWillAppear(_ animated: Bool) {
@@ -42,31 +41,20 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
     }
         
     func setAccountImage() {
-        var imageName:String = "banknote"
-        switch self.account?.kind {
-        case Account.AccountKind.current.rawValue:
-            imageName = "banknote"
-        case Account.AccountKind.savings.rawValue:
-            imageName = "goforward.plus"
-        case Account.AccountKind.loan.rawValue:
-            imageName = "gobackward.minus"
-        case Account.AccountKind.term.rawValue:
-            imageName = "snow"
-        default:
-            imageName = "banknote"
+        if let accountKind = self.account?.kind {
+            let image = UIImage(named: viewModel.getImageName(kind: accountKind))
+            self.image.image = image
         }
-        let image = UIImage(named: imageName)
-        self.image.image = image
     }
     
     func setViews() {
         guard let accountUnwrapped = self.account else {return}
         self.kind.text = accountUnwrapped.kind
-//        self.accountTitle.text = accountUnwrapped.title
-//        self.number.text = accountUnwrapped.number
-//        self.currency.text = accountUnwrapped.currency
-//        self.balance.text = "\(accountUnwrapped.balance ?? 0.0)"
-//        self.openingData.text = accountUnwrapped.openingDate
+        self.accountTitle.text = accountUnwrapped.title
+        self.number.text = accountUnwrapped.number
+        self.currency.text = accountUnwrapped.currency
+        self.balance.text = "\(accountUnwrapped.balance ?? 0.0)"
+        self.openingData.text = accountUnwrapped.openingDate
     }
     
     func registerCell() {
@@ -75,17 +63,17 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.transactions?.count ?? 0
+        return self.account?.transactions.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let transactionsUnwrapped = transactions else {return UITableViewCell()}
+        guard let transactionsUnwrapped = self.account?.transactions else {return UITableViewCell()}
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: self.identifier) as? AccountCellTableViewCell {
-            
-            cell.accountNameAndKind.text = ""
-            cell.accountNumber.text = ""
-            cell.accountCurrencyAndBalance.text = ""
+            let model = viewModel.getDisplayModel(model: transactionsUnwrapped[indexPath.row])
+            cell.accountNameAndKind.text = model.title
+            cell.accountNumber.text = model.firstSubtitle
+            cell.accountCurrencyAndBalance.text = model.secondSubtitle
             
             if transactionsUnwrapped[indexPath.row].type == "DB" {
                 cell.accountCurrencyAndBalance.textColor = .red
