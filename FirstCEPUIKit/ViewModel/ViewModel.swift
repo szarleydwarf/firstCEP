@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ViewModel:NSObject {
     private let service:APIServices?
@@ -40,20 +41,6 @@ class ViewModel:NSObject {
         }
         if let balance = model.balance, let currency = model.currency {
             displayModel.secondSubtitle = getCurrencySymbol(from: currency) + " " + formatAmount(amount: balance)
-        }
-        return displayModel
-    }
-    
-    func getDisplayModel (model:Transaction) -> DisplayModel {
-        var displayModel:DisplayModel = DisplayModel()
-        if let recipient = model.recipient {
-            displayModel.title = recipient
-        }
-        if let date = model.dataOfTransaction {
-            displayModel.firstSubtitle = date
-        }
-        if let type = model.type, let currency = model.currency, let amount = model.amount {
-            displayModel.secondSubtitle = type + " " + getCurrencySymbol(from: currency) + " " + formatAmount(amount: amount)
         }
         return displayModel
     }
@@ -106,5 +93,13 @@ class ViewModel:NSObject {
             return String(format:" %.2f", locale: Locale.current, amount)
         }
         return ""
+    }
+    
+    func getTextColor(type:String?) -> UIColor{
+        if type == "DB" {
+            return .red
+        } else {
+            return .green
+        }
     }
 }

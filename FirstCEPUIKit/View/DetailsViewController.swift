@@ -75,11 +75,7 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
             cell.accountNumber.text = viewModel.getTitle(from: model.dataOfTransaction)
             cell.accountCurrencyAndBalance.text = viewModel.getTitle(from: model.type, secondString: viewModel.getCurrencySymbol(from: model.currency), thirdString: viewModel.formatAmount(amount: model.amount))
             
-            if transactionsUnwrapped[indexPath.row].type == "DB" {
-                cell.accountCurrencyAndBalance.textColor = .red
-            } else {
-                cell.accountCurrencyAndBalance.textColor = .green
-            }
+            cell.accountCurrencyAndBalance.textColor = viewModel.getTextColor(type: model.type)
             
             return cell
         }
