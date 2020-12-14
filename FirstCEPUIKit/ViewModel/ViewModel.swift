@@ -31,20 +31,6 @@ class ViewModel:NSObject {
         return self.accounts
     }
     
-    func getDisplayModel (model:Account) -> DisplayModel {
-        var displayModel:DisplayModel = DisplayModel()
-        if let title = model.title, let kind = model.kind {
-            displayModel.title = kind + " " + title
-        }
-        if let number = model.number {
-            displayModel.firstSubtitle = number
-        }
-        if let balance = model.balance, let currency = model.currency {
-            displayModel.secondSubtitle = getCurrencySymbol(from: currency) + " " + formatAmount(amount: balance)
-        }
-        return displayModel
-    }
-    
     func getImageName(kind: String) -> String {
         var imageName:String = "banknote"
         switch kind {
@@ -62,7 +48,7 @@ class ViewModel:NSObject {
         return imageName
     }
 
-    func getTitle(from firstString:String?, secondString:String? = "", thirdString: String? = "")->String {
+    func getTextToDisplay(from firstString:String?, secondString:String? = "", thirdString: String? = "")->String {
         var toReturn = ""
         if let first = firstString {
             toReturn += first

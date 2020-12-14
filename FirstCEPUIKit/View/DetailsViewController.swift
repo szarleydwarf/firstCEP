@@ -71,16 +71,18 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: self.identifier) as? AccountCellTableViewCell {
             let model = transactionsUnwrapped[indexPath.row] as Transaction
-            cell.accountNameAndKind.text = viewModel.getTitle(from: model.recipient)
-            cell.accountNumber.text = viewModel.getTitle(from: model.dataOfTransaction)
-            cell.accountCurrencyAndBalance.text = viewModel.getTitle(from: model.type, secondString: viewModel.getCurrencySymbol(from: model.currency), thirdString: viewModel.formatAmount(amount: model.amount))
-            
-            cell.accountCurrencyAndBalance.textColor = viewModel.getTextColor(type: model.type)
-            
+
+            update(cell, with: model)
             return cell
         }
         return UITableViewCell()
     }
     
-
+    func update(_ cell: AccountCellTableViewCell, with transaction: Transaction) {
+        cell.accountNameAndKind.text = viewModel.getTextToDisplay(from: transaction.recipient)
+        cell.accountNumber.text = viewModel.getTextToDisplay(from: transaction.dataOfTransaction)
+        cell.accountCurrencyAndBalance.text = viewModel.getTextToDisplay(from: transaction.type, secondString: viewModel.getCurrencySymbol(from: transaction.currency), thirdString: viewModel.formatAmount(amount: transaction.amount))
+        
+        cell.accountCurrencyAndBalance.textColor = viewModel.getTextColor(type: transaction.type)
+    }
 }

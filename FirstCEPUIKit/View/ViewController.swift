@@ -23,7 +23,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         registerCell()
         accounts = viewModel.getAccounts()?.accounts
-//        print("ACVC >> \(accounts)")
     }
     
     func registerCell() {
@@ -38,15 +37,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let unwrappedAccounts = accounts else {return UITableViewCell()}
         if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? AccountCellTableViewCell {
-            let displayModel = viewModel.getDisplayModel(model: unwrappedAccounts[indexPath.row])
-            
-            cell.accountNameAndKind.text = displayModel.title
-            cell.accountNumber.text = displayModel.firstSubtitle
-            cell.accountCurrencyAndBalance.text = displayModel.secondSubtitle
+            let model =  unwrappedAccounts[indexPath.row] as Account
+            update(cell, with: model)
             
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func update(_ cell: AccountCellTableViewCell, with account: Account) {
+        cell.accountNameAndKind.text = viewModel.getTextToDisplay(from: account.title, secondString: account.kind)
+        cell.accountNumber.text = viewModel.getTextToDisplay(from: account.number)
+        cell.accountCurrencyAndBalance.text = viewModel.getTextToDisplay(from: viewModel.getCurrencySymbol(from: account.currency), secondString: viewModel.formatAmount(amount: account.balance))
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -56,8 +58,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let account = accountsUnwraped[indexPath.row]
             detailsView.account = account
         }
-        
-        self.navigationController?.pushViewController(detailsView, animated: true)
+    self.navigationController?.pushViewController(detailsView, animated: true)
     }
 }
 
