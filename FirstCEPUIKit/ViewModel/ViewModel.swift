@@ -88,4 +88,11 @@ class ViewModel:NSObject {
             return .green
         }
     }
+    
+    func displayDetailsView(navigation:UINavigationController ,_ account: Account) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailsView = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        detailsView.account = account
+        navigation.pushViewController(detailsView, animated: true)
+    }
 }

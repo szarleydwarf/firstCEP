@@ -52,8 +52,8 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
         self.kind.text = accountUnwrapped.kind
         self.accountTitle.text = accountUnwrapped.title
         self.number.text = accountUnwrapped.number
-        self.currency.text = accountUnwrapped.currency
-        self.balance.text = "\(accountUnwrapped.balance ?? 0.0)"
+        self.currency.text = viewModel.getCurrencySymbol(from: accountUnwrapped.currency)
+        self.balance.text = viewModel.formatAmount(amount: accountUnwrapped.balance)
         self.openingData.text = accountUnwrapped.openingDate
     }
     

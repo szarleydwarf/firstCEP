@@ -52,13 +52,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let detailsView = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        
         if let accountsUnwraped = accounts {
             let account = accountsUnwraped[indexPath.row]
-            detailsView.account = account
+            if let navController = self.navigationController {
+                viewModel.displayDetailsView(navigation: navController, account)
+            }
         }
-    self.navigationController?.pushViewController(detailsView, animated: true)
     }
 }
 
