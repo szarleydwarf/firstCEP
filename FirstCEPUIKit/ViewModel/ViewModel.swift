@@ -75,19 +75,36 @@ class ViewModel:NSObject {
         return imageName
     }
 
-    func get(from first:String, second:String)->String {
-        return first + " " + second
+    func getTitle(from firstString:String?, secondString:String? = "", thirdString: String? = "")->String {
+        var toReturn = ""
+        if let first = firstString {
+            toReturn += first
+        }
+        
+        if let second = secondString {
+            toReturn += " " + second
+        }
+        
+        if let third = thirdString {
+            toReturn += " " + third
+        }
+        return toReturn
     }
     
-    func getCurrencySymbol(from currencyCode:String)->String {
-        let result = Locale.availableIdentifiers.map { Locale(identifier: $0) }.first { $0.currencyCode == currencyCode }
-        if let symbol = result?.currencySymbol {
-            return symbol
+    func getCurrencySymbol(from currencyCode:String?)->String {
+        if let currency = currencyCode {
+            let result = Locale.availableIdentifiers.map { Locale(identifier: $0) }.first { $0.currencyCode == currency }
+            if let symbol = result?.currencySymbol {
+                return symbol
+            }
         }
         return ""
     }
     
-    func formatAmount(amount:Double) -> String {
-        return String(format:" %.2f", locale: Locale.current, amount)
+    func formatAmount(amount:Double?) -> String {
+        if let amount = amount {
+            return String(format:" %.2f", locale: Locale.current, amount)
+        }
+        return ""
     }
 }

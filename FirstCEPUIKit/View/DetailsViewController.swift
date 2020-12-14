@@ -70,10 +70,10 @@ class DetailsViewController: UIViewController,UITableViewDataSource, UITableView
         guard let transactionsUnwrapped = self.account?.transactions else {return UITableViewCell()}
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: self.identifier) as? AccountCellTableViewCell {
-            let model = viewModel.getDisplayModel(model: transactionsUnwrapped[indexPath.row])
-            cell.accountNameAndKind.text = model.title
-            cell.accountNumber.text = model.firstSubtitle
-            cell.accountCurrencyAndBalance.text = model.secondSubtitle
+            let model = transactionsUnwrapped[indexPath.row] as Transaction
+            cell.accountNameAndKind.text = viewModel.getTitle(from: model.recipient)
+            cell.accountNumber.text = viewModel.getTitle(from: model.dataOfTransaction)
+            cell.accountCurrencyAndBalance.text = viewModel.getTitle(from: model.type, secondString: viewModel.getCurrencySymbol(from: model.currency), thirdString: viewModel.formatAmount(amount: model.amount))
             
             if transactionsUnwrapped[indexPath.row].type == "DB" {
                 cell.accountCurrencyAndBalance.textColor = .red
