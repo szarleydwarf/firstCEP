@@ -23,9 +23,16 @@ class ViewModel:NSObject {
     
     func getAccounts() -> AccountList? {
         if let service = service {
-            let accountsList = service.fetchFromLocalFile(from: fileName)
-            if !accountsList.isEmpty {
-                self.accounts?.accounts = accountsList
+//            normal version, local file
+//            let accountsList = service.fetchFromLocalFile(from: fileName)
+//            if !accountsList.isEmpty {
+//                self.accounts?.accounts = accountsList
+//            }
+            
+//          generic version, local file
+            let accountsList = service.fetchFromLocalFileGeneric(type: AccountList.self, from: fileName)
+            if let accounts = accountsList?.accounts, !accounts.isEmpty {
+                self.accounts?.accounts = accounts
             }
         }
         return self.accounts
