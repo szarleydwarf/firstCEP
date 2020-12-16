@@ -30,9 +30,16 @@ class ViewModel:NSObject {
 //            }
             
 //          generic version, local file
-            let accountsList = service.fetchFromLocalFileGeneric(type: AccountList.self, from: fileName)
-            if let accounts = accountsList?.accounts, !accounts.isEmpty {
-                self.accounts?.accounts = accounts
+//            let accountsList = service.fetchFromLocalFileGeneric(type: AccountList.self, from: fileName)
+//            if let accounts = accountsList?.accounts, !accounts.isEmpty {
+//                self.accounts?.accounts = accounts
+//            }
+            
+//          normal version, REST
+            service.fetchFromRESTAPI(from: placeholder) { accounts in
+                if !accounts.isEmpty {
+                    self.accounts?.accounts = accounts
+                }
             }
         }
         return self.accounts
