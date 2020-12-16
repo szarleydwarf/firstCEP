@@ -20,30 +20,35 @@ class ViewModel:NSObject {
         self.service = APIServices()
         self.accounts = AccountList()
     }
-    
-    func getAccounts() -> AccountList? {
+    func getAccounts(completion: @escaping(AccountList?) -> Void) {
         if let service = service {
-//            normal version, local file
-//            let accountsList = service.fetchFromLocalFile(from: fileName)
-//            if !accountsList.isEmpty {
-//                self.accounts?.accounts = accountsList
-//            }
-            
-//          generic version, local file
-//            let accountsList = service.fetchFromLocalFileGeneric(type: AccountList.self, from: fileName)
-//            if let accounts = accountsList?.accounts, !accounts.isEmpty {
-//                self.accounts?.accounts = accounts
-//            }
-            
 //          normal version, REST
-            service.fetchFromRESTAPI(from: placeholder) { accounts in
+            service.fetchFromRESTAPI(from: placeholder) {[weak self] accounts in
                 if !accounts.isEmpty {
-                    self.accounts?.accounts = accounts
+                    self?.accounts?.accounts = accounts
+                    completion(self?.accounts)
                 }
             }
+            
         }
-        return self.accounts
     }
+    //    func getAccounts() -> AccountList? {
+    //        if let service = service {
+    //            normal version, local file
+    //            let accountsList = service.fetchFromLocalFile(from: fileName)
+    //            if !accountsList.isEmpty {
+    //                self.accounts?.accounts = accountsList
+    //            }
+    
+    //          generic version, local file
+    //            let accountsList = service.fetchFromLocalFileGeneric(type: AccountList.self, from: fileName)
+    //            if let accounts = accountsList?.accounts, !accounts.isEmpty {
+    //                self.accounts?.accounts = accounts
+    //            }
+    
+    //        }
+    //        return self.accounts
+    //    }
     
     func getImageName(kind: String) -> String {
         var imageName:String = "banknote"
@@ -61,7 +66,7 @@ class ViewModel:NSObject {
         }
         return imageName
     }
-
+    
     func getTextToDisplay(from firstString:String?, secondString:String? = "", thirdString: String? = "")->String {
         var toReturn = ""
         if let first = firstString {
