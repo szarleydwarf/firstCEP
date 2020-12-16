@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         registerCell()
         viewModel.getAccounts() {[weak self] accounts in
             self?.accounts = accounts?.accounts
-            self?.table.reloadData() 
+            self?.table.reloadData()
         }
         
     }

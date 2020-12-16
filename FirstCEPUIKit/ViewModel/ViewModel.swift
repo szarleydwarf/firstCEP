@@ -23,13 +23,20 @@ class ViewModel:NSObject {
     func getAccounts(completion: @escaping(AccountList?) -> Void) {
         if let service = service {
 //          normal version, REST
-            service.fetchFromRESTAPI(from: placeholder) {[weak self] accounts in
-                if !accounts.isEmpty {
-                    self?.accounts?.accounts = accounts
+//            service.fetchFromRESTAPI(from: placeholder) {[weak self] accounts in
+//                if !accounts.isEmpty {
+//                    self?.accounts?.accounts = accounts
+//                    completion(self?.accounts)
+//                }
+//            }
+//          generic version, REST
+            service.fetchFromRESTAPIGeneric(type: AccountList.self, from: placeholder) {[weak self] accounts in
+                if let accountsList = accounts?.accounts, !accountsList.isEmpty {
+                    self?.accounts?.accounts = accountsList
                     completion(self?.accounts)
                 }
+                
             }
-            
         }
     }
     //    func getAccounts() -> AccountList? {
