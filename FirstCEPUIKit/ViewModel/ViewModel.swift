@@ -20,6 +20,7 @@ class ViewModel:NSObject {
         self.service = APIServices()
         self.accounts = AccountList()
     }
+    
     func getAccounts(completion: @escaping(AccountList?) -> Void) {
         if let service = service {
 //          normal version, REST
@@ -29,13 +30,13 @@ class ViewModel:NSObject {
 //                    completion(self?.accounts)
 //                }
 //            }
+            
 //          generic version, REST
-            service.fetchFromRESTAPIGeneric(type: AccountList.self, from: placeholder) {[weak self] accounts in
-                if let accountsList = accounts?.accounts, !accountsList.isEmpty {
+            service.fetchFromRESTAPIGeneric(type: [Account].self, from: placeholder) {[weak self] accounts in
+                if let accountsList = accounts, !accountsList.isEmpty {
                     self?.accounts?.accounts = accountsList
                     completion(self?.accounts)
                 }
-                
             }
         }
     }
