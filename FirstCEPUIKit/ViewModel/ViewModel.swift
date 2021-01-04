@@ -18,7 +18,13 @@ class ViewModel:NSObject {
     
     override init() {
         self.service = APIServices()
-        self.accounts = AccountList()
+//        self.accounts = AccountList()
+        getAccounts() {accounts in
+            self.accounts = accounts
+//            self?.table.reloadData()
+            
+        }
+        print("VM> \(self.accounts?.accounts)")
     }
     
     func getAccounts(completion: @escaping(AccountList?) -> Void) {
