@@ -21,6 +21,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.table.delegate = self
         
         registerCell()
+        viewModel.getAccounts() {done in
+            if done {
+                self.table.reloadData()
+            }
+        }
+        
     }
     
     func registerCell() {
@@ -29,11 +35,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.accounts.accounts?.count ?? 0
+        return viewModel.accounts?.accounts?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let unwrappedAccounts = viewModel.accounts.accounts else {return UITableViewCell()}
+        guard let unwrappedAccounts = viewModel.accounts?.accounts else {return UITableViewCell()}
         if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? AccountCellTableViewCell {
             let model =  unwrappedAccounts[indexPath.row] as Account
             update(cell, with: model)
@@ -51,7 +57,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let accountsUnwraped = viewModel.accounts.accounts {
+        if let accountsUnwraped = viewModel.accounts?.accounts {
             let account = accountsUnwraped[indexPath.row]
             if let navController = self.navigationController {
                 viewModel.displayDetailsView(navigation: navController, account)
