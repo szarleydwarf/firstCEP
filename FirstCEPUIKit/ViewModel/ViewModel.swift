@@ -11,20 +11,21 @@ import UIKit
 
 class ViewModel:NSObject {
     private let service:APIServices?
-    private let placeholderT = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/transactions"
     private let placeholder = "https://my-json-server.typicode.com/szarleydwarf/firstCEP/master/db/accounts"
     let fileName = "Accounts"
-    var accounts:AccountList?
+    var accounts:AccountList = AccountList()
     
     override init() {
         self.service = APIServices()
-//        self.accounts = AccountList()
-        getAccounts() {accounts in
-            self.accounts = accounts
-//            self?.table.reloadData()
-            
+        
+        if let service = self.service {
+            service.fetchFromRESTAPIGeneric(type: [Account].self, from: placeholder) { acc in
+                if let accountList = acc, !accountList.isEmpty{
+//                    self.accounts.accounts = accountList
+                }
+            }
         }
-        print("VM> \(self.accounts?.accounts)")
+        print("VM> \(self.accounts.accounts)")
     }
     
     func getAccounts(completion: @escaping(AccountList?) -> Void) {
@@ -40,7 +41,7 @@ class ViewModel:NSObject {
 //          generic version, REST
             service.fetchFromRESTAPIGeneric(type: [Account].self, from: placeholder) {[weak self] accounts in
                 if let accountsList = accounts, !accountsList.isEmpty {
-                    self?.accounts?.accounts = accountsList
+                    self?.accounts.accounts = accountsList
                     completion(self?.accounts)
                 }
             }
