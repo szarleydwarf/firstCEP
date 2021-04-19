@@ -16,13 +16,17 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             List{
-                ForEach(0 ..< viewModel.accountsCount){ i in
-                    Text("\(viewModel.accounts?[i].getName() ?? "") \(viewModel.accounts?[i].getNumber() ?? "") \(viewModel.accounts?[i].getBalance() ?? "")")
-                        .padding()
+                ForEach(0 ..< viewModel.accountsCount){ index in
+                    self.updateView(index)
                 }
             }
             .navigationBarTitle("Accounts", displayMode: .inline)
         }
+    }
+    
+    func updateView(_ index:Int) {
+        Text("\(viewModel.accounts?[index].getName() ?? "") \(viewModel.accounts?[index].getNumber() ?? "") \(viewModel.accounts?[index].getBalance() ?? "")")
+            .padding()
     }
 }
 

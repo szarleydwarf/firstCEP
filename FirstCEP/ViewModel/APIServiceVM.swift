@@ -11,12 +11,18 @@ import Foundation
 
 class ViewModel {
     var service: NetworKingProtocol!
+    var localService:LocalDataProtocol!
     
-    init(services: NetworKingProtocol = NetworKing()) {
+    init(services: NetworKingProtocol = NetworKing(), localService:LocalDataProtocol = NetworKing()) {
         self.service = services
+        self.localService = localService
     }
     
-    var accounts:[Account]?
+    var accounts:[Account]? {
+        didSet {
+            
+        }
+    }
     
     var accountsCount:Int {
         return accounts?.count ?? 1
@@ -24,5 +30,9 @@ class ViewModel {
     
     func getData (from: URL) {
         
+    }
+    
+    func getData (from fileNamed:String) {
+        self.accounts = self.localService.fetchDataFromLocalFile(from: fileNamed)
     }
 }
