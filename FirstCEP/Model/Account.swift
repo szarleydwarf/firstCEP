@@ -30,4 +30,9 @@ struct Account:Decodable , Hashable{
         guard let number = self.number else {return ""}
         return number
     }
+    
+    #if DEBUG
+    static let example = Account(kind: "CURRENT", title: "LOAN", number: "1213 3435 7745", balance: 1234.44, currency: "GBP")
+    #endif
 }
+        

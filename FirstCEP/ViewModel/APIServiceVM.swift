@@ -21,6 +21,7 @@ class ViewModel {
     
     var accounts:[Account]?
     
+    // this returns 1 always, need to find out why
     var accountsCount:Int {
         return accounts?.count ?? 1
     }

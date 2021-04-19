@@ -19,6 +19,7 @@
 		D77D0F45256032A000446EBC /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77D0F44256032A000446EBC /* Account.swift */; };
 		D77D0F472560349900446EBC /* ModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77D0F462560349900446EBC /* ModelTest.swift */; };
 		D7FA4558262DCC2A00749439 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FA4557262DCC2A00749439 /* Networking.swift */; };
+		D7FA456A262DF4B400749439 /* AccountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FA4569262DF4B400749439 /* AccountRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		D77D0F44256032A000446EBC /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		D77D0F462560349900446EBC /* ModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTest.swift; sourceTree = "<group>"; };
 		D7FA4557262DCC2A00749439 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		D7FA4569262DF4B400749439 /* AccountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				D77D0F20255FD40200446EBC /* ContentView.swift */,
+				D7FA4569262DF4B400749439 /* AccountRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				D7FA4558262DCC2A00749439 /* Networking.swift in Sources */,
 				D77D0F1F255FD40200446EBC /* SceneDelegate.swift in Sources */,
 				D77D0F21255FD40200446EBC /* ContentView.swift in Sources */,
+				D7FA456A262DF4B400749439 /* AccountRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

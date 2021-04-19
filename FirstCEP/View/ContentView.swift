@@ -10,13 +10,12 @@ import SwiftUI
 
 struct ContentView: View {
     let accounts:[Account] = ViewModel().getData(from: "Accounts")
-    let accountsCount = ViewModel().accountsCount
     @State private var selected = 0
     
     var body: some View {
         NavigationView{
             List{
-                ForEach(0 ..< accountsCount){ index in
+                ForEach(0 ..< accounts.count) { index in
                     Text("\(self.accounts[index].getName() ) \(self.accounts[index].getNumber() ) \(self.accounts[index].getBalance())")
                         .padding()
                 }
