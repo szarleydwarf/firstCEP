@@ -9,25 +9,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    let viewModel = ViewModel()
-        
+    let accounts:[Account] = ViewModel().getData(from: "Accounts")
+    let accountsCount = ViewModel().accountsCount
     @State private var selected = 0
     
     var body: some View {
         NavigationView{
             List{
-                ForEach(0 ..< viewModel.accountsCount){ index in
-                    self.updateView(index)
+                ForEach(0 ..< accountsCount){ index in
+                    Text("\(self.accounts[index].getName() ) \(self.accounts[index].getNumber() ) \(self.accounts[index].getBalance())")
+                        .padding()
                 }
             }
             .navigationBarTitle("Accounts", displayMode: .inline)
         }
     }
-    
-    func updateView(_ index:Int) {
-        Text("\(viewModel.accounts?[index].getName() ?? "") \(viewModel.accounts?[index].getNumber() ?? "") \(viewModel.accounts?[index].getBalance() ?? "")")
-            .padding()
-    }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
