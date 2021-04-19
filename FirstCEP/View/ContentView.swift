@@ -15,9 +15,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             List{
-                ForEach(0 ..< accounts.count) { index in
-                    Text("\(self.accounts[index].getName() ) \(self.accounts[index].getNumber() ) \(self.accounts[index].getBalance())")
-                        .padding()
+                ForEach(accounts) { account in
+                    AccountRow(account: account)
                 }
             }
             .navigationBarTitle("Accounts", displayMode: .inline)

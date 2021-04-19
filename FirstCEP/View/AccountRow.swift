@@ -10,8 +10,23 @@ import SwiftUI
 
 struct AccountRow: View {
     let account:Account
+    
     var body: some View {
-        Text(account.getName())
+        HStack {
+            if account.kind == "loan" {
+                Image(systemName: "pencil.circle")
+            } else if account.kind == "current" {
+                Image(systemName: "scribble")
+            } else if account.kind == "savings" {
+                Image(systemName: "book")
+            } else if account.kind == "term" {
+                Image(systemName: "lock.doc")
+            } else {
+                Image(systemName: "paperplane")
+            }
+            Text(account.getName())
+
+        }
     }
 }
 

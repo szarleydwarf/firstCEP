@@ -9,12 +9,17 @@
 import Foundation
 
 
-struct Account:Decodable , Hashable{
+struct Account:Decodable , Hashable, Identifiable {
+    let id = UUID()
     let kind:String?
     let title:String?
     let number:String?
     let balance:Double?
     let currency:String?
+    
+    enum CodingKeys:String, CodingKey {
+        case kind, title, number, balance, currency
+    }
     
     func getBalance() ->String {
         guard let currency = self.currency, let balance = self.balance else {return ""}
