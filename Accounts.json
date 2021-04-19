@@ -1,0 +1,44 @@
+{
+  "accounts": [
+    {
+      "kind": "current",
+      "title": "Current Account",
+      "number": "NL25 TRIO 0253 8443 20",
+      "balance": 1230,
+      "currency": "GBP",
+      "opening_date": "2016-04-12"
+    },
+    {
+      "kind": "current",
+      "title": "Joint Account",
+      "number": "NL25 TRIO 0269 8445 60",
+      "balance": 45090.2,
+      "currency": "USD",
+      "opening_date": "1997-07-22"
+    },
+    {
+      "kind": "savings",
+      "title": "Savings Account",
+      "number": "NL81 TRIO 0212  4710 66",
+      "balance": 1,
+      "currency": "EUR",
+      "opening_date": "1968-12-29"
+    },
+    {
+      "kind": "term",
+      "title": "Term Deposit",
+      "number": "NL81 TRIO 0212 4710 66",
+      "balance": 13210560.47,
+      "currency": "PLN",
+      "opening_date": "2000-01-02"
+    },
+    {
+      "kind": "loan",
+      "title": "Our home loan",
+      "number": "NL25 TRIO 0253 8443 20",
+      "balance": 150033.33,
+      "currency": "GBP",
+      "opening_date": "2009-11-14"
+    }
+  ]
+}

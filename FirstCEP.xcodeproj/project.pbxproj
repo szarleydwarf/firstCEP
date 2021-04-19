@@ -18,6 +18,7 @@
 		D77D0F3F255FDAE500446EBC /* Accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = D77D0F3E255FDAE500446EBC /* Accounts.json */; };
 		D77D0F45256032A000446EBC /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77D0F44256032A000446EBC /* Account.swift */; };
 		D77D0F472560349900446EBC /* ModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77D0F462560349900446EBC /* ModelTest.swift */; };
+		D7FA4558262DCC2A00749439 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FA4557262DCC2A00749439 /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		D77D0F3E255FDAE500446EBC /* Accounts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Accounts.json; sourceTree = "<group>"; };
 		D77D0F44256032A000446EBC /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		D77D0F462560349900446EBC /* ModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTest.swift; sourceTree = "<group>"; };
+		D7FA4557262DCC2A00749439 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		D77D0F1B255FD40200446EBC /* FirstCEP */ = {
 			isa = PBXGroup;
 			children = (
+				D7FA4556262DCC0600749439 /* Services */,
 				D77D0F43255FDD9A00446EBC /* AppDefaults */,
 				D77D0F42255FDD8800446EBC /* ViewModel */,
 				D77D0F41255FDD7B00446EBC /* View */,
@@ -151,6 +154,14 @@
 			path = AppDefaults;
 			sourceTree = "<group>";
 		};
+		D7FA4556262DCC0600749439 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D7FA4557262DCC2A00749439 /* Networking.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,7 +207,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "The App Experts";
 				TargetAttributes = {
 					D77D0F18255FD40200446EBC = {
@@ -256,6 +267,7 @@
 				D77D0F1D255FD40200446EBC /* AppDelegate.swift in Sources */,
 				D77D0F45256032A000446EBC /* Account.swift in Sources */,
 				D772BC47256191A700132878 /* APIServiceVM.swift in Sources */,
+				D7FA4558262DCC2A00749439 /* Networking.swift in Sources */,
 				D77D0F1F255FD40200446EBC /* SceneDelegate.swift in Sources */,
 				D77D0F21255FD40200446EBC /* ContentView.swift in Sources */,
 			);
@@ -318,6 +330,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -378,6 +391,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

@@ -9,17 +9,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    let accounts:[Account] = APIServiceVM().fetchDataFromLocalFile(from: "Accounts")
+    let viewModel = ViewModel()
+        
     @State private var selected = 0
     
     var body: some View {
         NavigationView{
             List{
-                ForEach(0 ..< accounts.count){ i in
-                    Text("\(self.accounts[i].getName()) \(self.accounts[i].getNumber()) \(self.accounts[i].getBalance())")
+                ForEach(0 ..< viewModel.accountsCount){ i in
+                    Text("\(viewModel.accounts?[i].getName() ?? "") \(viewModel.accounts?[i].getNumber() ?? "") \(viewModel.accounts?[i].getBalance() ?? "")")
+                        .padding()
                 }
             }
-            .navigationBarTitle("Accounts")
+            .navigationBarTitle("Accounts", displayMode: .inline)
         }
     }
 }
