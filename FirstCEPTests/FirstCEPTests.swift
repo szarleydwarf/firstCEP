@@ -10,6 +10,4 @@ import XCTest
 @testable import FirstCEP
 
 class FirstCEPTests: XCTestCase {
-
- 
 }

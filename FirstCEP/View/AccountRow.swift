@@ -9,23 +9,27 @@
 import SwiftUI
 
 struct AccountRow: View {
-    let account:Account
-    
+    let account: Account
+    let imageNames: [String: String] = [
+        "loan": "pencil.circle",
+        "current": "scribble",
+        "savings": "book",
+        "term": "lock.doc",
+        "d": "paperlane"
+    ]
     var body: some View {
         HStack {
-            if account.kind == "loan" {
-                Image(systemName: "pencil.circle")
-            } else if account.kind == "current" {
-                Image(systemName: "scribble")
-            } else if account.kind == "savings" {
-                Image(systemName: "book")
-            } else if account.kind == "term" {
-                Image(systemName: "lock.doc")
-            } else {
-                Image(systemName: "paperplane")
+            ForEach(1..<imageNames.count) { key in
+                Text("RO \(key)")
             }
-            Text(account.getName())
-
+            VStack(alignment: .trailing) {
+                Text(account.getName())
+                    .font(.headline)
+                    .background(Color.yellow)
+                Text(account.getNumber())
+                    .font(.body)
+            }
+            .padding(8)
         }
     }
 }

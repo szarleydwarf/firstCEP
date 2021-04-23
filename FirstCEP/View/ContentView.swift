@@ -9,12 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    let accounts:[Account] = ViewModel().getData(from: "Accounts")
+    let accounts: [Account] = ViewModel().getData(from: "Accounts")
     @State private var selected = 0
-    
+
     var body: some View {
-        NavigationView{
-            List{
+        NavigationView {
+            List {
                 ForEach(accounts) { account in
                     AccountRow(account: account)
                 }
@@ -28,6 +28,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-        
+
     }
 }
