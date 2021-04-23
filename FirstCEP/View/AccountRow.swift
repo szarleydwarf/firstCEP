@@ -10,17 +10,19 @@ import SwiftUI
 
 struct AccountRow: View {
     let account: Account
-    let imageNames: [String: String] = [
-        "loan": "pencil.circle",
-        "current": "scribble",
-        "savings": "book",
-        "term": "lock.doc",
-        "d": "paperlane"
+    let imageNames: [(String, String)] = [
+        ("loan", "pencil.circle"),
+        ("current", "scribble"),
+        ("savings", "book"),
+        ("term", "lock.doc"),
+        ("d", "paperlane")
     ]
     var body: some View {
         HStack {
-            ForEach(1..<imageNames.count) { key in
-                Text("RO \(key)")
+            ForEach(imageNames.indices) { key in
+                if account.kind == imageNames[key].0 {
+                    Image(systemName: imageNames[key].1)
+                }
             }
             VStack(alignment: .trailing) {
                 Text(account.getName())
