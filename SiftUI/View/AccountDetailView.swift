@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AccountDetailView: View {
     let account: Account
-
+    
     var body: some View {
         VStack {
             Image(systemName: ViewModel().imageName(kind: account.kind))
@@ -30,11 +30,23 @@ struct AccountDetailView: View {
         .navigationTitle(account.kind?.uppercased() ?? "Current")
         .navigationBarTitleDisplayMode(.inline)
         .padding(10)
-        VStack {
-            Button("Transfer money") {
-                print( "transfering")
+        NavigationView {
+            HStack {
+                Text("Send money")
+                    .font(.title3)
+                    .foregroundColor(.purple)
+                
+                Button {
+                    NavigationLink(destination: TransferView(transfer: Transfer())) {                        Text("transfering")
+                    }
+                } label: {
+                    Image(systemName: "arrowshape.turn.up.right.fill")
+                }
+                
             }
             .contentShape(Circle())
+            .foregroundColor(.purple)
+            
         }
         Spacer()
     }

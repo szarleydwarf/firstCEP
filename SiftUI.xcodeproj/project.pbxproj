@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D71A47B4263B2B9300D3A847 /* TransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A47B3263B2B9300D3A847 /* TransferView.swift */; };
 		D7D0A8E22637334000A0D907 /* SiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0A8E12637334000A0D907 /* SiftUIApp.swift */; };
 		D7D0A8E42637334000A0D907 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0A8E32637334000A0D907 /* ContentView.swift */; };
 		D7D0A8E62637334300A0D907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D0A8E52637334300A0D907 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D71A47B3263B2B9300D3A847 /* TransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferView.swift; sourceTree = "<group>"; };
 		D7D0A8DE2637334000A0D907 /* SiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D0A8E12637334000A0D907 /* SiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiftUIApp.swift; sourceTree = "<group>"; };
 		D7D0A8E32637334000A0D907 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				D7D0A8E32637334000A0D907 /* ContentView.swift */,
 				D7D0A9232637355200A0D907 /* AccountRow.swift */,
 				D7D0A928263735B900A0D907 /* AccountDetailView.swift */,
+				D71A47B3263B2B9300D3A847 /* TransferView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7D0A932263735EB00A0D907 /* MainViewModel.swift in Sources */,
+				D71A47B4263B2B9300D3A847 /* TransferView.swift in Sources */,
 				D7D0A8E42637334000A0D907 /* ContentView.swift in Sources */,
 				D7D0A916263734A200A0D907 /* Account.swift in Sources */,
 				D7D0A9242637355200A0D907 /* AccountRow.swift in Sources */,

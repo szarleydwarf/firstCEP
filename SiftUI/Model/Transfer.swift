@@ -18,4 +18,7 @@ class Transfer: ObservableObject {
         print("transfer > \(accounts.0) <> \(accounts.1)")
         return false
     }
+    #if DEBUG
+    static let example = Transfer()
+    #endif
 }
