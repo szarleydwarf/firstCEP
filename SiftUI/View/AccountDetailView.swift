@@ -26,10 +26,17 @@ struct AccountDetailView: View {
             Text(account.getBalance())
                 .font(.title)
                 .foregroundColor(.blue)
-            Spacer()
         }
         .navigationTitle(account.kind?.uppercased() ?? "Current")
         .navigationBarTitleDisplayMode(.inline)
+        .padding(10)
+        VStack {
+            Button("Transfer money") {
+                print( "transfering")
+            }
+            .contentShape(Circle())
+        }
+        Spacer()
     }
 }
 
