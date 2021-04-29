@@ -11,8 +11,10 @@ struct TransferView: View {
     let transfer: Transfer
     
     var body: some View {
-        
-        Text(transfer.accounts.sender.kind ?? "DEFFF")
+        VStack {
+            Text(transfer.accounts.sender.kind ?? "DEFFF")
+            Text(transfer.accounts.reciever.kind ?? "DEFFF")
+        }
     }
 }
 

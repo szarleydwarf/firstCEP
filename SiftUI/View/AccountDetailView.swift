@@ -31,13 +31,10 @@ struct AccountDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .padding(10)
         NavigationView {
-            
             NavigationLink(destination: TransferView(transfer: Transfer())) {
                 ButtonView()
             }
         }
-        .contentShape(Circle())
-        
         Spacer()
     }
 }

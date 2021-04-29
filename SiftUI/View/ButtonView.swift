@@ -12,10 +12,15 @@ struct ButtonView: View {
         HStack {
             Text("Send money")
                 .font(.title3)
-                .foregroundColor(.purple)
             Image(systemName: "arrowshape.turn.up.right.fill")
-                .foregroundColor(.purple)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.purple, lineWidth: 2))
+                .padding(6)
         }
+        .frame(width: 180, height: 40, alignment: .center)
+        .foregroundColor(.purple)
+        .background(Color.yellow)
+        .clipShape(Capsule())
     }
 }
 
