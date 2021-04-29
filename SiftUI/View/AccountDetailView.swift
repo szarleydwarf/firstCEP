@@ -31,23 +31,13 @@ struct AccountDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .padding(10)
         NavigationView {
-            HStack {
-                Text("Send money")
-                    .font(.title3)
-                    .foregroundColor(.purple)
-                
-                Button {
-                    NavigationLink(destination: TransferView(transfer: Transfer())) {                        Text("transfering")
-                    }
-                } label: {
-                    Image(systemName: "arrowshape.turn.up.right.fill")
-                }
-                
-            }
-            .contentShape(Circle())
-            .foregroundColor(.purple)
             
+            NavigationLink(destination: TransferView(transfer: Transfer())) {
+                ButtonView()
+            }
         }
+        .contentShape(Circle())
+        
         Spacer()
     }
 }

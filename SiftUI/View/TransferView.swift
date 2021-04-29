@@ -12,7 +12,7 @@ struct TransferView: View {
     
     var body: some View {
         
-        Text(transfer.accounts.sender.getName())
+        Text(transfer.accounts.sender.kind ?? "DEFFF")
     }
 }
 
