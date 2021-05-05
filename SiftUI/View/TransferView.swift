@@ -12,7 +12,9 @@ struct TransferView: View {
     
     var body: some View {
         VStack {
+            Text("FROM: ")
             Text(transfer.accounts.sender.kind ?? "DEFFF")
+            Text("TO : ")
             Text(transfer.accounts.reciever.kind ?? "DEFFF")
         }
     }

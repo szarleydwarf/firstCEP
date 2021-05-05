@@ -8,12 +8,12 @@
 import Foundation
 
 class Transfer: ObservableObject {
-    @Published var accounts = (sender: Account(kind: "CURRENT", title: "LOAN",
-   number: "1213 3435 7745", balance: 1234.44,
-   currency: "GBP"),
-   reciever: Account(kind: "CURRENT", title: "LOAN",
-   number: "1213 3435 7745", balance: 1234.44, currency: "GBP"))
-
+    @Published var accounts = (
+        sender: Account(kind: "", title: "",
+                        number: "", balance: 0.00, currency: ""),
+        reciever: Account(kind: "", title: "",
+                          number: "", balance: 0.0, currency: ""))
+    
     func doTransfer ( betwenn accounts: (Account, Account)) -> Bool {
         print("transfer > \(accounts.0) <> \(accounts.1)")
         return false
