@@ -10,6 +10,7 @@ import SwiftUI
 struct ButtonView: View {
     let buttonText:String
     let imageName:String
+    let action: () 
     
     var body: some View {
         HStack {
@@ -18,15 +19,15 @@ struct ButtonView: View {
             Image(systemName: imageName)
                 .padding(6)
         }
-        .frame(width: 180, height: 40, alignment: .center)
-        .foregroundColor(.purple)
-        .background(Color.yellow)
+        .frame(width: 240, height: 40, alignment: .center)
+        .foregroundColor(.white)
+        .background(Color.green)
         .clipShape(Capsule())
     }
 }
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView(buttonText: String, imageName: String)
+        ButtonView(buttonText: "String", imageName: "String", action: Transfer().add(account: Account.example))
     }
 }

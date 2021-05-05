@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AccountDetailView: View {
     let account: Account
+    @EnvironmentObject var transfer: Transfer
     
     var body: some View {
         VStack {
@@ -30,10 +31,14 @@ struct AccountDetailView: View {
         .navigationTitle(account.kind?.uppercased() ?? "Current")
         .navigationBarTitleDisplayMode(.inline)
         .padding(10)
-        NavigationView {
-            NavigationLink(destination: TransferView(transfer: Transfer())) {
-                ButtonView(buttonText: "Send money from this account", imageName: "arrowshape.turn.up.right.fill")
-            }
+        
+        VStack {
+            ButtonView(buttonText: "Send money from - ",
+                       imageName: "arrowshape.turn.up.right.fill", action: Transfer().add(account: account))
+                .padding(6)
+            ButtonView(buttonText: "Send money to - ",
+                       imageName: "arrowshape.turn.up.left.fill", action: Transfer().add(account: account))
+                .padding(6)
         }
         Spacer()
     }
@@ -43,6 +48,7 @@ struct AccountDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             AccountDetailView(account: Account.example)
+                .environmentObject(Transfer())
         }
     }
 }

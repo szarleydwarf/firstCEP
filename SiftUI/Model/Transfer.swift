@@ -14,10 +14,14 @@ class Transfer: ObservableObject {
         reciever: Account(kind: "", title: "",
                           number: "", balance: 0.0, currency: ""))
     
-    func doTransfer ( betwenn accounts: (Account, Account)) -> Bool {
+    func doTransfer ( between accounts: (Account, Account)) {
         print("transfer > \(accounts.0) <> \(accounts.1)")
-        return false
     }
+    
+    func add(account: Account) {
+        print("ADDED -> \(account.getName())")
+    }
+    
     #if DEBUG
     static let example = Transfer()
     #endif
