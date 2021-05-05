@@ -13,16 +13,20 @@ struct ButtonView: View {
     let action: () 
     
     var body: some View {
-        HStack {
-            Text(buttonText)
-                .font(.title3)
-            Image(systemName: imageName)
-                .padding(6)
+        Button(action: {
+            self.action
+        }) {
+            HStack {
+                Text(buttonText)
+                    .font(.title3)
+                Image(systemName: imageName)
+                    .padding(6)
+            }
+            .frame(width: 240, height: 40, alignment: .center)
+            .foregroundColor(.white)
+            .background(Color.green)
+            .clipShape(Capsule())
         }
-        .frame(width: 240, height: 40, alignment: .center)
-        .foregroundColor(.white)
-        .background(Color.green)
-        .clipShape(Capsule())
     }
 }
 
