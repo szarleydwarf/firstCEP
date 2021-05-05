@@ -10,11 +10,11 @@ import SwiftUI
 struct ButtonView: View {
     let buttonText:String
     let imageName:String
-    let action: () 
+    let account: Account
     
     var body: some View {
         Button(action: {
-            self.action
+            Transfer().add(account: account)
         }) {
             HStack {
                 Text(buttonText)
@@ -32,6 +32,6 @@ struct ButtonView: View {
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView(buttonText: "String", imageName: "String", action: Transfer().add(account: Account.example))
+        ButtonView(buttonText: "String", imageName: "String", account: Account.example)
     }
 }

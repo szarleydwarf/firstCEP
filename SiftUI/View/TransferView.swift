@@ -16,8 +16,8 @@ struct TransferView: View {
             Text(transfer.accounts.sender.kind ?? "DEFFF")
             Text("TO : ")
             Text(transfer.accounts.reciever.kind ?? "DEFFF")
-            ButtonView(buttonText: "Transfer", imageName: "paperplane.fill",
-                action: transfer.doTransfer(between: (transfer.accounts.sender, transfer.accounts.reciever)))
+//            ButtonView(buttonText: "Transfer", imageName: "paperplane.fill",
+//                action: transfer.doTransfer(between: (transfer.accounts.sender, transfer.accounts.reciever)))
         }
     }
 }

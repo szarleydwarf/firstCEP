@@ -34,10 +34,10 @@ struct AccountDetailView: View {
         
         VStack {
             ButtonView(buttonText: "Send money from - ",
-                       imageName: "arrowshape.turn.up.right.fill", action: Transfer().add(account: account))
+                       imageName: "arrowshape.turn.up.right.fill", account: account)
                 .padding(6)
             ButtonView(buttonText: "Send money to - ",
-                       imageName: "arrowshape.turn.up.left.fill", action: Transfer().add(account: account))
+                       imageName: "arrowshape.turn.up.left.fill", account: account)
                 .padding(6)
         }
         Spacer()
