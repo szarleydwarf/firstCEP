@@ -13,7 +13,7 @@ struct SiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(transfer)
+            MainView().environmentObject(transfer)
         }
     }
 }
