@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ButtonView: View {
+    let buttonText:String
+    let imageName:String
+    
     var body: some View {
         HStack {
-            Text("Send money")
+            Text(buttonText)
                 .font(.title3)
-            Image(systemName: "arrowshape.turn.up.right.fill")
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.purple, lineWidth: 2))
+            Image(systemName: imageName)
                 .padding(6)
         }
         .frame(width: 180, height: 40, alignment: .center)
@@ -26,6 +27,6 @@ struct ButtonView: View {
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView()
+        ButtonView(buttonText: String, imageName: String)
     }
 }

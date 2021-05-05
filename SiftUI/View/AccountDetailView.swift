@@ -32,7 +32,7 @@ struct AccountDetailView: View {
         .padding(10)
         NavigationView {
             NavigationLink(destination: TransferView(transfer: Transfer())) {
-                ButtonView()
+                ButtonView(buttonText: "Send money from this account", imageName: "arrowshape.turn.up.right.fill")
             }
         }
         Spacer()
