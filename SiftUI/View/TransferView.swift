@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TransferView: View {
     let transfer: Transfer
-    
+
     var body: some View {
         VStack {
             Text("FROM: ")

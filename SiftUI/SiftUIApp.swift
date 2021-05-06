@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct SiftUIApp: App {
     @StateObject var transfer = Transfer()
-    
+
     var body: some Scene {
         WindowGroup {
             MainView().environmentObject(transfer)

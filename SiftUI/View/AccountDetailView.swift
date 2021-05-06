@@ -10,7 +10,7 @@ import SwiftUI
 struct AccountDetailView: View {
     let account: Account
     @EnvironmentObject var transfer: Transfer
-    
+
     var body: some View {
         VStack {
             Image(systemName: ViewModel().imageName(kind: account.kind))
@@ -31,7 +31,7 @@ struct AccountDetailView: View {
         .navigationTitle(account.kind?.uppercased() ?? "Current")
         .navigationBarTitleDisplayMode(.inline)
         .padding(10)
-        
+
         VStack {
             ButtonView(buttonText: "Send money from - ",
                        imageName: "arrowshape.turn.up.right.fill", account: account)

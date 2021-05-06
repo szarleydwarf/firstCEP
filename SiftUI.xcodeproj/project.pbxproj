@@ -22,6 +22,8 @@
 		D7D0A929263735B900A0D907 /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0A928263735B900A0D907 /* AccountDetailView.swift */; };
 		D7D0A932263735EB00A0D907 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0A931263735EB00A0D907 /* MainViewModel.swift */; };
 		D7D0A93B2637361D00A0D907 /* NetworkingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0A93A2637361D00A0D907 /* NetworkingServices.swift */; };
+		D7E1119B2642DDFA0058A3C3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1119A2642DDFA0058A3C3 /* MainView.swift */; };
+		D7FED6962643EAAB00FD0D13 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FED6952643EAAB00FD0D13 /* CircularView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		D7D0A928263735B900A0D907 /* AccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
 		D7D0A931263735EB00A0D907 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		D7D0A93A2637361D00A0D907 /* NetworkingServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServices.swift; sourceTree = "<group>"; };
+		D7E1119A2642DDFA0058A3C3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D7FED6952643EAAB00FD0D13 /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D745A9182642CC7600B1EB41 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				D71A47BE263B303500D3A847 /* ButtonView.swift */,
+				D7D0A9232637355200A0D907 /* AccountRow.swift */,
+				D7FED6952643EAAB00FD0D13 /* CircularView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		D7D0A8D52637334000A0D907 = {
 			isa = PBXGroup;
 			children = (
@@ -164,11 +178,11 @@
 		D7D0A9222637353B00A0D907 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D7E1119A2642DDFA0058A3C3 /* MainView.swift */,
 				D7D0A8E32637334000A0D907 /* ContentView.swift */,
-				D7D0A9232637355200A0D907 /* AccountRow.swift */,
 				D7D0A928263735B900A0D907 /* AccountDetailView.swift */,
 				D71A47B3263B2B9300D3A847 /* TransferView.swift */,
-				D71A47BE263B303500D3A847 /* ButtonView.swift */,
+				D745A9182642CC7600B1EB41 /* SubViews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +213,7 @@
 				D7D0A8DA2637334000A0D907 /* Sources */,
 				D7D0A8DB2637334000A0D907 /* Frameworks */,
 				D7D0A8DC2637334000A0D907 /* Resources */,
+				D7FED69A2643F45400FD0D13 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -314,6 +329,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D7FED69A2643F45400FD0D13 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning:SwiftLintnotinstalled,downloadfromhttps://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D7D0A8DA2637334000A0D907 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -326,7 +361,9 @@
 				D7D0A916263734A200A0D907 /* Account.swift in Sources */,
 				D7D0A9242637355200A0D907 /* AccountRow.swift in Sources */,
 				D7D0A929263735B900A0D907 /* AccountDetailView.swift in Sources */,
+				D7E1119B2642DDFA0058A3C3 /* MainView.swift in Sources */,
 				D7D0A9112637347C00A0D907 /* Transfer.swift in Sources */,
+				D7FED6962643EAAB00FD0D13 /* CircularView.swift in Sources */,
 				D7D0A8E22637334000A0D907 /* SiftUIApp.swift in Sources */,
 				D7D0A93B2637361D00A0D907 /* NetworkingServices.swift in Sources */,
 			);

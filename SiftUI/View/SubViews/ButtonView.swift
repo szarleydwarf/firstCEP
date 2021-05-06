@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ButtonView: View {
-    let buttonText:String
-    let imageName:String
+    let buttonText: String
+    let imageName: String
     let account: Account
-    
+
     var body: some View {
         Button(action: {
             Transfer().add(account: account)
