@@ -127,6 +127,7 @@
 		D7D0A8E02637334000A0D907 /* SiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				D7FED6A126440E4600FD0D13 /* New Group */,
 				D7D0A9392637360E00A0D907 /* Services */,
 				D7D0A930263735D800A0D907 /* ViewModel */,
 				D7D0A9222637353B00A0D907 /* View */,
@@ -201,6 +202,13 @@
 				D7D0A93A2637361D00A0D907 /* NetworkingServices.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D7FED6A126440E4600FD0D13 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
