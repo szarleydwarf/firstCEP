@@ -13,6 +13,7 @@ struct AccountDetailView: View {
 
     var body: some View {
         VStack {
+            CircularView()
             Image(systemName: ViewModel().imageName(kind: account.kind))
                 .resizable()
                 .scaledToFit()
