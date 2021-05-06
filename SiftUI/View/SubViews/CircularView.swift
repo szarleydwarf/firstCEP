@@ -21,14 +21,25 @@ struct CircularView: View {
                     .stroke(Color.blue, lineWidth: 10.0)
                     .rotationEffect(.init(degrees: -90))
                     .animation(.linear)
-
-                Image(systemName: ViewModel().imageName(kind: account.kind))
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 120, height: 120)
-                    .padding(8)
-                    .foregroundColor(.blue)
             }
+                ZStack(alignment: .center) {
+                    Rectangle().frame(width: 120, height: 120)
+                    Filler(percent: Double(self.fill)/100)
+                        .fill(Color.gray)
+                        .frame(width: 120, height: 120)
+                }
+                .mask{
+                    Image(systemName: ViewModel().imageName(kind: account.kind))
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 120, height: 120)
+                        .padding(8)
+                        .foregroundColor(.blue)
+                }
+                .onTapGesture {
+                    
+                }
+            
             .padding(20)
         }
         .padding(10)
