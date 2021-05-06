@@ -13,12 +13,12 @@ struct AccountDetailView: View {
 
     var body: some View {
         VStack {
-            CircularView()
-            Image(systemName: ViewModel().imageName(kind: account.kind))
-                .resizable()
-                .scaledToFit()
-                .frame(width: 120, height: 120)
-                .padding(8)
+            CircularView(account: account)
+//            Image(systemName: ViewModel().imageName(kind: account.kind))
+//                .resizable()
+//                .scaledToFit()
+//                .frame(width: 120, height: 120)
+//                .padding(8)
             Text(account.getName())
                 .font(.title2)
                 .foregroundColor(.green)

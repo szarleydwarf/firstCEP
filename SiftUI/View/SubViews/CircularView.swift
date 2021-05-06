@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CircularView: View {
+    let account: Account
     @State var fill: CGFloat = 0.1
     var body: some View {
         ZStack {
@@ -17,22 +18,29 @@ struct CircularView: View {
                     .stroke(Color.white.opacity(0.3), lineWidth: 10.0)
                 Circle()
                     .trim(from: 0, to: self.fill)
-                    .stroke(Color.gray, lineWidth: 10.0)
+                    .stroke(Color.blue, lineWidth: 10.0)
                     .rotationEffect(.init(degrees: -90))
                     .animation(.linear)
+
+                Image(systemName: ViewModel().imageName(kind: account.kind))
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 120, height: 120)
+                    .padding(8)
+                    .foregroundColor(.blue)
             }
             .padding(20)
         }
         .padding(10)
         .background(Color.green)
         .onTapGesture {
-            self.fill = 1.0
+            self.fill += 0.1
         }
     }
 }
 
 struct CircularView_Previews: PreviewProvider {
     static var previews: some View {
-        CircularView()
+        CircularView(account: Account.example)
     }
 }
