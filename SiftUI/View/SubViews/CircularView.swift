@@ -27,10 +27,6 @@ struct CircularView: View {
                 Filler(percent: Double(self.fill))
                     .fill(Color.yellow)
                     .frame(width: self.imageSize, height: self.imageSize)
-                Filler(percent: Double(self.fill))
-                    .fill(Color.red)
-                    .frame(width: self.imageSize, height: self.imageSize)
-                    .opacity(0.5)
             }
             .mask(
                 Image.init(systemName: ViewModel().imageName(kind: account.kind))
