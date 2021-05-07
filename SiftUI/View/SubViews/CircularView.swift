@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CircularView: View {
     let account: Account
+    let imageSize: CGFloat = 200
     @State var fill: CGFloat = 0.1
     var body: some View {
         ZStack {
@@ -23,12 +24,16 @@ struct CircularView: View {
                     .animation(.linear)
             }
             ZStack(alignment: .center) {
-                Rectangle().frame(width: 120, height: 120)
+                Rectangle().frame(width: self.imageSize, height: self.imageSize)
                 Filler(percent: Double(self.fill)/100)
                     .fill(Color.gray)
-                    .frame(width: 120, height: 120)
+                    .frame(width: self.imageSize, height: self.imageSize)
             }
-            .mask(<#_#>)
+            .mask(
+                Image.init(systemName: "book")
+                    .resizable()
+                    .frame(width: self.imageSize, height: self.imageSize)
+            )
             .padding(20)
         }
         .padding(10)
