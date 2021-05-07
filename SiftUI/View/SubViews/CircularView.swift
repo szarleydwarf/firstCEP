@@ -12,7 +12,7 @@ struct CircularView: View {
     @State var fill: CGFloat = 0.1
     var body: some View {
         ZStack {
-//            Color(.green)
+            //            Color(.green)
             ZStack {
                 Circle()
                     .stroke(Color.white.opacity(0.3), lineWidth: 10.0)
@@ -22,24 +22,13 @@ struct CircularView: View {
                     .rotationEffect(.init(degrees: -90))
                     .animation(.linear)
             }
-                ZStack(alignment: .center) {
-                    Rectangle().frame(width: 120, height: 120)
-                    Filler(percent: Double(self.fill)/100)
-                        .fill(Color.gray)
-                        .frame(width: 120, height: 120)
-                }
-                .mask{
-                    Image(systemName: ViewModel().imageName(kind: account.kind))
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 120, height: 120)
-                        .padding(8)
-                        .foregroundColor(.blue)
-                }
-                .onTapGesture {
-                    
-                }
-            
+            ZStack(alignment: .center) {
+                Rectangle().frame(width: 120, height: 120)
+                Filler(percent: Double(self.fill)/100)
+                    .fill(Color.gray)
+                    .frame(width: 120, height: 120)
+            }
+            .mask(<#_#>)
             .padding(20)
         }
         .padding(10)
