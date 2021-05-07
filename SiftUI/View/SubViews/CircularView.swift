@@ -13,7 +13,6 @@ struct CircularView: View {
     @State var fill: CGFloat = 0.1
     var body: some View {
         ZStack {
-            //            Color(.green)
             ZStack {
                 Circle()
                     .stroke(Color.white.opacity(0.3), lineWidth: 10.0)
@@ -25,22 +24,34 @@ struct CircularView: View {
             }
             ZStack(alignment: .center) {
                 Rectangle().frame(width: self.imageSize, height: self.imageSize)
-                Filler(percent: Double(self.fill)/100)
-                    .fill(Color.gray)
+                Filler(percent: Double(self.fill))
+                    .fill(Color.yellow)
                     .frame(width: self.imageSize, height: self.imageSize)
+                Filler(percent: Double(self.fill))
+                    .fill(Color.red)
+                    .frame(width: self.imageSize, height: self.imageSize)
+                    .opacity(0.5)
             }
             .mask(
-                Image.init(systemName: "book")
+                Image.init(systemName: ViewModel().imageName(kind: account.kind))
                     .resizable()
                     .frame(width: self.imageSize, height: self.imageSize)
             )
+            .onTapGesture {
+                if self.fill >= 1 {
+                    self.fill = 0
+                } else {
+                    self.fill += 0.1
+                }
+                print(self.fill)
+            }
             .padding(20)
         }
         .padding(10)
         .background(Color.green)
-        .onTapGesture {
-            self.fill += 0.1
-        }
+        //        .onTapGesture {
+        //
+        //        }
     }
 }
 
