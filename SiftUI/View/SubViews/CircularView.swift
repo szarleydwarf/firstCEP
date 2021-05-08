@@ -23,36 +23,39 @@ struct CircularView: View {
                     .animation(.linear)
             }
             ZStack(alignment: .center) {
-                Rectangle().frame(width: self.imageSize, height: self.imageSize)
-                Filler(percent: Double(self.fill))
-                    .fill(Color.yellow)
-                    .frame(width: self.imageSize, height: self.imageSize)
-            }
-            .mask(
+                //                Rectangle().frame(width: self.imageSize, height: self.imageSize)
+                //                Filler(percent: Double(self.fill))
+                //                    .fill(Color.yellow)
+                //                    .frame(width: self.imageSize, height: self.imageSize)
+                //            }
+                //            .mask(
                 Image.init(systemName: ViewModel().imageName(kind: account.kind))
                     .resizable()
                     .frame(width: self.imageSize, height: self.imageSize)
-            )
-            .onTapGesture {
-                if self.fill >= 1 {
-                    self.fill = 0
-                } else {
-                    self.fill += 0.1
-                }
-                print(self.fill)
+                Image.init(systemName: ViewModel().imageName(kind: account.kind))
+                    .resizable()
+                    
+                    .frame(width: self.imageSize, height: self.imageSize)
+                    .animation(.linear)
+//                )
             }
-            .padding(20)
+                .onTapGesture {
+                    if self.fill >= 1 {
+                        self.fill = 0
+                    } else {
+                        self.fill += 0.1
+                    }
+                    print(self.fill)
+                }
+                .padding(20)
+            }
+            .padding(10)
+            .background(Color.green)
         }
-        .padding(10)
-        .background(Color.green)
-        //        .onTapGesture {
-        //
-        //        }
     }
-}
-
-struct CircularView_Previews: PreviewProvider {
-    static var previews: some View {
-        CircularView(account: Account.example)
+    
+    struct CircularView_Previews: PreviewProvider {
+        static var previews: some View {
+            CircularView(account: Account.example)
+        }
     }
-}

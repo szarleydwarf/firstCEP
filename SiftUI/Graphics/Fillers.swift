@@ -19,8 +19,10 @@ struct Filler: Shape {
         var path = Path()
         let fillHeight = 0.01 * rect.height
         path.move(to: CGPoint(x: 0, y: fillHeight * CGFloat(rect.height)))
+
         path.addLine(to: CGPoint(x: rect.width, y: rect.height))
         path.addLine(to: CGPoint(x: 0, y: rect.height))
+        path.closeSubpath()
         return path
     }
 }
