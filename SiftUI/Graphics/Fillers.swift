@@ -25,8 +25,7 @@ struct Filler: Shape {
 
         // add line till the percent met
         for i in 0...Int(percent) {
-            let x = ((Int(percent * 10) % 2) == 0) ? 0 : rect.width
-            print("x > \(x) i > \(Int(percent * 10))")
+            let x = CGFloat(i) * rect.width
             path.addLine(to: CGPoint(x: x, y: yOffset + height * CGFloat(i)))
         }
         path.addLine(to: CGPoint(x: rect.width, y: rect.height))

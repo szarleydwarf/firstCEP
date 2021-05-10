@@ -21,6 +21,13 @@ struct CircularView: View {
                     .stroke(Color.blue, lineWidth: 10.0)
                     .rotationEffect(.init(degrees: -90))
                     .animation(.linear)
+                Path { path in
+                    path.move(to: CGPoint(x: 10, y: 10))
+                    path.addLine(to: CGPoint(x: 100, y: 10))
+                    path.addLine(to: CGPoint(x: 100, y: 20))
+                    path.addLine(to: CGPoint(x: 10, y: 20))
+                }
+                .stroke(Color.blue, lineWidth: 10)
             }
             ZStack(alignment: .center) {
                 Rectangle().frame(width: self.imageSize, height: self.imageSize)
@@ -38,7 +45,7 @@ struct CircularView: View {
             if self.fill >= 1 {
                 self.fill = 0
             } else {
-                self.fill += 0.1
+                self.fill += 0.05
             }
             print(self.fill)
         }
