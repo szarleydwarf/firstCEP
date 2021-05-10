@@ -10,14 +10,14 @@ import SwiftUI
 struct CircularView: View {
     let account: Account
     let imageSize: CGFloat = 200
-    @State var fill: CGFloat = 0.1
+    @State var fill: CGFloat = 1
     var body: some View {
         ZStack {
             ZStack {
                 Circle()
                     .stroke(Color.white.opacity(0.3), lineWidth: 10.0)
                 Circle()
-                    .trim(from: 0, to: self.fill)
+                    .trim(from: 0, to: self.fill/100)
                     .stroke(Color.blue, lineWidth: 10.0)
                     .rotationEffect(.init(degrees: -90))
                     .animation(.linear)
@@ -36,10 +36,10 @@ struct CircularView: View {
             )
         }
         .onTapGesture {
-            if self.fill >= 1 {
+            if self.fill >= 100 {
                 self.fill = 0
             } else {
-                self.fill += 0.05
+                self.fill += 1
             }
         }
         .padding(20)
