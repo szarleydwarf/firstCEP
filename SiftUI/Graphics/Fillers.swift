@@ -17,8 +17,18 @@ struct Filler: Shape {
 
     func path(in rect: CGRect) -> Path {
         var path = Path()
+        let height = rect.height
+        let yOffset = CGFloat(1 - percent) * rect.height
+
         // move to starting point
+        path.move(to: CGPoint(x: 0, y: yOffset + height))
+
         // add line till the percent met
+        for i in 0...Int(percent) {
+            path.addLine(to: CGPoint(x: 0, y: yOffset + height * CGFloat(i)))
+        }
+        path.addLine(to: CGPoint(x: rect.width, y: rect.height))
+        path.addLine(to: CGPoint(x: 0, y: rect.height))
         path.closeSubpath()
         return path
     }
