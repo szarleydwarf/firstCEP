@@ -23,39 +23,32 @@ struct CircularView: View {
                     .animation(.linear)
             }
             ZStack(alignment: .center) {
-                //                Rectangle().frame(width: self.imageSize, height: self.imageSize)
-                //                Filler(percent: Double(self.fill))
-                //                    .fill(Color.yellow)
-                //                    .frame(width: self.imageSize, height: self.imageSize)
-                //            }
-                //            .mask(
+                Rectangle().frame(width: self.imageSize, height: self.imageSize)
+                Filler(percent: Double(self.fill))
+                    .fill(Color.yellow)
+                    .frame(width: self.imageSize, height: self.imageSize)
+            }
+            .mask(
                 Image.init(systemName: ViewModel().imageName(kind: account.kind))
                     .resizable()
                     .frame(width: self.imageSize, height: self.imageSize)
-                Image.init(systemName: ViewModel().imageName(kind: account.kind))
-                    .resizable()
-                    
-                    .frame(width: self.imageSize, height: self.imageSize)
-                    .animation(.linear)
-//                )
-            }
-                .onTapGesture {
-                    if self.fill >= 1 {
-                        self.fill = 0
-                    } else {
-                        self.fill += 0.1
-                    }
-                    print(self.fill)
-                }
-                .padding(20)
-            }
-            .padding(10)
-            .background(Color.green)
+            )
         }
-    }
-    
-    struct CircularView_Previews: PreviewProvider {
-        static var previews: some View {
-            CircularView(account: Account.example)
+        .onTapGesture {
+            if self.fill >= 1 {
+                self.fill = 0
+            } else {
+                self.fill += 0.1
+            }
+            print(self.fill)
         }
+        .padding(20)
+        .background(Color.green)
     }
+}
+
+struct CircularView_Previews: PreviewProvider {
+    static var previews: some View {
+        CircularView(account: Account.example)
+    }
+}
