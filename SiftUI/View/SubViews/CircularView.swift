@@ -10,7 +10,7 @@ import SwiftUI
 struct CircularView: View {
     let account: Account
     let imageSize: CGFloat = 200
-    @State var fill: CGFloat = 1
+    @State var fill: CGFloat = 0
     var body: some View {
         ZStack {
             ZStack {
@@ -34,12 +34,13 @@ struct CircularView: View {
                     .resizable()
                     .frame(width: self.imageSize, height: self.imageSize)
             )
+            .animation(.linear)
         }
         .onTapGesture {
             if self.fill >= 100 {
                 self.fill = 0
             } else {
-                self.fill += 1
+                self.fill += 10
             }
         }
         .padding(20)
