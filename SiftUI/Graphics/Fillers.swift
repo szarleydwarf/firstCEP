@@ -18,20 +18,18 @@ struct Filler: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         let height = rect.height
-        let yOffset = CGFloat(1 - percent) * height
+        let yOffset = CGFloat(1 - percent) * (rect.height)
 
         // move to starting point
         path.move(to: CGPoint(x: 0, y: yOffset + height))
-
+print("Before")
         // add line till the percent met
         for i in 0...Int(percent) {
-            print("i > \(i) > \(percent)")
 //            x position is either 0 or rect.width
-            let x: CGFloat = (i % 2) == 0 ?  0 : rect.height
-            print("X > \(i) > \(x)")
+            let x: CGFloat = (i % 2) == 0 ?  0 : rect.width
 //            y position is growing from 0 up to given percentage
-            let y: CGFloat = yOffset + height * CGFloat(i)
-            print("Y > \(i) > \(y)")
+            let y: CGFloat = yOffset + height * CGFloat(percent/100)
+            print("i > \(i) > \(yOffset) > \(percent) > \(x) > \(y)")
             let pt = CGPoint(x: x, y: y)
             path.addLine(to: pt)
         }
