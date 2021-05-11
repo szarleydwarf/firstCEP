@@ -26,11 +26,14 @@ print("Before")
         // add line till the percent met
         for i in 0...Int(percent) {
 //            x position is either 0 or rect.width
-            let x: CGFloat = (i % 2) == 0 ?  0 : rect.width
+            var x: CGFloat = 0//(i % 2) == 0 ?  0 : rect.width
 //            y position is growing from 0 up to given percentage
-            let y: CGFloat = (height) / CGFloat(percent)
-            print("i > \(i) > \(yOffset) > \(percent) > \(x) > \(y)")
-            let pt = CGPoint(x: x, y: y)
+            var y: CGFloat = (yOffset + 10)
+            y = y > height ? yOffset : (yOffset + 10)
+            print("i > \(i) > \(yOffset) > \(percent) > \(height) > \(y)")
+            var pt = CGPoint(x: x, y: y)
+            path.addLine(to: pt)
+            pt = CGPoint(x: rect.width, y: y)
             path.addLine(to: pt)
         }
         path.addLine(to: CGPoint(x: rect.width, y: rect.height))
