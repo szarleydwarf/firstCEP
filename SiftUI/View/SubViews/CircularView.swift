@@ -24,17 +24,25 @@ struct CircularView: View {
             }
 
             ZStack(alignment: .center) {
-                Rectangle().frame(width: self.imageSize, height: self.imageSize)
-                Filler(percent: Double(self.fill))
-                    .fill(Color.yellow)
-                    .frame(width: self.imageSize, height: self.imageSize)
+                VStack {
+                    Text(account.currency ?? "")
+                    Text("\(account.balance ?? 0)")
+                }
+                .font(.title)
+                .foregroundColor(.yellow)
             }
-            .mask(
-                Image.init(systemName: ViewModel().imageName(kind: account.kind))
-                    .resizable()
-                    .frame(width: self.imageSize, height: self.imageSize)
-            )
-            .animation(.linear)
+//            ZStack(alignment: .center) {
+//                Rectangle().frame(width: self.imageSize, height: self.imageSize)
+//                Filler(percent: Double(self.fill))
+//                    .fill(Color.yellow)
+//                    .frame(width: self.imageSize, height: self.imageSize)
+//            }
+//            .mask(
+//                Image.init(systemName: ViewModel().imageName(kind: account.kind))
+//                    .resizable()
+//                    .frame(width: self.imageSize, height: self.imageSize)
+//            )
+//            .animation(.linear)
         }
         .onTapGesture {
             if self.fill >= 100 {
