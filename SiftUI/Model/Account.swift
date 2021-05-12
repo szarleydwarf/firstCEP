@@ -14,7 +14,7 @@ struct Account: Decodable, Hashable, Identifiable {
     let number: String?
     let balance: Double?
     let currency: String?
-    let goal: Double?
+    var goal: Double?
 
     enum CodingKeys: String, CodingKey {
         case kind, title, number, balance, currency, goal

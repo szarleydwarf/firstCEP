@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import Combine
 
 struct AccountDetailView: View {
-    let account: Account
+    @State var account: Account
     @EnvironmentObject var transfer: Transfer
 
     var body: some View {
@@ -16,9 +17,10 @@ struct AccountDetailView: View {
             if account.goal ?? 0 > 0 {
                 CircularView(account: account)
             } else {
-                GoalView()
+                GoalView(goal: "\(account.goal ?? 0)")
             }
             Spacer()
+                Text("GOAL : \(account.goal ?? 0) >> ")
             Text(account.getName())
                 .font(.title2)
                 .foregroundColor(.green)

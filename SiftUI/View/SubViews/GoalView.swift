@@ -9,14 +9,18 @@ import SwiftUI
 import Combine
 
 struct GoalView: View {
-    @State private var goal: String = ""
+    @State var goal: String
 
     var body: some View {
         VStack(alignment: .center) {
             Text("What is your money Goal for this account")
             TextField("Enter $$$ Goal", text: $goal)
                 .keyboardType(.decimalPad)
-                .padding(40)
+                .padding(10)
+                .background(Color.white)
+                .clipShape(Capsule())
+                .lineLimit(1)
+                .multilineTextAlignment(.center)
                 .onReceive(Just(self.goal)) { (input) in
                     let filtered = input.filter { $0.isNumber }
                     if self.goal != filtered {
@@ -33,6 +37,6 @@ struct GoalView: View {
 
 struct GoalView_Previews: PreviewProvider {
     static var previews: some View {
-        GoalView()
+        GoalView(goal: String.init())
     }
 }
