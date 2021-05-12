@@ -22,7 +22,11 @@ protocol LocalDataProtocol {
     func fetchDataFromLocalFile(from file: String) -> [Account]
 }
 
-class NetworKing: LocalDataProtocol {
+class NetworKing {
+
+}
+
+extension NetworKing: LocalDataProtocol {
     func fetchDataFromLocalFile(from file: String) -> [Account] {
         guard let url = Bundle.main.url(forResource: file, withExtension: "json")
         else {fatalError("could not create the path")}

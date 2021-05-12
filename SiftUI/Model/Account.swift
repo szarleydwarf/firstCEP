@@ -14,9 +14,10 @@ struct Account: Decodable, Hashable, Identifiable {
     let number: String?
     let balance: Double?
     let currency: String?
+    let goal: Double?
 
     enum CodingKeys: String, CodingKey {
-        case kind, title, number, balance, currency
+        case kind, title, number, balance, currency, goal
     }
 
     func getBalance() -> String {
@@ -36,6 +37,6 @@ struct Account: Decodable, Hashable, Identifiable {
 
     #if DEBUG
     static let example = Account(kind: "CURRENT", title: "LOAN",
-                                 number: "1213 3435 7745", balance: 1234.44, currency: "GBP")
+                                 number: "1213 3435 7745", balance: 1234.44, currency: "GBP", goal: 0)
     #endif
 }
