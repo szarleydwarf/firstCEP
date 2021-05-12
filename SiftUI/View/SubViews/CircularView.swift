@@ -11,6 +11,7 @@ struct CircularView: View {
     let account: Account
     let imageSize: CGFloat = 200
     @State var fill: CGFloat = 0
+
     var body: some View {
         ZStack {
             ZStack {
@@ -27,23 +28,13 @@ struct CircularView: View {
                 VStack {
                     Text(account.currency ?? "")
                     Text("\(account.balance ?? 0)")
+                    Text("Goal: \(account.goal ?? 0)")
+                        .foregroundColor(.red)
                 }
                 .font(.title)
-                .foregroundColor(.yellow)
+                .foregroundColor(.white)
             }
-//            ZStack(alignment: .center) {
-//                Rectangle().frame(width: self.imageSize, height: self.imageSize)
-//                Filler(percent: Double(self.fill))
-//                    .fill(Color.yellow)
-//                    .frame(width: self.imageSize, height: self.imageSize)
-//            }
-//            .mask(
-//                Image.init(systemName: ViewModel().imageName(kind: account.kind))
-//                    .resizable()
-//                    .frame(width: self.imageSize, height: self.imageSize)
-//            )
-//            .animation(.linear)
-        }
+       }
         .onTapGesture {
             if self.fill >= 100 {
                 self.fill = 0

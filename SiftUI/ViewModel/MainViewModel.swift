@@ -30,7 +30,7 @@ class ViewModel {
         ("current", "scribble"),
         ("savings", "book"),
         ("term", "lock.doc"),
-        ("d", "paperlane")
+        ("d", "paperplane")
     ]
 
     func imageName(kind: String?) -> String {
@@ -39,7 +39,7 @@ class ViewModel {
                     return imageName.1
             }
         }
-        return "paperlane"
+        return imageNames.last?.1 ?? "paperplane"
     }
 
     func getData (from: URL) -> [Account] {
