@@ -13,7 +13,12 @@ struct AccountDetailView: View {
 
     var body: some View {
         VStack {
-            CircularView(account: account)
+            if account.goal ?? 0 > 0 {
+                CircularView(account: account)
+            } else {
+                GoalView()
+            }
+            Spacer()
             Text(account.getName())
                 .font(.title2)
                 .foregroundColor(.green)

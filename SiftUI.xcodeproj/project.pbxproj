@@ -23,6 +23,7 @@
 		D7D0A932263735EB00A0D907 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0A931263735EB00A0D907 /* MainViewModel.swift */; };
 		D7D0A93B2637361D00A0D907 /* NetworkingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0A93A2637361D00A0D907 /* NetworkingServices.swift */; };
 		D7E1119B2642DDFA0058A3C3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1119A2642DDFA0058A3C3 /* MainView.swift */; };
+		D7F5ACBE264C62C0007460DF /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F5ACBD264C62C0007460DF /* GoalView.swift */; };
 		D7FED6962643EAAB00FD0D13 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FED6952643EAAB00FD0D13 /* CircularView.swift */; };
 		D7FED6AF26440F4B00FD0D13 /* Fillers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FED6AE26440F4B00FD0D13 /* Fillers.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		D7D0A931263735EB00A0D907 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		D7D0A93A2637361D00A0D907 /* NetworkingServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServices.swift; sourceTree = "<group>"; };
 		D7E1119A2642DDFA0058A3C3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D7F5ACBD264C62C0007460DF /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		D7FED6952643EAAB00FD0D13 /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
 		D7FED6AE26440F4B00FD0D13 /* Fillers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fillers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +104,7 @@
 				D71A47BE263B303500D3A847 /* ButtonView.swift */,
 				D7D0A9232637355200A0D907 /* AccountRow.swift */,
 				D7FED6952643EAAB00FD0D13 /* CircularView.swift */,
+				D7F5ACBD264C62C0007460DF /* GoalView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				D71A47B4263B2B9300D3A847 /* TransferView.swift in Sources */,
 				D71A47BF263B303500D3A847 /* ButtonView.swift in Sources */,
 				D7D0A8E42637334000A0D907 /* ContentView.swift in Sources */,
+				D7F5ACBE264C62C0007460DF /* GoalView.swift in Sources */,
 				D7D0A916263734A200A0D907 /* Account.swift in Sources */,
 				D7D0A9242637355200A0D907 /* AccountRow.swift in Sources */,
 				D7D0A929263735B900A0D907 /* AccountDetailView.swift in Sources */,
