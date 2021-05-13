@@ -16,6 +16,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(accounts) { account in
+                    self.$account = account
                     NavigationLink(destination: AccountDetailView(account: account)) {
                         AccountRow(account: account)
                     }
