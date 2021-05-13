@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     let accounts: [Account] = ViewModel().getData(from: "Accounts")
+    @State var account: Account?
     @State private var selected = 0
 
     var body: some View {

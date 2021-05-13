@@ -17,7 +17,13 @@ struct AccountDetailView: View {
             if account.goal ?? 0 > 0 {
                 CircularView(account: account)
             } else {
-                GoalView(goal: "\(account.goal ?? 0)")
+                var goal = "\(account.goal ?? 0)"
+                GoalView(goal: goal) {
+                    self.account.goal = Double(goal)
+                }
+                .sheet($goal) {
+                    
+                }
             }
             Spacer()
                 Text("GOAL : \(account.goal ?? 0) >> ")
