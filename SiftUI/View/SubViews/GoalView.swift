@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct GoalView: View {
-    @State var goal: String
+    @Binding var goal: Int
 
     var body: some View {
         VStack(alignment: .center) {
@@ -37,6 +37,6 @@ struct GoalView: View {
 
 struct GoalView_Previews: PreviewProvider {
     static var previews: some View {
-        GoalView(goal: String.init())
+        GoalView(goal: Int.init())
     }
 }

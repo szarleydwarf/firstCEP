@@ -9,15 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     let accounts: [Account] = ViewModel().getData(from: "Accounts")
-    @State private var accountGoal: Int = 0
     @State private var selected = 0
 
     var body: some View {
         NavigationView {
             List {
                 ForEach(accounts) { account in
-                    NavigationLink(destination: AccountDetailView(account: account, goal: $accountGoal)) {
-                        Text($accountGoal)
+                    NavigationLink(destination: AccountDetailView(account: account)) {
                         AccountRow(account: account)
                     }
                 }

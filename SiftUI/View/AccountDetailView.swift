@@ -10,7 +10,7 @@ import Combine
 
 struct AccountDetailView: View {
     @State var account: Account
-    @Binding var goal: Int
+    @State var goal: Int = 0
     @EnvironmentObject var transfer: Transfer
 
     var body: some View {
@@ -19,7 +19,7 @@ struct AccountDetailView: View {
                 CircularView(account: account)
             } else {
                 var goal = "\(account.goal ?? 0)"
-                GoalView(goal: goal)
+                GoalView(goal: $goal)
             }
             Spacer()
                 Text("GOAL : \(account.goal ?? 0) >> ")
@@ -49,7 +49,7 @@ struct AccountDetailView: View {
 struct AccountDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            AccountDetailView(account: Account.example, goal: .constant(0))
+            AccountDetailView(account: Account.example)
                 .environmentObject(Transfer())
         }
     }
