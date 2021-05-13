@@ -20,9 +20,10 @@ struct AccountDetailView: View {
             } else {
                 var goal = "\(account.goal ?? 0)"
                 GoalView(goal: $goal)
+                account.goal = $goal
             }
             Spacer()
-                Text("GOAL : \(account.goal ?? 0) >> ")
+                Text("GOAL : \(account.goal ?? 0) >> \(goal)")
             Text(account.getName())
                 .font(.title2)
                 .foregroundColor(.green)

@@ -10,25 +10,26 @@ import Combine
 
 struct GoalView: View {
     @Binding var goal: Int
+    @State var goalString: String = ""
 
     var body: some View {
         VStack(alignment: .center) {
             Text("What is your money Goal for this account")
-            TextField("Enter $$$ Goal", text: $goal)
+            TextField("Enter $$$ Goal", text: $goalString)
                 .keyboardType(.decimalPad)
-                .padding(10)
+                .padding(3)
                 .background(Color.white)
                 .clipShape(Capsule())
                 .lineLimit(1)
                 .multilineTextAlignment(.center)
-                .onReceive(Just(self.goal)) { (input) in
-                    let filtered = input.filter { $0.isNumber }
-                    if self.goal != filtered {
-                        self.goal = filtered
+                .onReceive(Just(self.goalString)) { (input) in
+                    let filtered = input.filter { $0.isWholeNumber }
+                    if self.goalString != filtered {
+                        self.goal = Int(filtered) ?? 0
                     }
                 }
             Text("You enter")
-            Text(goal)
+            Text("\(goal)")
         }
         .padding(20)
         .background(Color.green)
@@ -37,6 +38,6 @@ struct GoalView: View {
 
 struct GoalView_Previews: PreviewProvider {
     static var previews: some View {
-        GoalView(goal: Int.init())
+        GoalView(goal: .constant(0))
     }
 }
