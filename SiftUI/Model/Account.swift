@@ -21,17 +21,17 @@ struct Account: Decodable, Hashable, Identifiable {
     }
 
     func getBalance() -> String {
-        guard var currency = self.currency, var balance = self.balance else {return ""}
+        guard let currency = self.currency, let balance = self.balance else {return ""}
         return currency + " " + String(balance)
     }
 
     func getName() -> String {
-        guard var kind = self.kind, var title = self.title else {return ""}
+        guard let kind = self.kind, let title = self.title else {return ""}
         return kind + " " + title
     }
 
     func getNumber() -> String {
-        guard var number = self.number else {return ""}
+        guard let number = self.number else {return ""}
         return number
     }
 
