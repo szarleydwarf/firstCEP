@@ -9,7 +9,7 @@ import Foundation
 
 class AccountPublisher: ObservableObject {
     @Published var account = Account()
-    
+
     func getBalance() -> String {
         guard let currency = self.account.currency, let balance = self.account.balance else {return ""}
         return currency + " " + String(balance)
@@ -29,13 +29,17 @@ class AccountPublisher: ObservableObject {
         guard let kind = self.account.kind else {return ""}
         return kind
     }
-    
+
     func getAccountGoal() -> Double {
         guard let goal = account.goal else {return -1}
         return goal
     }
-    
+
     func getAccount() -> Account {
         return account
     }
+
+    #if DEBUG
+    static var example = AccountPublisher()
+    #endif
 }

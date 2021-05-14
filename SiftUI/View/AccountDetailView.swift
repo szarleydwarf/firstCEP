@@ -15,7 +15,7 @@ struct AccountDetailView: View {
 
     var body: some View {
         VStack {
-            if account.getAccountGoal() ?? 0 > 0 {
+            if account.getAccount().goal ?? 0 > 0 {
                 CircularView(account: account.account)
                 Text(account.getName())
                     .font(.title2)
@@ -48,7 +48,7 @@ struct AccountDetailView: View {
 struct AccountDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            AccountDetailView(account: AccountPublisher.account.example)
+            AccountDetailView()
                 .environmentObject(Transfer())
                 .environmentObject(AccountPublisher())
         }

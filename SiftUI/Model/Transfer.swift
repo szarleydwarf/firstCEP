@@ -19,7 +19,7 @@ class Transfer: ObservableObject {
     }
 
     func add(account: Account) {
-        print("ADDED -> \(account.getName())")
+        print("ADDED -> \(account.balance ?? 0)")
     }
 
     #if DEBUG

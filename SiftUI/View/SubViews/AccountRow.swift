@@ -17,11 +17,11 @@ struct AccountRow: View {
                 .overlay(Circle().stroke(Color.green, lineWidth: 2.0))
                 .padding(10)
             VStack(alignment: .trailing) {
-                Text(account.getName())
-                    .font(.headline)
-                    .background(Color.yellow)
-                Text(account.getNumber())
-                    .font(.body)
+//                Text(account.getName())
+//                    .font(.headline)
+//                    .background(Color.yellow)
+//                Text(account.getNumber())
+//                    .font(.body)
             }
             .padding(8)
         }
