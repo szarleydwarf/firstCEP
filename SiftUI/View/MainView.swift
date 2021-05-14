@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var transfer: Transfer
+    @EnvironmentObject var account: AccountPublisher
 
     var body: some View {
         TabView {
