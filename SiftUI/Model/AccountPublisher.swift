@@ -29,4 +29,13 @@ class AccountPublisher: ObservableObject {
         guard let kind = self.account.kind else {return ""}
         return kind
     }
+    
+    func getAccountGoal() -> Double {
+        guard let goal = account.goal else {return -1}
+        return goal
+    }
+    
+    func getAccount() -> Account {
+        return account
+    }
 }
