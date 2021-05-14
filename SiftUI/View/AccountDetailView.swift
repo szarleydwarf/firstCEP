@@ -17,33 +17,31 @@ struct AccountDetailView: View {
         VStack {
             if account.goal ?? 0 > 0 {
                 CircularView(account: account)
+                Text(account.getName())
+                    .font(.title2)
+                    .foregroundColor(.green)
+                Text(account.getNumber())
+                    .font(.title3)
+                    .foregroundColor(.gray)
+
+                VStack {
+                    ButtonView(buttonText: "Send money from - ",
+                               imageName: "arrowshape.turn.up.right.fill", account: account)
+                        .padding(6)
+                    ButtonView(buttonText: "Send money to - ",
+                               imageName: "arrowshape.turn.up.left.fill", account: account)
+                        .padding(6)
+                }
+                Spacer()
             } else {
-                var goal = "\(account.goal ?? 0)"
-                GoalView(goal: $goal)
-                account.goal = $goal
+                GoalView(account: $account)
             }
             Spacer()
                 Text("GOAL : \(account.goal ?? 0) >> \(goal)")
-            Text(account.getName())
-                .font(.title2)
-                .foregroundColor(.green)
-            Text(account.getNumber())
-                .font(.title3)
-                .foregroundColor(.gray)
         }
         .navigationTitle(account.kind?.uppercased() ?? "Current")
         .navigationBarTitleDisplayMode(.inline)
         .padding(10)
-
-        VStack {
-            ButtonView(buttonText: "Send money from - ",
-                       imageName: "arrowshape.turn.up.right.fill", account: account)
-                .padding(6)
-            ButtonView(buttonText: "Send money to - ",
-                       imageName: "arrowshape.turn.up.left.fill", account: account)
-                .padding(6)
-        }
-        Spacer()
     }
 }
 

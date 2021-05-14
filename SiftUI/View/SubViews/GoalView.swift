@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct GoalView: View {
-    @Binding var goal: Int
+    @Binding var account: Account
     @State var goalString: String = ""
 
     var body: some View {
@@ -25,11 +25,11 @@ struct GoalView: View {
                 .onReceive(Just(self.goalString)) { (input) in
                     let filtered = input.filter { $0.isWholeNumber }
                     if self.goalString != filtered {
-                        self.goal = Int(filtered) ?? 0
+                        self.account.goal = Double(filtered) ?? 0
                     }
                 }
             Text("You enter")
-            Text("\(goal)")
+            Text("\(self.account.goal ?? 0)")
         }
         .padding(20)
         .background(Color.green)
@@ -38,6 +38,6 @@ struct GoalView: View {
 
 struct GoalView_Previews: PreviewProvider {
     static var previews: some View {
-        GoalView(goal: .constant(0))
+        GoalView(account: .constant(Account.example))
     }
 }
