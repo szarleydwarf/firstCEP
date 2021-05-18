@@ -11,8 +11,9 @@ struct ContentView: View {
     let pokis: [Poki]
     var body: some View {
         List(pokis.indices) { index in
-            
+            PokiView(name: pokis[index].name, height: pokis[index].height, weight: pokis[index].weight)
         }
+        .navigationTitle("POKIES !")
     }
 }
 

@@ -12,6 +12,7 @@
 		D79A65E32654185200CC7BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79A65E22654185200CC7BB9 /* Assets.xcassets */; };
 		D79A65E62654185200CC7BB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79A65E52654185200CC7BB9 /* Preview Assets.xcassets */; };
 		D79A65F9265420E400CC7BB9 /* Poki.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A65F8265420E400CC7BB9 /* Poki.swift */; };
+		D79A65FE2654258000CC7BB9 /* PokiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A65FD2654258000CC7BB9 /* PokiView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D79A65E52654185200CC7BB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D79A65E72654185200CC7BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D79A65F8265420E400CC7BB9 /* Poki.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poki.swift; sourceTree = "<group>"; };
+		D79A65FD2654258000CC7BB9 /* PokiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokiView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		D79A65F626541AA700CC7BB9 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				D79A65FD2654258000CC7BB9 /* PokiView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				D79A65E12654184F00CC7BB9 /* ContentView.swift in Sources */,
 				D79A65F9265420E400CC7BB9 /* Poki.swift in Sources */,
 				D79A65DF2654184F00CC7BB9 /* PokiMVVMUIApp.swift in Sources */,
+				D79A65FE2654258000CC7BB9 /* PokiView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
