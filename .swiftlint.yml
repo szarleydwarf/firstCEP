@@ -1,0 +1,8 @@
+disabled_rules:
+  - multiple_closures_with_trailing_closure
+identifier_name:
+  max_length:
+    warning: 45
+    error: 60
+  min_length:
+    warning: 1

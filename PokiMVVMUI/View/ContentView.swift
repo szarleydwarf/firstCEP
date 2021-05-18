@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    let pokis: [Poki]
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List(pokis.indices) { index in
+            
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(pokis: [Poki]())
     }
 }
