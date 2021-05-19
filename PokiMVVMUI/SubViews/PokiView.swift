@@ -14,7 +14,7 @@ struct PokiView: View {
         HStack {
             MobiImageView()
                 .position(x: 20, y: 20)
-            MobiDetailsView(name: name)
+            MobiDetailsView(name: name, showAll: false)
                 .position(x: 0, y: 20)
         }
     }

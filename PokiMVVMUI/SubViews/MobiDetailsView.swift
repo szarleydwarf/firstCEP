@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MobiDetailsView: View {
     let name: String
+    let showAll: Bool
 
     var body: some View {
         Text("Name - \(name)")
@@ -17,6 +18,6 @@ struct MobiDetailsView: View {
 
 struct MobiDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        MobiDetailsView(name: "")
+        MobiDetailsView(name: "", showAll: false)
     }
 }
