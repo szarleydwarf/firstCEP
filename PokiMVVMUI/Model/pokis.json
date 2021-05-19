@@ -1,0 +1,36 @@
+{
+  "mobs": [
+    {
+      "name": "Bubosaur",
+      "element": "fire",
+      "attack": 12,
+      "defence": 2,
+      "exp": 0,
+      "life": 10
+    },
+    {
+      "name": "Duck-Duck",
+      "element": "water",
+      "attack": 10,
+      "defence": 4,
+      "exp": 0,
+      "life": 18
+    },
+    {
+      "name": "SlimeSour",
+      "element": "earth",
+      "attack": 24,
+      "defence": 8,
+      "exp": 0,
+      "life": 16
+    },
+    {
+      "name": "Wing-moon",
+      "element": "wind",
+      "attack": 19,
+      "defence": 0,
+      "exp": 0,
+      "life": 30
+    }
+  ]
+}
