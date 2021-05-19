@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D7699B1926555D0B001F1DBA /* pokis.json in Resources */ = {isa = PBXBuildFile; fileRef = D7699B1826555D0B001F1DBA /* pokis.json */; };
+		D7699B1F2655640C001F1DBA /* MobiImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7699B1E2655640C001F1DBA /* MobiImageView.swift */; };
+		D7699B232655651A001F1DBA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7699B222655651A001F1DBA /* ViewModel.swift */; };
 		D79A65DF2654184F00CC7BB9 /* PokiMVVMUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A65DE2654184F00CC7BB9 /* PokiMVVMUIApp.swift */; };
 		D79A65E12654184F00CC7BB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A65E02654184F00CC7BB9 /* ContentView.swift */; };
 		D79A65E32654185200CC7BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79A65E22654185200CC7BB9 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		D7699B1826555D0B001F1DBA /* pokis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokis.json; sourceTree = "<group>"; };
+		D7699B1E2655640C001F1DBA /* MobiImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobiImageView.swift; sourceTree = "<group>"; };
+		D7699B222655651A001F1DBA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D79A65DB2654184E00CC7BB9 /* PokiMVVMUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokiMVVMUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79A65DE2654184F00CC7BB9 /* PokiMVVMUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokiMVVMUIApp.swift; sourceTree = "<group>"; };
 		D79A65E02654184F00CC7BB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 		D79A65F0265418CE00CC7BB9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D7699B222655651A001F1DBA /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				D79A65FD2654258000CC7BB9 /* PokiView.swift */,
+				D7699B1E2655640C001F1DBA /* MobiImageView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -228,6 +234,8 @@
 				D79A65E12654184F00CC7BB9 /* ContentView.swift in Sources */,
 				D79A65F9265420E400CC7BB9 /* Poki.swift in Sources */,
 				D79A65DF2654184F00CC7BB9 /* PokiMVVMUIApp.swift in Sources */,
+				D7699B1F2655640C001F1DBA /* MobiImageView.swift in Sources */,
+				D7699B232655651A001F1DBA /* ViewModel.swift in Sources */,
 				D79A65FE2654258000CC7BB9 /* PokiView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
