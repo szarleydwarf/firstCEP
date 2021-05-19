@@ -16,6 +16,7 @@ struct ContentView: View {
             }
         }
         .navigationTitle("POKIES !")
+        .onAppear(perform: vm.fetchPokiList)
     }
 }
 

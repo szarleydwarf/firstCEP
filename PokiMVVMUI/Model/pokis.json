@@ -1,5 +1,4 @@
-{
-  "mobs": [
+2[
     {
       "name": "Bubosaur",
       "element": "fire",
@@ -32,5 +31,4 @@
       "exp": 0,
       "life": 30
     }
-  ]
-}
+]

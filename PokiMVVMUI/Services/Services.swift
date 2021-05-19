@@ -16,11 +16,10 @@ protocol LocalServicesProtocol {
 }
 
 class Services {
-    
 }
 
 extension Services: LocalServicesProtocol {
-    func fetchLocalFile(from fileName: String) -> [Poki]{
+    func fetchLocalFile(from fileName: String) -> [Poki] {
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json")
         else {fatalError("could not create the path")}
 
