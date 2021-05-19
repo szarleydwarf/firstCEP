@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+class ViewModel: ObservableObject {
+    @Published var pokis: [Poki] = Array(repeating: Poki.example, count: 10)
+
+    func fetchPokiList() {
+    }
+
+    func fetchPoki() {
+    }
+}

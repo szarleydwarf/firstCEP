@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    let pokis: [Poki]
+    @StateObject private var vm = ViewModel()
     var body: some View {
-        List(pokis.indices) { index in
-            PokiView(name: pokis[index].name, height: pokis[index].height, weight: pokis[index].weight)
+        List(vm.pokis.indices) { index in
+            if let poki = vm.pokis[index] {
+                PokiView(name: poki.name)
+            }
         }
         .navigationTitle("POKIES !")
     }
@@ -19,6 +21,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(pokis: [Poki]())
+        ContentView()
     }
 }

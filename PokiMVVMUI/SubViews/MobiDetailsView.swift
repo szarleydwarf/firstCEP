@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct MobiDetailsView: View {
+    let name: String
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Name - \(name)")
     }
 }
 
 struct MobiDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        MobiDetailsView()
+        MobiDetailsView(name: "")
     }
 }

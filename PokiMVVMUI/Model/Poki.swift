@@ -8,10 +8,10 @@
 import Foundation
 
 struct Poki: Decodable {
-    let name: String
-    let height, weight: Int
-    
+    let name, element: String
+    let attack, defence, exp, life: Int
+
     #if DEBUG
-    static var example = Poki(name: "", height: 0, weight: 0)
+    static var example = Poki(name: "", element: "", attack: 0, defence: 0, exp: 0, life: 0)
     #endif
 }
