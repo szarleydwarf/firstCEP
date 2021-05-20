@@ -12,9 +12,9 @@ struct PokiView: View {
 
     var body: some View {
         HStack {
-            MobiImageView(width: 20, height: 50)
+            MobiImageView(width: 20, height: 20)
                 .position(x: 20, y: 20)
-            MobiDetailsView(text: "Name - \(name)")
+            MobiDetailsView(text: "Name - \(name)", fonts: .headline, color: .blue)
                 .position(x: 0, y: 20)
         }
     }

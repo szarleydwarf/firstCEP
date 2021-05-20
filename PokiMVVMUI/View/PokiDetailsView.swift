@@ -13,13 +13,14 @@ struct PokiDetailsView: View {
     var body: some View {
         VStack {
             MobiImageView(width: 140, height: 140)
-            MobiDetailsView(text: "Name - \(mobi.name)")
-            MobiDetailsView(text: "Element - \(mobi.element)")
-            MobiDetailsView(text: "Attack - \(mobi.attack)")
-            MobiDetailsView(text: "Defence - \(mobi.defence)")
-            MobiDetailsView(text: "Experience - \(mobi.exp)")
-            MobiDetailsView(text: "Life - \(mobi.life)")
+            MobiDetailsView(text: "Name - \(mobi.name)", fonts: .title, color: .blue)
+            MobiDetailsView(text: "Element - \(mobi.element)", fonts: .title3, color: .green)
+            MobiDetailsView(text: "Attack - \(mobi.attack)", fonts: .headline, color: .red)
+            MobiDetailsView(text: "Defence - \(mobi.defence)", fonts: .headline, color: .blue)
+            MobiDetailsView(text: "Experience - \(mobi.exp)", fonts: .headline, color: .yellow)
+            MobiDetailsView(text: "Life - \(mobi.life)", fonts: .headline, color: .red)
         }
+        Spacer()
     }
 }
 

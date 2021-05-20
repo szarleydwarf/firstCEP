@@ -12,12 +12,13 @@ struct MobiImageView: View {
 
     var body: some View {
         ZStack {
-            Circle()
-                .stroke(Color.gray, lineWidth: 2)
             Image(systemName: "lock")
                 .resizable()
-                .frame(width: width, height: height)
+                .frame(width: width/2, height: height/2)
                 .foregroundColor(Color.green)
+            Circle()
+                .stroke(Color.gray, lineWidth: 3)
+                .frame(width: width, height: height, alignment: .center)
         }
     }
 }
