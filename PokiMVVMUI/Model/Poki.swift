@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Poki: Decodable {
+struct Poki: Decodable, Hashable {
     let name, element: String
     let attack, defence, exp, life: Int
 
