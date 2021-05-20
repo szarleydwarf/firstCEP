@@ -10,7 +10,7 @@ import SwiftUI
 struct PokiDetailsView: View {
 
     var body: some View {
-        MobiImageView(width: 200, height: 200)
+        MobiImageView(width: 140, height: 140)
         MobiDetailsView(name: "", showAll: true)
     }
 }

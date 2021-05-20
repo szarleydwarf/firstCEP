@@ -9,13 +9,15 @@ import SwiftUI
 
 struct MobiImageView: View {
     let width, height: CGFloat
-    
+
     var body: some View {
         ZStack {
             Circle()
+                .stroke(Color.gray, lineWidth: 2)
             Image(systemName: "lock")
-                .foregroundColor(Color.white)
+                .resizable()
                 .frame(width: width, height: height)
+                .foregroundColor(Color.green)
         }
     }
 }
