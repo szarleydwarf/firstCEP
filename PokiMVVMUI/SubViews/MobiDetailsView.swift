@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct MobiDetailsView: View {
-    let name: String
-    let showAll: Bool
+    let text: String
 
     var body: some View {
-        Text("Name - \(name)")
+        Text(text)
     }
 }
 
 struct MobiDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        MobiDetailsView(name: "", showAll: false)
+        MobiDetailsView(text: "")
     }
 }

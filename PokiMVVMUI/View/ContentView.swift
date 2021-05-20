@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         List {
             ForEach(self.vm.pokis, id: \.self) { poki in
-                NavigationLink(destination: PokiDetailsView()) {
+                NavigationLink(destination: PokiDetailsView(mobi: poki)) {
                     PokiView(name: poki.name)
                 }
             }
