@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct MobiImageView: View {
+    let imageName: String
     let width, height: CGFloat
 
     var body: some View {
         ZStack {
-            Image(systemName: "lock")
+            Image(systemName: imageName)
                 .resizable()
-                .frame(width: width/2, height: height/2)
+                .frame(width: width/1.2, height: height/1.2)
                 .foregroundColor(Color.green)
             Circle()
                 .stroke(Color.gray, lineWidth: 3)
@@ -25,6 +26,6 @@ struct MobiImageView: View {
 
 struct MobiImageView_Previews: PreviewProvider {
     static var previews: some View {
-        MobiImageView(width: 0, height: 0)
+        MobiImageView(imageName: "", width: 0, height: 0)
     }
 }
