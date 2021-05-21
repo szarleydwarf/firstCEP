@@ -14,6 +14,23 @@ class ViewModel: ObservableObject {
         self.pokis = Services().fetchLocalFile(from: "pokis")
     }
 
+    func imageName(from element: String) -> String {
+        var name: String
+        switch element {
+        case "fire":
+            name = "flame"
+        case "water":
+            name = "waveform"
+        case "earth":
+            name = "square.stack.3d.up"
+        case "air":
+            name = "leaf"
+        default:
+            name  = "questionmark.diamond"
+        }
+        return name
+    }
+
     func fetchPoki() {
     }
 }

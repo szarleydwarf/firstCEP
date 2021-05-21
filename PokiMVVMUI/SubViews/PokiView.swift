@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct PokiView: View {
-    let name: String
+    @StateObject private var vm = ViewModel()
+    let name, element: String
 
     var body: some View {
         HStack {
-            MobiImageView(imageName: "book", width: 20, height: 20)
+            MobiImageView(imageName: self.vm.imageName(from: element), width: 30, height: 30)
                 .position(x: 20, y: 20)
             MobiDetailsView(text: "Name - \(name)", fonts: .headline, color: .blue)
                 .position(x: 0, y: 20)
@@ -22,6 +23,6 @@ struct PokiView: View {
 
 struct PokiView_Previews: PreviewProvider {
     static var previews: some View {
-        PokiView(name: "")
+        PokiView(name: "", element: "")
     }
 }

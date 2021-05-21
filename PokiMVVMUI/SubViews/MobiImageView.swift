@@ -15,8 +15,9 @@ struct MobiImageView: View {
         ZStack {
             Image(systemName: imageName)
                 .resizable()
-                .frame(width: width/1.2, height: height/1.2)
+                .frame(width: width/1.1, height: height/1.1)
                 .foregroundColor(Color.green)
+                .clipShape(Circle())
             Circle()
                 .stroke(Color.gray, lineWidth: 3)
                 .frame(width: width, height: height, alignment: .center)

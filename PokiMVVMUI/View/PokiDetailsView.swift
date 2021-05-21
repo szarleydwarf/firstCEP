@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct PokiDetailsView: View {
+    @StateObject private var vm = ViewModel()
     let mobi: Poki
 
     var body: some View {
         VStack {
-            MobiImageView(width: 140, height: 140)
+            MobiImageView(imageName: self.vm.imageName(from: mobi.element), width: 140, height: 140)
             MobiDetailsView(text: "Name - \(mobi.name)", fonts: .title, color: .blue)
             MobiDetailsView(text: "Element - \(mobi.element)", fonts: .title3, color: .green)
             MobiDetailsView(text: "Attack - \(mobi.attack)", fonts: .headline, color: .red)
