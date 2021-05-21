@@ -20,6 +20,13 @@ struct PokiDetailsView: View {
             MobiDetailsView(text: "Defence - \(mobi.defence)", fonts: .headline, color: .blue)
             MobiDetailsView(text: "Experience - \(mobi.exp)", fonts: .headline, color: .yellow)
             MobiDetailsView(text: "Life - \(mobi.life)", fonts: .headline, color: .red)
+            
+            List {
+                ForEach(self.vm.pokis, id: \.self) {poki in
+                    PokiView(name: poki.name, element: poki.element)
+                }
+            }
+            .onAppear(perform: self.vm.fetchPokiList)
         }
         Spacer()
     }
