@@ -16,7 +16,7 @@ struct ButtonView: View {
                 NavigationLink(destination: BattleView()) {
                     Text(text)
                 }
-                .navigationTitle("Navigation")
+                .navigationTitle("To the Battle")
                 .frame(width: 240, height: 40, alignment: .center)
                 .foregroundColor(.white)
                 .background(Color.green)
