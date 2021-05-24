@@ -17,20 +17,23 @@ struct PokiDetailsView: View {
             MobiImageView(imageName: self.vm.imageName(from: mobi.element), width: 140, height: 140)
             MobiDetailsView(text: "Name - \(mobi.name)", fonts: .title, color: .blue)
             MobiDetailsView(text: "Element - \(mobi.element)", fonts: .title2, color: .green)
-            MobiDetailsView(text: "Attack - \(mobi.attack)", fonts: .headline, color: .red)
-            MobiDetailsView(text: "Defence - \(mobi.defence)", fonts: .headline, color: .blue)
-            MobiDetailsView(text: "Experience - \(mobi.exp)", fonts: .headline, color: .yellow)
-            MobiDetailsView(text: "Life - \(mobi.life)", fonts: .headline, color: .red)
+            HStack {
+                MobiDetailsView(text: "Attack - \(mobi.attack)", fonts: .headline, color: .red)
+                MobiDetailsView(text: "Defence - \(mobi.defence)", fonts: .headline, color: .orange)
+            }
+            HStack {
+                MobiDetailsView(text: "Life - \(mobi.life)", fonts: .headline, color: .red)
+                MobiDetailsView(text: "Experience - \(mobi.exp)", fonts: .headline, color: .orange)
+            }
             Picker("", selection: $selected) {
                 ForEach(self.vm.pokis, id: \.self) {poki in
                     PokiView(name: poki.name, element: poki.element)
                 }
             }
             .onAppear(perform: self.vm.fetchPokiList)
-            .frame(width: 200, height: 160, alignment: .center)
-            .border(Color.green, width: 2)
+            .frame(width: 200, height: 120, alignment: .center)
 
-            ButtonView(text: "Battle")
+            ButtonView(text: "To the battle")
         }
         Spacer()
     }
