@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D737A652265C3B6600233C71 /* AttackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D737A651265C3B6600233C71 /* AttackView.swift */; };
 		D7699B1926555D0B001F1DBA /* pokis.json in Resources */ = {isa = PBXBuildFile; fileRef = D7699B1826555D0B001F1DBA /* pokis.json */; };
 		D7699B1F2655640C001F1DBA /* MobiImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7699B1E2655640C001F1DBA /* MobiImageView.swift */; };
 		D7699B232655651A001F1DBA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7699B222655651A001F1DBA /* ViewModel.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D737A651265C3B6600233C71 /* AttackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackView.swift; sourceTree = "<group>"; };
 		D7699B1826555D0B001F1DBA /* pokis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokis.json; sourceTree = "<group>"; };
 		D7699B1E2655640C001F1DBA /* MobiImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobiImageView.swift; sourceTree = "<group>"; };
 		D7699B222655651A001F1DBA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				D7699B1E2655640C001F1DBA /* MobiImageView.swift */,
 				D7699B29265566B8001F1DBA /* MobiDetailsView.swift */,
 				D7DA13AE2657C39E0035141A /* ButtonView.swift */,
+				D737A651265C3B6600233C71 /* AttackView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				D79A65F9265420E400CC7BB9 /* Poki.swift in Sources */,
 				D79A65DF2654184F00CC7BB9 /* PokiMVVMUIApp.swift in Sources */,
 				D7699B1F2655640C001F1DBA /* MobiImageView.swift in Sources */,
+				D737A652265C3B6600233C71 /* AttackView.swift in Sources */,
 				D79A539C2656C31A00CFDE1D /* PokiDetailsView.swift in Sources */,
 				D7699B2E2655771A001F1DBA /* Services.swift in Sources */,
 				D7DA13B22657C4280035141A /* BattleView.swift in Sources */,
