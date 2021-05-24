@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct BattleView: View {
-    
+    let attackingMobi: Poki
+    let defendingMobi: Poki
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("\(attackingMobi.name)")
+        Text("\(defendingMobi.name)")
     }
 }
 
 struct BattleView_Previews: PreviewProvider {
     static var previews: some View {
-        BattleView()
+        BattleView(attackingMobi: Poki.example, defendingMobi: Poki.example)
     }
 }

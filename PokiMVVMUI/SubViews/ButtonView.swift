@@ -11,19 +11,15 @@ struct ButtonView: View {
     let text: String
 
     var body: some View {
-        NavigationView {
             VStack {
-                NavigationLink(destination: BattleView()) {
-                    Text(text)
-                }
-//                .navigationTitle("To the Battle")
+                Text(text)
                 .frame(width: 240, height: 40, alignment: .center)
                 .foregroundColor(.white)
                 .background(Color.green)
                 .clipShape(Capsule())
             }
         }
-    }
+
 }
 
 struct ButtonView_Previews: PreviewProvider {

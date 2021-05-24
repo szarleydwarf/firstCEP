@@ -33,7 +33,13 @@ struct PokiDetailsView: View {
             .onAppear(perform: self.vm.fetchPokiList)
             .frame(width: 200, height: 120, alignment: .center)
 
-            ButtonView(text: "To the battle")
+            NavigationView {
+                ButtonView(text: "To the battle")
+                    .onTapGesture {
+                        NavigationLink(destination: BattleView(attackingMobi: mobi, defendingMobi: selected)) {
+                        }
+                    }
+            }
         }
         Spacer()
     }
