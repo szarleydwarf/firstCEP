@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct BattleView: View {
-    let attackingMobi: Poki
-    let defendingMobi: Poki
+    var attackingMobi: Poki
+    var defendingMobi: Poki
 
     var body: some View {
-        Text("\(attackingMobi.name)")
-        Text("\(defendingMobi.name)")
+        HStack {
+            Text("Atacking > \(attackingMobi.name)")
+            Text("Defending > \(defendingMobi.name)")
+        }
     }
 }
 
