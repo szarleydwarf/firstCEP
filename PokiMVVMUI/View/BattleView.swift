@@ -12,6 +12,7 @@ struct BattleView: View {
     @StateObject private var vm = ViewModel()
     var attackingMobi: Poki
     var defendingMobi: Poki
+    var canellable: AnyCancellable?
 
     var body: some View {
         VStack {
@@ -29,7 +30,12 @@ struct BattleView: View {
                     ForEach((0..<defendingMobi.life).reversed(), id: \.self) {id in
                         if defendingMobi.life > 0 {
                             AttackView(text: self.vm.attack(attacker: attackingMobi, defender: defendingMobi))
-                            AttackView(text: "LOL>\(id)")
+                        }
+                    }.onAppear {
+                        DispatchQueue.main.async {
+                            withAnimation {
+                                scrollView.scrollTo(, anchor:  .bottom)
+                            }
                         }
                     }
                 }
