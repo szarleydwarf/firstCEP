@@ -23,16 +23,18 @@ struct BattleView: View {
                 Text("\(attackingMobi.name)")
                 Text("\(defendingMobi.name)")
             }
+            .foregroundColor(.green)
             ScrollView(.vertical) {
                 ScrollViewReader {scrollView in
                     ForEach((0..<defendingMobi.life).reversed(), id: \.self) {id in
-                        if self.vm.defender?.life ?? -1 > 0 {
-                            AttackView(text: self.vm.attack())
+                        if defendingMobi.life > 0 {
+                            AttackView(text: self.vm.attack(attacker: attackingMobi, defender: defendingMobi))
                             AttackView(text: "LOL>\(id)")
                         }
                     }
                 }
             }
+            .frame(width: 280, height: 100, alignment: .center)
         }
     }
 }
