@@ -25,6 +25,9 @@ struct BattleView: View {
             }
             ScrollView(.vertical) {
                 ScrollViewReader {scrollView in
+                    ForEach((0..<defendingMobi.life).reversed(), id: \.self) {id in
+                        Text("LOL>\(id)")
+                    }
                     if self.vm.defender?.life ?? -1 > 0 {
                         Text("fight")
                         AttackView(text: self.vm.attack())
