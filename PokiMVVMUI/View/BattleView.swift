@@ -12,7 +12,7 @@ struct BattleView: View {
     @StateObject private var vm = ViewModel()
     var attackingMobi: Poki
     var defendingMobi: Poki
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -26,11 +26,10 @@ struct BattleView: View {
             ScrollView(.vertical) {
                 ScrollViewReader {scrollView in
                     ForEach((0..<defendingMobi.life).reversed(), id: \.self) {id in
-                        Text("LOL>\(id)")
-                    }
-                    if self.vm.defender?.life ?? -1 > 0 {
-                        Text("fight")
-                        AttackView(text: self.vm.attack())
+                        if self.vm.defender?.life ?? -1 > 0 {
+                            AttackView(text: self.vm.attack())
+                            AttackView(text: "LOL>\(id)")
+                        }
                     }
                 }
             }
