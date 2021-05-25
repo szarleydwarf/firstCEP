@@ -6,15 +6,31 @@
 //
 
 import SwiftUI
+import Combine
 
 struct BattleView: View {
+    @StateObject private var vm = ViewModel()
     var attackingMobi: Poki
     var defendingMobi: Poki
-
+    
     var body: some View {
-        HStack {
-            Text("Atacking > \(attackingMobi.name)")
-            Text("Defending > \(defendingMobi.name)")
+        VStack {
+            HStack {
+                Text("Atacking")
+                Text("Defending")
+            }
+            HStack {
+                Text("\(attackingMobi.name)")
+                Text("\(defendingMobi.name)")
+            }
+            ScrollView(.vertical) {
+                ScrollViewReader {scrollView in
+                    if self.vm.defender?.life ?? -1 > 0 {
+                        Text("fight")
+                        AttackView(text: self.vm.attack())
+                    }
+                }
+            }
         }
     }
 }

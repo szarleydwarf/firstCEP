@@ -9,6 +9,7 @@ import Foundation
 
 class ViewModel: ObservableObject {
     @Published var pokis: [Poki] = Array(repeating: Poki.example, count: 2)
+    var attacker, defender: Poki?
 
     func fetchPokiList() {
         self.pokis = Services().fetchLocalFile(from: "pokis")
@@ -32,5 +33,16 @@ class ViewModel: ObservableObject {
     }
 
     func fetchPoki() {
+    }
+
+    func attack() -> String {
+        var text: String = "\(attacker?.name ?? "") attack with strength \(attacker?.attack ?? 0)\n"
+        text += "\(defender?.name ?? "") defend is \(defender?.defence ?? 0)"
+        if let life = defender?.life, let defence = defender?.defence, let attack = attacker?.attack {
+            let damage = life - (defence - attack)
+            text += "\n causing damage \(damage)"
+        }
+
+        return text
     }
 }
