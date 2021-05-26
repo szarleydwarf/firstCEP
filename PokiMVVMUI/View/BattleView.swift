@@ -34,7 +34,7 @@ struct BattleView: View {
                     }.onAppear {
                         DispatchQueue.main.async {
                             withAnimation {
-                                scrollView.scrollTo(, anchor:  .bottom)
+//                                scrollView.scrollTo(, anchor:  .bottom)
                             }
                         }
                     }

@@ -25,15 +25,6 @@ struct PokiDetailsView: View {
                 MobiDetailsView(text: "Life - \(mobi.life)", fonts: .headline, color: .red)
                 MobiDetailsView(text: "Experience - \(mobi.exp)", fonts: .headline, color: .orange)
             }
-            Picker("", selection: $selected) {
-                ForEach(self.vm.pokis, id: \.self) {poki in
-                    PokiView(name: poki.name, element: poki.element)
-                }
-            }
-            .onAppear(perform: self.vm.fetchPokiList)
-            .frame(width: 200, height: 120, alignment: .center)
-
-            ButtonView(text: "To the battle", attacking: mobi, defending: selected)
         }
         Spacer()
     }
