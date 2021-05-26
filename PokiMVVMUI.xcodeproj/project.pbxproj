@@ -7,41 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D737A652265C3B6600233C71 /* AttackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D737A651265C3B6600233C71 /* AttackView.swift */; };
 		D7699B1926555D0B001F1DBA /* pokis.json in Resources */ = {isa = PBXBuildFile; fileRef = D7699B1826555D0B001F1DBA /* pokis.json */; };
-		D7699B1F2655640C001F1DBA /* MobiImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7699B1E2655640C001F1DBA /* MobiImageView.swift */; };
 		D7699B232655651A001F1DBA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7699B222655651A001F1DBA /* ViewModel.swift */; };
-		D7699B2A265566B8001F1DBA /* MobiDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7699B29265566B8001F1DBA /* MobiDetailsView.swift */; };
 		D7699B2E2655771A001F1DBA /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7699B2D2655771A001F1DBA /* Services.swift */; };
-		D79A539C2656C31A00CFDE1D /* PokiDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A539B2656C31A00CFDE1D /* PokiDetailsView.swift */; };
 		D79A65DF2654184F00CC7BB9 /* PokiMVVMUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A65DE2654184F00CC7BB9 /* PokiMVVMUIApp.swift */; };
 		D79A65E12654184F00CC7BB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A65E02654184F00CC7BB9 /* ContentView.swift */; };
 		D79A65E32654185200CC7BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79A65E22654185200CC7BB9 /* Assets.xcassets */; };
 		D79A65E62654185200CC7BB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79A65E52654185200CC7BB9 /* Preview Assets.xcassets */; };
-		D79A65F9265420E400CC7BB9 /* Poki.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A65F8265420E400CC7BB9 /* Poki.swift */; };
-		D79A65FE2654258000CC7BB9 /* PokiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A65FD2654258000CC7BB9 /* PokiView.swift */; };
-		D7DA13AF2657C39E0035141A /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DA13AE2657C39E0035141A /* ButtonView.swift */; };
-		D7DA13B22657C4280035141A /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DA13B12657C4280035141A /* BattleView.swift */; };
+		D79A65F9265420E400CC7BB9 /* Mobis.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A65F8265420E400CC7BB9 /* Mobis.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D737A651265C3B6600233C71 /* AttackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackView.swift; sourceTree = "<group>"; };
 		D7699B1826555D0B001F1DBA /* pokis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokis.json; sourceTree = "<group>"; };
-		D7699B1E2655640C001F1DBA /* MobiImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobiImageView.swift; sourceTree = "<group>"; };
 		D7699B222655651A001F1DBA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		D7699B29265566B8001F1DBA /* MobiDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobiDetailsView.swift; sourceTree = "<group>"; };
 		D7699B2D2655771A001F1DBA /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
-		D79A539B2656C31A00CFDE1D /* PokiDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokiDetailsView.swift; sourceTree = "<group>"; };
 		D79A65DB2654184E00CC7BB9 /* PokiMVVMUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokiMVVMUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79A65DE2654184F00CC7BB9 /* PokiMVVMUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokiMVVMUIApp.swift; sourceTree = "<group>"; };
 		D79A65E02654184F00CC7BB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D79A65E22654185200CC7BB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D79A65E52654185200CC7BB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D79A65E72654185200CC7BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D79A65F8265420E400CC7BB9 /* Poki.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poki.swift; sourceTree = "<group>"; };
-		D79A65FD2654258000CC7BB9 /* PokiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokiView.swift; sourceTree = "<group>"; };
-		D7DA13AE2657C39E0035141A /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
-		D7DA13B12657C4280035141A /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleView.swift; sourceTree = "<group>"; };
+		D79A65F8265420E400CC7BB9 /* Mobis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobis.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				D7699B1826555D0B001F1DBA /* pokis.json */,
-				D79A65F8265420E400CC7BB9 /* Poki.swift */,
+				D79A65F8265420E400CC7BB9 /* Mobis.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,8 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				D79A65E02654184F00CC7BB9 /* ContentView.swift */,
-				D79A539B2656C31A00CFDE1D /* PokiDetailsView.swift */,
-				D7DA13B12657C4280035141A /* BattleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,11 +133,6 @@
 		D79A65F626541AA700CC7BB9 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				D79A65FD2654258000CC7BB9 /* PokiView.swift */,
-				D7699B1E2655640C001F1DBA /* MobiImageView.swift */,
-				D7699B29265566B8001F1DBA /* MobiDetailsView.swift */,
-				D7DA13AE2657C39E0035141A /* ButtonView.swift */,
-				D737A651265C3B6600233C71 /* AttackView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -249,18 +228,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7699B2A265566B8001F1DBA /* MobiDetailsView.swift in Sources */,
 				D79A65E12654184F00CC7BB9 /* ContentView.swift in Sources */,
-				D7DA13AF2657C39E0035141A /* ButtonView.swift in Sources */,
-				D79A65F9265420E400CC7BB9 /* Poki.swift in Sources */,
+				D79A65F9265420E400CC7BB9 /* Mobis.swift in Sources */,
 				D79A65DF2654184F00CC7BB9 /* PokiMVVMUIApp.swift in Sources */,
-				D7699B1F2655640C001F1DBA /* MobiImageView.swift in Sources */,
-				D737A652265C3B6600233C71 /* AttackView.swift in Sources */,
-				D79A539C2656C31A00CFDE1D /* PokiDetailsView.swift in Sources */,
 				D7699B2E2655771A001F1DBA /* Services.swift in Sources */,
-				D7DA13B22657C4280035141A /* BattleView.swift in Sources */,
 				D7699B232655651A001F1DBA /* ViewModel.swift in Sources */,
-				D79A65FE2654258000CC7BB9 /* PokiView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

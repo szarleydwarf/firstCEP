@@ -1,34 +1,98 @@
 [
     {
-      "name": "Bubosaur",
-      "element": "fire",
-      "attack": 12,
-      "defence": 2,
-      "exp": 0,
-      "life": 10
+        "id":"fire-1234-ujnb",
+        "element":"fire",
+        "mobies": [
+            {
+                "id":"fire-2345-ujnb",
+                "name": "Bubosaur",
+                "element": "fire",
+                "attack": 12,
+                "defence": 2,
+                "exp": 0,
+                "life": 10
+            },
+            {
+                "id":"fire-3456-ujnb",
+                "name": "Firestoner",
+                "element": "fire",
+                "attack": 9,
+                "defence": 6,
+                "exp": 0,
+                "life": 14
+            }
+        ]
     },
     {
-      "name": "Duck-Duck",
-      "element": "water",
-      "attack": 10,
-      "defence": 4,
-      "exp": 0,
-      "life": 18
+        "id":"wate-1234-ujnb",
+        "element":"water",
+        "mobies": [
+            {
+                "id":"wate-2345-ujnb",
+                "name": "Duck-Duck",
+                "element": "water",
+                "attack": 10,
+                "defence": 4,
+                "exp": 0,
+                "life": 18
+            },
+            {
+                "id":"wate-3456-ujnb",
+                "name": "Fishermon",
+                "element": "water",
+                "attack": 4,
+                "defence": 9,
+                "exp": 0,
+                "life": 13
+            }
+        ]
     },
     {
-      "name": "SlimeSour",
-      "element": "earth",
-      "attack": 24,
-      "defence": 8,
-      "exp": 0,
-      "life": 16
+        "id":"eart-1234-ujnb",
+        "element":"earth",
+        "mobies": [
+            {
+                "id":"eart-2345-ujnb",
+                "name": "SlimeSour",
+                "element": "earth",
+                "attack": 24,
+                "defence": 8,
+                "exp": 0,
+                "life": 16
+            },
+            {
+                "id":"eart-3456-ujnb",
+                "name": "Gorgonzola",
+                "element": "earth",
+                "attack": 21,
+                "defence": 7,
+                "exp": 0,
+                "life": 14
+            }
+        ]
     },
     {
-      "name": "Wing-moon",
-      "element": "air",
-      "attack": 19,
-      "defence": 0,
-      "exp": 0,
-      "life": 30
+        "id":"aira-1234-ujnb",
+        "element":"air",
+        "mobies": [
+            {
+                "id":"aira-2345-ujnb",
+                "name": "Wing-moon",
+                "element": "air",
+                "attack": 19,
+                "defence": 0,
+                "exp": 0,
+                "life": 30
+            },
+            {
+                "id":"aira-3456-ujnb",
+                "name": "Leafnear",
+                "element": "air",
+                "attack": 13,
+                "defence": 1,
+                "exp": 0,
+                "life": 27
+            }
+        ]
     }
 ]
