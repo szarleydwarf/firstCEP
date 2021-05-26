@@ -1,10 +1,10 @@
 [
     {
-        "id":"fire-1234-ujnb",
+        "id":"BE3D7CAF-6459-4ADD-9FDF-C9872E669D3E",
         "element":"fire",
         "mobies": [
             {
-                "id":"fire-2345-ujnb",
+                "id":"300F554A-1F40-4E56-9DC2-D43E58B5BC41",
                 "name": "Bubosaur",
                 "element": "fire",
                 "attack": 12,
@@ -13,7 +13,7 @@
                 "life": 10
             },
             {
-                "id":"fire-3456-ujnb",
+                "id":"3015FABC-8E18-4191-80D9-81726D3A64B0",
                 "name": "Firestoner",
                 "element": "fire",
                 "attack": 9,
@@ -24,11 +24,11 @@
         ]
     },
     {
-        "id":"wate-1234-ujnb",
+        "id":"96164918-C52E-45A9-928D-8C53675C60A6",
         "element":"water",
         "mobies": [
             {
-                "id":"wate-2345-ujnb",
+                "id":"31547D57-89AF-424A-8E02-2504720BF4B8",
                 "name": "Duck-Duck",
                 "element": "water",
                 "attack": 10,
@@ -37,7 +37,7 @@
                 "life": 18
             },
             {
-                "id":"wate-3456-ujnb",
+                "id":"3BB0EE5B-12B0-420A-8C40-6ABD8CF8A35F",
                 "name": "Fishermon",
                 "element": "water",
                 "attack": 4,
@@ -48,11 +48,11 @@
         ]
     },
     {
-        "id":"eart-1234-ujnb",
+        "id":"8F4FC68F-0DF0-4D7F-9181-CBCD9408879C",
         "element":"earth",
         "mobies": [
             {
-                "id":"eart-2345-ujnb",
+                "id":"D2C09824-B53D-469B-8C9E-0C94B3685674",
                 "name": "SlimeSour",
                 "element": "earth",
                 "attack": 24,
@@ -61,7 +61,7 @@
                 "life": 16
             },
             {
-                "id":"eart-3456-ujnb",
+                "id":"5108AE82-4418-4BEF-BA6B-D44C68A20F48",
                 "name": "Gorgonzola",
                 "element": "earth",
                 "attack": 21,
@@ -72,11 +72,11 @@
         ]
     },
     {
-        "id":"aira-1234-ujnb",
+        "id":"CD8427B1-AB04-4746-B12C-76C92B363399",
         "element":"air",
         "mobies": [
             {
-                "id":"aira-2345-ujnb",
+                "id":"34C3CBF7-229C-4ED8-9BF0-1E29E3D0FED1",
                 "name": "Wing-moon",
                 "element": "air",
                 "attack": 19,
@@ -85,7 +85,7 @@
                 "life": 30
             },
             {
-                "id":"aira-3456-ujnb",
+                "id":"F859311D-7A7D-4102-B163-EED68D737A49",
                 "name": "Leafnear",
                 "element": "air",
                 "attack": 13,

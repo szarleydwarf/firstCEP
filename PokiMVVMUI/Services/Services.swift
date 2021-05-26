@@ -12,14 +12,14 @@ enum ServiceErrors: Error {
 }
 
 protocol LocalServicesProtocol {
-    func fetchLocalFile<T: Decodable>(_type: T.Type, from fileName: String) -> T
+    func fetchLocalFile<T: Decodable>(_ type: T.Type, from fileName: String) -> T
 }
 
 class Services {
 }
 
 extension Services: LocalServicesProtocol {
-    func fetchLocalFile<T: Decodable>(_type: T.Type, from fileName: String) -> T {
+    func fetchLocalFile<T: Decodable>(_ type: T.Type, from fileName: String) -> T {
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json")
         else {fatalError("could not find \(fileName)")}
 

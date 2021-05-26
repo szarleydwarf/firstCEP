@@ -15,6 +15,7 @@ struct ContentView: View {
             }
         .navigationTitle("Mobies !")
         .onAppear(perform: vm.fetchPokiList)
+//        .onAppear(perform: vm.getUUID)
     }
 }
 

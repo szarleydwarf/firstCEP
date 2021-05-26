@@ -34,6 +34,12 @@ class ViewModel: ObservableObject {
     func fetchPoki() {
     }
 
+    func getUUID() {
+        for _ in 1...12 {
+            print(UUID().uuidString)
+        }
+    }
+
     func attack(attacker: Mobi, defender: Mobi) -> String {
         let damage = defender.life - (defender.defence - attacker.attack)
         return "\n Caused damage \(damage)"
