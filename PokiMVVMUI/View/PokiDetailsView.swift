@@ -14,16 +14,23 @@ struct PokiDetailsView: View {
 
     var body: some View {
         VStack {
-            MobiImageView(imageName: self.vm.imageName(from: mobi.element), width: 140, height: 140)
-            MobiDetailsView(text: "Name - \(mobi.name)", fonts: .title, color: .blue)
-            MobiDetailsView(text: "Element - \(mobi.element)", fonts: .title2, color: .green)
-            HStack {
-                MobiDetailsView(text: "Attack - \(mobi.attack)", fonts: .headline, color: .red)
-                MobiDetailsView(text: "Defence - \(mobi.defence)", fonts: .headline, color: .orange)
+            Section {
+                MobiImageView(imageName: self.vm.imageName(from: mobi.element), width: 140, height: 140)
             }
-            HStack {
-                MobiDetailsView(text: "Life - \(mobi.life)", fonts: .headline, color: .red)
-                MobiDetailsView(text: "Experience - \(mobi.exp)", fonts: .headline, color: .orange)
+            Section {
+                MobiDetailsView(text: "Name - \(mobi.name)", fonts: .title, color: .blue)
+                MobiDetailsView(text: "Element - \(mobi.element)", fonts: .title2, color: .green)
+                HStack {
+                    MobiDetailsView(text: "Attack - \(mobi.attack)", fonts: .headline, color: .red)
+                    MobiDetailsView(text: "Defence - \(mobi.defence)", fonts: .headline, color: .orange)
+                }
+                HStack {
+                    MobiDetailsView(text: "Life - \(mobi.life)", fonts: .headline, color: .red)
+                    MobiDetailsView(text: "Experience - \(mobi.exp)", fonts: .headline, color: .orange)
+                }
+            }
+            Section {
+                ButtonView(text: "Select", attacking: mobi, defending: mobi)
             }
         }
         Spacer()
