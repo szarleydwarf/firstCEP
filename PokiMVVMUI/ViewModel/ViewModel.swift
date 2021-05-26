@@ -8,10 +8,10 @@
 import Foundation
 
 class ViewModel: ObservableObject {
-    @Published var pokis: [Poki] = Array(repeating: Poki.example, count: 2)
+    @Published var mobisList: [MobiElements]?// = Array(repeating: [Mobi.example], count: 2)
 
     func fetchPokiList() {
-        self.pokis = Services().fetchLocalFile(from: "pokis")
+        self.mobisList = Services().fetchLocalFile([MobiElements].self, from: "pokis")
     }
 
     func imageName(from element: String) -> String {
@@ -34,7 +34,7 @@ class ViewModel: ObservableObject {
     func fetchPoki() {
     }
 
-    func attack(attacker: Poki, defender: Poki) -> String {
+    func attack(attacker: Mobi, defender: Mobi) -> String {
         let damage = defender.life - (defender.defence - attacker.attack)
         return "\n Caused damage \(damage)"
     }

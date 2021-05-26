@@ -12,13 +12,8 @@ struct ContentView: View {
 
     var body: some View {
         List {
-            ForEach(self.vm.pokis, id: \.self) { poki in
-                NavigationLink(destination: PokiDetailsView(mobi: poki)) {
-                    PokiView(name: poki.name, element: poki.element)
-                }
             }
-        }
-        .navigationTitle("POKIES !")
+        .navigationTitle("Mobies !")
         .onAppear(perform: vm.fetchPokiList)
     }
 }
