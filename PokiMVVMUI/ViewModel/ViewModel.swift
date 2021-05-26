@@ -8,11 +8,9 @@
 import Foundation
 
 class ViewModel: ObservableObject {
-    @Published var mobisList: [MobiElements]?// = Array(repeating: [Mobi.example], count: 2)
-
-    func fetchPokiList() {
-        self.mobisList = Services().fetchLocalFile([MobiElements].self, from: "pokis")
-    }
+    var mobisList: [MobiElements] = {
+        return Services().fetchLocalFile([MobiElements].self, from: "pokis")
+    }()
 
     func imageName(from element: String) -> String {
         var name: String

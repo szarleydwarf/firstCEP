@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var vm = ViewModel()
+    var vm = ViewModel()
 
     var body: some View {
         List {
+            ForEach(self.vm.mobisList) { section in
+                Section(header: Text(section.element)) {
+                    ForEach(section.mobies) {mobi in
+                        Text(mobi.name)
+                    }
+                }
             }
+        }
         .navigationTitle("Mobies !")
-        .onAppear(perform: vm.fetchPokiList)
-//        .onAppear(perform: vm.getUUID)
+        .listStyle(GroupedListStyle())
+//        .onAppear(perform: vm.fetchPokiList)
     }
 }
 

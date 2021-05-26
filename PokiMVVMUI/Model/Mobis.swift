@@ -8,9 +8,9 @@
 import Foundation
 
 struct MobiElements: Decodable, Hashable, Identifiable {
-    var id: UUID
-    var element: String
-    var mobies: [Mobi]
+    let id: UUID
+    let element: String
+    let mobies: [Mobi]
 
 }
 
