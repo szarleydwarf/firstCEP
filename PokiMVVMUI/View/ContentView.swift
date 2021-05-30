@@ -15,7 +15,7 @@ struct ContentView: View {
             ForEach(self.vm.mobisList) { section in
                 Section(header: Text(section.element)) {
                     ForEach(section.mobies) {mobi in
-                        Text(mobi.name)
+                        MobiRow(mobi: mobi)
                     }
                 }
             }

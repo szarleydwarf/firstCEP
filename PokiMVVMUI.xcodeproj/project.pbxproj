@@ -15,6 +15,7 @@
 		D79A65E32654185200CC7BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79A65E22654185200CC7BB9 /* Assets.xcassets */; };
 		D79A65E62654185200CC7BB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79A65E52654185200CC7BB9 /* Preview Assets.xcassets */; };
 		D79A65F9265420E400CC7BB9 /* Mobis.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A65F8265420E400CC7BB9 /* Mobis.swift */; };
+		D7C7F7372663C077007E65C4 /* MobiRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C7F7362663C077007E65C4 /* MobiRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D79A65E52654185200CC7BB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D79A65E72654185200CC7BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D79A65F8265420E400CC7BB9 /* Mobis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobis.swift; sourceTree = "<group>"; };
+		D7C7F7362663C077007E65C4 /* MobiRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobiRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		D79A65F626541AA700CC7BB9 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				D7C7F7362663C077007E65C4 /* MobiRow.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				D79A65DF2654184F00CC7BB9 /* PokiMVVMUIApp.swift in Sources */,
 				D7699B2E2655771A001F1DBA /* Services.swift in Sources */,
 				D7699B232655651A001F1DBA /* ViewModel.swift in Sources */,
+				D7C7F7372663C077007E65C4 /* MobiRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
