@@ -29,6 +29,23 @@ class ViewModel: ObservableObject {
         return name
     }
 
+    func imageColor(from element: String) -> (Double, Double, Double) {
+        var color: (Double, Double, Double)
+        switch element {
+        case "fire":
+            color = (1, 0, 0)
+        case "water":
+            color = (0, 0, 1)
+        case "earth":
+            color = (0.6, 0.4, 0.2)
+        case "air":
+            color = (0.5, 0.5, 0.5)
+        default:
+            color  = (1, 1, 1)
+        }
+        return color
+    }
+
     func fetchPoki() {
     }
 
