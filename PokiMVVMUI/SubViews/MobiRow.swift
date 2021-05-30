@@ -20,6 +20,8 @@ struct MobiRow: View {
                 .overlay(Circle().stroke(Color.red, lineWidth: 2))
             Text(mobi.name)
                 .font(.title2)
+                .fontWeight(.semibold)
+                .padding(4)
         }
     }
 }

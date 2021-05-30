@@ -15,7 +15,11 @@ struct ContentView: View {
             ForEach(self.vm.mobisList) { section in
                 Section(header: Text(section.element)) {
                     ForEach(section.mobies) {mobi in
-                        MobiRow(mobi: mobi, rgb: self.vm.imageColor(from: mobi.element))
+                        NavigationLink(destination:
+                                MobiDetails(mobi: mobi,
+                                rgb: self.vm.imageColor(from: mobi.element))) {
+                            MobiRow(mobi: mobi, rgb: self.vm.imageColor(from: mobi.element))
+                        }
                     }
                 }
             }
