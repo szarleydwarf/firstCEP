@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct PokiMVVMUIApp: App {
+    @StateObject var battle = Battle()
+
     var body: some Scene {
         WindowGroup {
             NavigationView {
                 ContentView()
+                    .environmentObject(battle)
             }
         }
     }
