@@ -8,21 +8,22 @@
 import SwiftUI
 
 struct MobiDetails: View {
+    @EnvironmentObject var battle: Battle
     let vm = ViewModel()
     let mobi: Mobi
-    let rgb: (Double, Double, Double)
+    let rgb: RGB
 
     var body: some View {
         VStack {
             Image(systemName: vm.imageName(from: mobi.element))
                 .resizable()
                 .frame(width: 200, height: 200)
-                .foregroundColor(Color(red: rgb.0, green: rgb.1, blue: rgb.2))
+                .foregroundColor(Color(red: rgb.r, green: rgb.g, blue: rgb.b))
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color.red, lineWidth: 2))
             Text(">>> \(mobi.name) <<<")
                 .font(.title)
-                .foregroundColor(Color(red: rgb.0, green: rgb.1, blue: rgb.2))
+                .foregroundColor(Color(red: rgb.r, green: rgb.g, blue: rgb.b))
             Text(">>> \(mobi.element) <<<")
                 .font(.title3)
             HStack {
@@ -58,6 +59,6 @@ struct MobiDetails: View {
 
 struct MobiDetails_Previews: PreviewProvider {
     static var previews: some View {
-        MobiDetails(mobi: Mobi.example, rgb: (0, 0, 0))
+        MobiDetails(mobi: Mobi.example, rgb: RGB.example)
     }
 }

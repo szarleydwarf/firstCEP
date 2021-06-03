@@ -29,19 +29,19 @@ class ViewModel: ObservableObject {
         return name
     }
 
-    func imageColor(from element: String) -> (Double, Double, Double) {
-        var color: (Double, Double, Double)
+    func imageColor(from element: String) -> RGB {
+        var color: RGB
         switch element {
         case "fire":
-            color = (1, 0, 0)
+            color = RGB(r: 1, g: 0, b: 0)
         case "water":
-            color = (0, 0, 1)
+            color = RGB(r: 0, g: 0, b: 1)
         case "earth":
-            color = (0.6, 0.4, 0.2)
+            color = RGB(r: 0.6, g: 0.4, b: 0.2)
         case "air":
-            color = (0.5, 0.5, 0.5)
+            color = RGB(r: 0.5, g: 0.5, b: 0.5)
         default:
-            color  = (1, 1, 1)
+            color = RGB(r: 1, g: 1, b: 1)
         }
         return color
     }
