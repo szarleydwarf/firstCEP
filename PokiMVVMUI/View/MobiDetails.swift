@@ -48,8 +48,13 @@ struct MobiDetails: View {
                     RoundedRectangle(cornerRadius: 15)
                         .stroke(Color.red, lineWidth: 2)
                 )
-
             }
+            Button("Add to battle") {
+                battle.add(oponent: mobi)
+            }
+            .font(.title3)
+            .padding(6)
+
             Spacer()
         }
         .navigationTitle("Mobie Details")
@@ -60,5 +65,6 @@ struct MobiDetails: View {
 struct MobiDetails_Previews: PreviewProvider {
     static var previews: some View {
         MobiDetails(mobi: Mobi.example, rgb: RGB.example)
+            .environmentObject(Battle())
     }
 }
