@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D70DCAAD26692B9B00168909 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70DCAAC26692B9B00168909 /* Battle.swift */; };
 		D70DCAB0266942C900168909 /* RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70DCAAF266942C900168909 /* RGB.swift */; };
+		D75A2223266A24A50012A389 /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A2222266A24A50012A389 /* BattleView.swift */; };
 		D7699B1926555D0B001F1DBA /* pokis.json in Resources */ = {isa = PBXBuildFile; fileRef = D7699B1826555D0B001F1DBA /* pokis.json */; };
 		D7699B232655651A001F1DBA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7699B222655651A001F1DBA /* ViewModel.swift */; };
 		D7699B2E2655771A001F1DBA /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7699B2D2655771A001F1DBA /* Services.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		D70DCAAC26692B9B00168909 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
 		D70DCAAF266942C900168909 /* RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGB.swift; sourceTree = "<group>"; };
+		D75A2222266A24A50012A389 /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleView.swift; sourceTree = "<group>"; };
 		D7699B1826555D0B001F1DBA /* pokis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokis.json; sourceTree = "<group>"; };
 		D7699B222655651A001F1DBA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D7699B2D2655771A001F1DBA /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				D79A65E02654184F00CC7BB9 /* ContentView.swift */,
 				D7C7F73A2663CAE1007E65C4 /* MobiDetails.swift */,
+				D75A2222266A24A50012A389 /* BattleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			files = (
 				D7C7F73B2663CAE1007E65C4 /* MobiDetails.swift in Sources */,
 				D79A65E12654184F00CC7BB9 /* ContentView.swift in Sources */,
+				D75A2223266A24A50012A389 /* BattleView.swift in Sources */,
 				D79A65F9265420E400CC7BB9 /* Mobis.swift in Sources */,
 				D70DCAAD26692B9B00168909 /* Battle.swift in Sources */,
 				D79A65DF2654184F00CC7BB9 /* PokiMVVMUIApp.swift in Sources */,
