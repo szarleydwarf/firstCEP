@@ -10,7 +10,11 @@ import SwiftUI
 struct BattleView: View {
     @EnvironmentObject var battle: Battle
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(battle.fighters.0.name)
+            Text(battle.fighters.1.name)
+        }
+        .navigationTitle("Battle")
     }
 }
 

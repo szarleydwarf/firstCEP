@@ -10,6 +10,7 @@
 		D70DCAAD26692B9B00168909 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70DCAAC26692B9B00168909 /* Battle.swift */; };
 		D70DCAB0266942C900168909 /* RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70DCAAF266942C900168909 /* RGB.swift */; };
 		D75A2223266A24A50012A389 /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A2222266A24A50012A389 /* BattleView.swift */; };
+		D75A2227266A46FC0012A389 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A2226266A46FC0012A389 /* MainView.swift */; };
 		D7699B1926555D0B001F1DBA /* pokis.json in Resources */ = {isa = PBXBuildFile; fileRef = D7699B1826555D0B001F1DBA /* pokis.json */; };
 		D7699B232655651A001F1DBA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7699B222655651A001F1DBA /* ViewModel.swift */; };
 		D7699B2E2655771A001F1DBA /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7699B2D2655771A001F1DBA /* Services.swift */; };
@@ -26,6 +27,7 @@
 		D70DCAAC26692B9B00168909 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
 		D70DCAAF266942C900168909 /* RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGB.swift; sourceTree = "<group>"; };
 		D75A2222266A24A50012A389 /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleView.swift; sourceTree = "<group>"; };
+		D75A2226266A46FC0012A389 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D7699B1826555D0B001F1DBA /* pokis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokis.json; sourceTree = "<group>"; };
 		D7699B222655651A001F1DBA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D7699B2D2655771A001F1DBA /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				D79A65E02654184F00CC7BB9 /* ContentView.swift */,
 				D7C7F73A2663CAE1007E65C4 /* MobiDetails.swift */,
 				D75A2222266A24A50012A389 /* BattleView.swift */,
+				D75A2226266A46FC0012A389 /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				D70DCAAD26692B9B00168909 /* Battle.swift in Sources */,
 				D79A65DF2654184F00CC7BB9 /* PokiMVVMUIApp.swift in Sources */,
 				D7699B2E2655771A001F1DBA /* Services.swift in Sources */,
+				D75A2227266A46FC0012A389 /* MainView.swift in Sources */,
 				D70DCAB0266942C900168909 /* RGB.swift in Sources */,
 				D7699B232655651A001F1DBA /* ViewModel.swift in Sources */,
 				D7C7F7372663C077007E65C4 /* MobiRow.swift in Sources */,
