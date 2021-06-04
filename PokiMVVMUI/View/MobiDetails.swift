@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MobiDetails: View {
-    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var battle: Battle
     let vm = ViewModel()
     let mobi: Mobi
@@ -50,12 +49,9 @@ struct MobiDetails: View {
                         .stroke(Color.red, lineWidth: 2)
                 )
             }
-            Button(action: {
-                    battle.add(oponent: mobi)
-                    self.presentationMode.wrappedValue.dismiss()
-            }) {
-                    Text("Add to battle")
-                }
+            Button("Add to battle") {
+                battle.add(oponent: mobi)
+            }
             .font(.title3)
             .padding(6)
 
