@@ -10,9 +10,9 @@ import SwiftUI
 struct BattleView: View {
     @EnvironmentObject var battle: Battle
     var body: some View {
-        VStack {
-            Text(battle.fighters.0.name)
-            Text(battle.fighters.1.name)
+        HStack {
+            MobiDetails(mobi: battle.fighters.0, rgb: RGB(r: 1, g: 0, b: 0))
+            MobiDetails(mobi: battle.fighters.1, rgb: RGB(r: 0, g: 1, b: 0.5))
         }
         .navigationTitle("Battle")
     }
