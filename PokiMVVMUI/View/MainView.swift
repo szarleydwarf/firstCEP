@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var battle: Battle
     var body: some View {
         TabView {
             ContentView()

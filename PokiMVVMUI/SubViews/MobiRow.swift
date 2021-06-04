@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MobiRow: View {
+    @EnvironmentObject var battle: Battle
     let vm = ViewModel()
     let mobi: Mobi
     let rgb: RGB
@@ -29,5 +30,6 @@ struct MobiRow: View {
 struct MobiRow_Previews: PreviewProvider {
     static var previews: some View {
         MobiRow(mobi: Mobi.example, rgb: RGB.example)
+            .environmentObject(Battle())
     }
 }
