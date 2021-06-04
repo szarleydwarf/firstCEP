@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MobiDetails: View {
     @EnvironmentObject var battle: Battle
+    @State var showView = false
     let vm = ViewModel()
     let mobi: Mobi
     let rgb: RGB
@@ -51,9 +52,11 @@ struct MobiDetails: View {
             }
             Button("Add to battle") {
                 battle.add(oponent: mobi)
+                self.showView = true
             }
             .font(.title3)
             .padding(6)
+            NavigationLink(destination: ContentView(), isActive: $showView) {}
 
             Spacer()
         }
