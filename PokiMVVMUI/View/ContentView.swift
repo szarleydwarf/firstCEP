@@ -18,7 +18,7 @@ struct ContentView: View {
                     ForEach(section.mobies) {mobi in
                         NavigationLink(destination:
                                 MobiDetails(mobi: mobi,
-                                rgb: self.vm.imageColor(from: mobi.element))) {
+                                            rgb: self.vm.imageColor(from: mobi.element), imageSize: (200, 200))) {
                             MobiRow(mobi: mobi, rgb: self.vm.imageColor(from: mobi.element))
                         }
                     }

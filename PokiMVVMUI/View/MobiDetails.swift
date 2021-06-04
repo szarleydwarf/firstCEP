@@ -12,12 +12,13 @@ struct MobiDetails: View {
     let vm = ViewModel()
     let mobi: Mobi
     let rgb: RGB
+    let imageSize: (CGFloat, CGFloat)
 
     var body: some View {
         VStack {
             Image(systemName: vm.imageName(from: mobi.element))
                 .resizable()
-                .frame(width: 200, height: 200)
+                .frame(width: imageSize.0, height: imageSize.1)
                 .foregroundColor(Color(red: rgb.r, green: rgb.g, blue: rgb.b))
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color.red, lineWidth: 2))
@@ -64,7 +65,7 @@ struct MobiDetails: View {
 
 struct MobiDetails_Previews: PreviewProvider {
     static var previews: some View {
-        MobiDetails(mobi: Mobi.example, rgb: RGB.example)
+        MobiDetails(mobi: Mobi.example, rgb: RGB.example, imageSize: (200, 200))
             .environmentObject(Battle())
     }
 }
